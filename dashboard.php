@@ -1506,6 +1506,7 @@ function fetchTasksForProject(projectId) {
             taskData.commentaire,
             taskData.IsCompleted
           );
+          task.completed = taskData.IsCompleted === 1;
           // Ajouter la catégorie au set
           if (task.category) {
             taskCategories.add(task.category);
@@ -1795,14 +1796,14 @@ function calculateGroupBudget(groupTasks) {
     return groupTasks.reduce((sum, task) => sum + (task.consumedBudget + task.remainingBudget), 0);
 }
 
-      function renderTaskItem(task) {
+function renderTaskItem(task) {
         const taskElement = document.createElement('div');
         taskElement.className = 'task-item';
         taskElement.id = `task-${task.id}`;
         
      
 
-    const validationIconClass = task.IsCompleted ? 'fas fa-check-circle validated' : 'far fa-circle';
+    const validationIconClass = task.completed ? 'fas fa-check-circle validated' : 'far fa-circle';
     
         
         taskElement.innerHTML = ` 
