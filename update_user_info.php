@@ -1,11 +1,12 @@
 <?php
 session_start();
-require_once 'database_connection.php';
 
 if (!isset($_SESSION['user_id'])) {
     echo json_encode(['success' => false, 'message' => 'Utilisateur non connecté']);
     exit();
 }
+
+include 'database_connection.php'; // Incluez votre connexion à la base de données
 
 $user_id = $_SESSION['user_id'];
 $userName = $_POST['userName'] ?? '';
@@ -19,17 +20,17 @@ if (empty($userName) || empty($userEmail)) {
 }
 
 // Mettre à jour les informations dans la base de données
-$updateQuery = "UPDATE utilisateur SET user_name = ?, user_email = ?";
+$updateQuery = "UPDATE utilisateur SET nom = ?, email = ?";
 $params = [$userName, $userEmail];
 if (!empty($userPassword)) {
-    $updateQuery .= ", user_password = ?";
+    $updateQuery .= ", mot_de_passe = ?";
     $hashedPassword = password_hash($userPassword, PASSWORD_DEFAULT);
     $params[] = $hashedPassword;
 }
-$updateQuery .= " WHERE user_id = ?";
+$updateQuery .= " WHERE id = ?";
 $params[] = $user_id;
 
-$stmt = $db->prepare($updateQuery);
+$stmt = $pdo->prepare($updateQuery);
 $success = $stmt->execute($params);
 
 echo json_encode(['success' => $success]);
