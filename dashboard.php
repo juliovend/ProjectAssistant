@@ -1602,7 +1602,7 @@ function toggleTaskValidation(taskId) {
                 const inputElement = document.createElement('input');
                 inputElement.type = 'text';
                 inputElement.value = task.name;
-                inputElement.classList.add('task-field');
+                inputElement.classList.add('task-name');
                 inputElement.setAttribute('data-task-id', taskId);
 
                 taskNameContainer.innerHTML = '';
