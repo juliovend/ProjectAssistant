@@ -23,6 +23,7 @@ if ($result) {
         // Stockez l'ID et le nom de l'utilisateur dans la session
         $_SESSION['user_id'] = $result['id'];
         $_SESSION['user_name'] = $result['nom'];
+        $_SESSION['user_email'] = $result['email'];
         echo json_encode(["success" => true, "message" => "Connexion réussie", "redirect" => "dashboard.php"]);
     } else {
         echo json_encode(["success" => false, "message" => "Mot de passe incorrect"]);

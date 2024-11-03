@@ -9,6 +9,7 @@ if (!isset($_SESSION['user_id'])) {
 
 // Récupérez le nom de l'utilisateur depuis la sessions
 $userName = $_SESSION['user_name'];
+$userEmail = $_SESSION['user_email'];
 ?>
 
 <!DOCTYPE html>
@@ -1035,7 +1036,7 @@ header {
       </div>
       <div class="form-group">
         <label for="userEmail">Email</label>
-        <input type="email" id="userEmail" name="userEmail" required>
+        <input type="email" id="userEmail" name="userEmail" value="<?php echo htmlspecialchars($userEmail); ?>" required>
       </div>
       <div class="form-group">
         <label for="userPassword">Nouveau mot de passe</label>
