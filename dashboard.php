@@ -77,11 +77,17 @@ $userEmail = $_SESSION['user_email'];
     align-items: flex-end;
 }
 
+.right-section-up {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .btn-settings {
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 1.5em;
+    font-size: 1.2em;
     color: var(--text-dark);
     transition: color 0.3s;
 }
@@ -872,12 +878,14 @@ header {
             </div>
             
             <div class="right-section">
-                <button class="btn-settings" onclick="showUserUpdateModal()" title="Paramètres du compte">
-                    <i class="fas fa-cog"></i>
-                </button>    
+              <div class="right-section-up">   
                 <div class="welcome-message">
                     Bienvenue, <span id="user-name"><?php echo htmlspecialchars($userName); ?></span>
                 </div>
+                <button class="btn-settings" onclick="showUserUpdateModal()" title="Paramètres du compte">
+                    <i class="fas fa-cog"></i>
+                </button> 
+              </div>
                 <div class="project-selector">
                     <select id="projectSelect" onchange="switchProject(this.value)">
                         <option value="">Sélectionner un projet</option>
