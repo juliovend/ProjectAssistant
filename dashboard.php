@@ -2284,8 +2284,6 @@ function validateTask(taskId) {
   document.addEventListener('DOMContentLoaded', function() {
     // Appel des fonctions initiales
     fetchProjects();
-    updateAssistantAnalysis();
-
 
     // Écouteurs d'événements pour les boutons et les champs
     const cancelButton = document.querySelector("#newProjectModal .btn-cancel");
@@ -2393,8 +2391,9 @@ taskList.addEventListener("change", function(event) {
             updateStats();
         }
 
-        updateAssistantAnalysis();
+        //updateAssistantAnalysis();
     }
+    //updateAssistantAnalysis();
 });
     
     // Initialiser le libellé du bouton de mode d'affichage
@@ -2404,6 +2403,9 @@ taskList.addEventListener("change", function(event) {
     } else {
         toggleBtn.textContent = 'suivi par Priorité';
     }
+  
+    updateAssistantAnalysis();
+
   });
     
     
