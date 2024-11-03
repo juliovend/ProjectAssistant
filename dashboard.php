@@ -872,7 +872,7 @@ header {
             </div>
             
             <div class="right-section">
-                <button class="btn-settings" onclick="openAccountModal()" title="Paramètres du compte">
+                <button class="btn-settings" onclick="showUserUpdateModal()" title="Paramètres du compte">
                     <i class="fas fa-cog"></i>
                 </button>    
                 <div class="welcome-message">
