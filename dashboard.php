@@ -1521,11 +1521,11 @@ function deleteCurrentProject() {
     const totalDays = (projectEnd - projectStart) / (1000 * 60 * 60 * 24);
     const elapsedDays = (today - projectStart) / (1000 * 60 * 60 * 24);
     const timeProgress = Math.min(Math.max(elapsedDays / totalDays, 0), 1) * 100; // En pourcentage
-    console.log(timeProgress);
 
-    // Avancement global du projet
-    const globalProgress = tasks.reduce((sum, task) => sum + task.consumedEffort, 0) / tasks.reduce((sum, task) => sum + task.totalEffort, 0) * 100 || 0;
-    console.log(globalProgress);
+    // Calcul de l'avancement global du projet
+    const totalEffort = tasks.reduce((sum, task) => sum + (task.totalEffort || 0), 0);
+    const consumedEffort = tasks.reduce((sum, task) => sum + (task.consumedEffort || 0), 0);
+    const globalProgress = totalEffort > 0 ? (consumedEffort / totalEffort) * 100 : 0;
 
     // Analyse de l'avancement
     const progressAnalysis = timeProgress >= globalProgress 
@@ -1535,10 +1535,8 @@ function deleteCurrentProject() {
     document.getElementById("progress-analysis").textContent = progressAnalysis;
 
     // Analyse du budget
-    const totalBudget = tasks.reduce((sum, task) => sum + task.consumedBudget + task.remainingBudget, 0);
-    console.log(totalBudget);
+    const totalBudget = tasks.reduce((sum, task) => sum + ((task.consumedBudget || 0) + (task.remainingBudget || 0)), 0);
     const allottedBudget = parseFloat(document.getElementById("projectBudget").value) || 0;
-    console.log(allottedBudget);
     const budgetAnalysis = totalBudget > allottedBudget
         ? `Attention, votre projet dépasse le budget initialement prévu de ${(totalBudget / allottedBudget * 100 - 100).toFixed(0)}%.`
         : "Félicitations, votre projet est on-budget.";
