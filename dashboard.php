@@ -1191,9 +1191,7 @@ function hideLoadingOverlay() {
             }
         })
         .catch(error => console.error('Erreur lors de la récupération des projets:', error));
-        .then(() => {
         hideLoadingOverlay(); // Masquer le sablier après le succès ou l'erreur
-    })
 }
 
   function populateProjectSelector(projects) {
