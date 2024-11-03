@@ -1293,7 +1293,7 @@ function updateUserInfo(event) {
     
 
 
-function switchProject(projectId) {
+async function switchProject(projectId) {
     console.log("switchProject appelé avec projectId:", projectId);
     
     // Vérifiez si l'utilisateur a sélectionné "Sélectionner un projet" ou rien du tout
