@@ -1632,6 +1632,8 @@ function fetchTasksForProject(projectId) {
         });
         renderTasks();
         updateStats();
+        // Appel pour mettre à jour les conseils de l'assistant
+        updateAssistantAnalysis();
       } else {
         console.error(data.message);
       }
@@ -2391,7 +2393,7 @@ taskList.addEventListener("change", function(event) {
             updateStats();
         }
 
-        //updateAssistantAnalysis();
+        updateAssistantAnalysis();
     }
     //updateAssistantAnalysis();
 });
@@ -2404,7 +2406,7 @@ taskList.addEventListener("change", function(event) {
         toggleBtn.textContent = 'suivi par Priorité';
     }
   
-    updateAssistantAnalysis();
+    //updateAssistantAnalysis();
 
   });
     
