@@ -878,13 +878,13 @@ header {
             </div>
             
             <div class="right-section">
-              <div class="right-section-up">
-                <button class="btn-settings" onclick="showUserUpdateModal()" title="Paramètres du compte">
-                    <i class="fas fa-cog"></i>
-                </button>    
+              <div class="right-section-up">   
                 <div class="welcome-message">
                     Bienvenue, <span id="user-name"><?php echo htmlspecialchars($userName); ?></span>
                 </div>
+                <button class="btn-settings" onclick="showUserUpdateModal()" title="Paramètres du compte">
+                    <i class="fas fa-cog"></i>
+                </button> 
               </div>
                 <div class="project-selector">
                     <select id="projectSelect" onchange="switchProject(this.value)">
