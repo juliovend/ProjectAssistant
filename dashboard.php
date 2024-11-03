@@ -1036,7 +1036,7 @@ header {
       </div>
       <div class="form-group">
         <label for="userEmail">Email</label>
-        <input type="email" id="userEmail" name="userEmail" value="<?php echo htmlspecialchars($userEmail); ?>" required>
+        <input type="email" id="userEmail" name="userEmail" value="<?php echo htmlspecialchars($userEmail); ?>" disabled>
       </div>
       <div class="form-group">
         <label for="userPassword">Nouveau mot de passe</label>
