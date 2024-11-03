@@ -14,7 +14,7 @@ $email = $data['email'];
 $password = $data['password'];
 
 // Modifier la requête SQL pour récupérer le nom complet
-$stmt = $db->prepare("SELECT id, nom, mot_de_passe FROM utilisateur WHERE email = :email");
+$stmt = $db->prepare("SELECT id, nom, mot_de_passe, email FROM utilisateur WHERE email = :email");
 $stmt->execute([':email' => $email]);
 $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -23,6 +23,7 @@ if ($result) {
         // Stockez l'ID et le nom de l'utilisateur dans la session
         $_SESSION['user_id'] = $result['id'];
         $_SESSION['user_name'] = $result['nom'];
+        $_SESSION['user_email'] = $result['email'];
         echo json_encode(["success" => true, "message" => "Connexion réussie", "redirect" => "dashboard.php"]);
     } else {
         echo json_encode(["success" => false, "message" => "Mot de passe incorrect"]);

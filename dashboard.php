@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// Vérifiez que l'utilisateur est connectéee
+// Vérifiez que l'utilisateur est connectée
 if (!isset($_SESSION['user_id'])) {
     header("Location: index.php"); // Redirige vers la page de connexion si l'utilisateur n'est pas connecté
     exit();
@@ -9,6 +9,7 @@ if (!isset($_SESSION['user_id'])) {
 
 // Récupérez le nom de l'utilisateur depuis la sessions
 $userName = $_SESSION['user_name'];
+$userEmail = $_SESSION['user_email'];
 ?>
 
 <!DOCTYPE html>
@@ -74,6 +75,19 @@ $userName = $_SESSION['user_name'];
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+}
+
+.btn-settings {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: var(--text-dark);
+    transition: color 0.3s;
+}
+
+.btn-settings:hover {
+    color: var(--secondary-dark);
 }
 
 .welcome-message {
@@ -858,10 +872,12 @@ header {
             </div>
             
             <div class="right-section">
+                <button class="btn-settings" onclick="showUserUpdateModal()" title="Paramètres du compte">
+                    <i class="fas fa-cog"></i>
+                </button>    
                 <div class="welcome-message">
                     Bienvenue, <span id="user-name"><?php echo htmlspecialchars($userName); ?></span>
                 </div>
-                
                 <div class="project-selector">
                     <select id="projectSelect" onchange="switchProject(this.value)">
                         <option value="">Sélectionner un projet</option>
@@ -1025,6 +1041,29 @@ header {
   </div>
 </div>
 
+<div id="userUpdateModal" class="modal">
+  <div class="modal-content">
+    <h3>Mise à jour des informations du compte</h3>
+    <form id="userUpdateForm" onsubmit="updateUserInfo(event)">
+      <div class="form-group">
+        <label for="userName">Nom d'utilisateur</label>
+        <input type="text" id="userName" name="userName" value="<?php echo htmlspecialchars($userName); ?>" required>
+      </div>
+      <div class="form-group">
+        <label for="userEmail">Email</label>
+        <input type="email" id="userEmail" name="userEmail" value="<?php echo htmlspecialchars($userEmail); ?>" required>
+      </div>
+      <div class="form-group">
+        <label for="userPassword">Nouveau mot de passe</label>
+        <input type="password" id="userPassword" name="userPassword">
+      </div>
+      <div class="modal-buttons">
+        <button type="button" class="btn btn-cancel" onclick="closeUserUpdateModal()">Annuler</button>
+        <button type="submit" class="btn btn-create">Mettre à jour</button>
+      </div>
+    </form>
+  </div>
+</div>
     
     <div id="newProjectModal" class="modal">
       <div class="modal-content">
@@ -1103,6 +1142,37 @@ header {
         }
     
           // Fonctions globales
+  
+          function showUserUpdateModal() {
+  document.getElementById('userUpdateModal').style.display = 'block';
+}
+
+function closeUserUpdateModal() {
+  document.getElementById('userUpdateModal').style.display = 'none';
+  document.getElementById('userUpdateForm').reset();
+}
+
+function updateUserInfo(event) {
+  event.preventDefault();
+
+  const formData = new FormData(document.getElementById('userUpdateForm'));
+
+  fetch('update_user_info.php', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.success) {
+      //alert('Informations mises à jour avec succès');
+      closeUserUpdateModal();
+    } else {
+      alert(`Erreur : ${data.message}`);
+    }
+  })
+  .catch(error => console.error('Erreur lors de la mise à jour des informations utilisateur:', error));
+}
+  
   function fetchProjects() {
     return fetch('get_projects.php')
         .then(response => response.json())
