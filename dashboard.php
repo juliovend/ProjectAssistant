@@ -1322,10 +1322,9 @@ function switchProject(projectId) {
         
         // Chargez les détails et les tâches du projet
         loadProjectDetails(currentProjectId);
-        fetchTasksForProject(currentProjectId).then(() => {
-            // Mise à jour des conseils de l'assistant après le chargement des détails et des tâches
+        fetchTasksForProject(currentProjectId)
             updateAssistantAnalysis();
-        });
+        
     }
 }
 
