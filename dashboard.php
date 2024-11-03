@@ -1589,12 +1589,14 @@ function toggleTaskValidation(taskId) {
         // Mettre à jour le nom de la tâche (texte barré ou non)
         const taskNameContainer = document.getElementById(`task-name-container-${taskId}`);
         if (taskNameContainer) {
+          const width = taskNameContainer.offsetWidth;
             if (task.completed) {
                 const spanElement = document.createElement('span');
                 spanElement.textContent = task.name;
                 spanElement.style.textDecoration = 'line-through';
                 spanElement.style.color = '#888';
                 spanElement.classList.add('completed-task');
+                spanElement.style.width = `${width}px`;
 
                 taskNameContainer.innerHTML = '';
                 taskNameContainer.appendChild(spanElement);
@@ -1602,8 +1604,9 @@ function toggleTaskValidation(taskId) {
                 const inputElement = document.createElement('input');
                 inputElement.type = 'text';
                 inputElement.value = task.name;
-                inputElement.classList.add('task-name');
+                inputElement.classList.add('task-field');
                 inputElement.setAttribute('data-task-id', taskId);
+                inputElement.style.width = `${width}px`;
 
                 taskNameContainer.innerHTML = '';
                 taskNameContainer.appendChild(inputElement);
