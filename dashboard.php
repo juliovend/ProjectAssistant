@@ -2316,6 +2316,7 @@ function validateTask(taskId) {
 
     document.getElementById("projectBudget").addEventListener("change", function() {
       updateProjectAttribute('budget', this.value);
+      updateAssistantAnalysis();
     });
     
       // Écouteur sur le sélecteur de catégorie dans la modale de création de tâche
