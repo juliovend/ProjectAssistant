@@ -1530,7 +1530,7 @@ function deleteCurrentProject() {
     console.log(totalEffort);
 
     // Analyse de l'avancement
-    const progressAnalysis = timeProgress >= globalProgress 
+    const progressAnalysis = globalProgress >= timeProgress
         ? "Félicitations, votre projet est on-time."
         : `Attention, votre projet semble en retard : l’avancement devrait être de ${Math.round(timeProgress)}% aujourd’hui.`;
 
