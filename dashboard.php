@@ -944,7 +944,7 @@ header {
         </div>
       </div>
       
-    <div class="stats-grid">
+<div class="stats-grid">
   <!-- Section Charge du Projet -->
   <div class="card stat-section">
     <h3>Suivi Charge</h3>
@@ -984,7 +984,6 @@ header {
       <div class="stat-value" id="total-budget">0€</div>
     </div>
   </div>
-</div>
 
 <div class="card stat-section">
     <h3>Analyse de l’assistant</h3>
@@ -1000,6 +999,7 @@ header {
             <p id="budget-analysis" class="stat-value">Calcul en cours...</p>
         </div>
     </div>
+</div>
 </div>
 
 
