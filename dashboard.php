@@ -987,12 +987,10 @@ header {
       <div class="stat-value" id="total-budget">0€</div>
     </div>
     <div class="stat-card">
-      <i class="fas fa-coins"></i>
       <p id="budget-analysis" class="h4">Calcul en cours...</p>
     </div>
   </div>
 </div>
-
 
 <div class="card">
   <div class="task-list-header">
