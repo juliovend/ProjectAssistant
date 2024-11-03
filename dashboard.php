@@ -1636,7 +1636,7 @@ function fetchTasksForProject(projectId) {
         renderTasks();
         updateStats();
         // Appel pour mettre à jour les conseils de l'assistant
-        updateAssistantAnalysis();
+        //updateAssistantAnalysis();
       } else {
         console.error(data.message);
       }
