@@ -1,13 +1,13 @@
 <?php
 session_start();
 
-// Vérifiez que l'utilisateur est connecté
+// Vérifiez que l'utilisateur est connectéee
 if (!isset($_SESSION['user_id'])) {
     header("Location: index.php"); // Redirige vers la page de connexion si l'utilisateur n'est pas connecté
     exit();
 }
 
-// Récupérez le nom de l'utilisateur depuis la session
+// Récupérez le nom de l'utilisateur depuis la sessions
 $userName = $_SESSION['user_name'];
 ?>
 
