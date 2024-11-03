@@ -106,15 +106,35 @@ $userName = $_SESSION['user_name'];
         animation: rotate 1s infinite linear;
       }
 
-      @keyframes rotate {
-        from {
-          transform: rotate(0deg);
-        }
+/* Sablier overlay */
+.loading-overlay {
+  display: none; /* Caché par défaut */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2000; /* Au-dessus de tous les autres éléments */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-        to {
-          transform: rotate(360deg);
-        }
-      }
+.loading-overlay .spinner {
+  font-size: 3rem;
+  color: #fff;
+  animation: rotate 2s infinite linear;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
       
 header {
   position: relative;
@@ -881,6 +901,12 @@ header {
     </div>
 </header>
 
+<!-- Sablier -->
+<div id="loadingOverlay" class="loading-overlay">
+  <i class="fas fa-hourglass-half spinner"></i>
+</div>
+
+
 <!-- Superposition pour bloquer la page tant qu'aucun projet n'est sélectionné -->
 <div id="overlay" class="overlay">
   <p style="color: white; text-align: center; margin-top: 20%;">Veuillez sélectionner un projet pour continuer</p>
@@ -1103,7 +1129,21 @@ header {
         }
     
           // Fonctions globales
+
+// Affiche l'overlay de chargement
+function showLoadingOverlay() {
+  document.getElementById("loadingOverlay").style.display = "flex";
+}
+
+// Masque l'overlay de chargement
+function hideLoadingOverlay() {
+  document.getElementById("loadingOverlay").style.display = "none";
+}
+
   function fetchProjects() {
+
+    showLoadingOverlay(); // Montre le sablier
+
     return fetch('get_projects.php')
         .then(response => response.json())
         .then(data => {
@@ -1151,6 +1191,7 @@ header {
             }
         })
         .catch(error => console.error('Erreur lors de la récupération des projets:', error));
+        .finally(() => hideLoadingOverlay()); // Masque le sablier
 }
 
   function populateProjectSelector(projects) {
