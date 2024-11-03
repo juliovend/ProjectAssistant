@@ -77,6 +77,19 @@ $userEmail = $_SESSION['user_email'];
     align-items: flex-end;
 }
 
+.btn-settings {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: var(--text-dark);
+    transition: color 0.3s;
+}
+
+.btn-settings:hover {
+    color: var(--secondary-dark);
+}
+
 .welcome-message {
     color: var(--text-dark);
     font-size: 1em;
@@ -862,7 +875,9 @@ header {
                 <div class="welcome-message">
                     Bienvenue, <span id="user-name"><?php echo htmlspecialchars($userName); ?></span>
                 </div>
-                <button class="btn" onclick="showUserUpdateModal()">Mettre à jour le compte</button>
+                <button class="btn-settings" onclick="openAccountModal()" title="Paramètres du compte">
+                    <i class="fas fa-cog"></i>
+                </button>
                 <div class="project-selector">
                     <select id="projectSelect" onchange="switchProject(this.value)">
                         <option value="">Sélectionner un projet</option>
