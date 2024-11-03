@@ -1526,6 +1526,8 @@ function deleteCurrentProject() {
     const totalEffort = tasks.reduce((sum, task) => sum + (task.totalEffort || 0), 0);
     const consumedEffort = tasks.reduce((sum, task) => sum + (task.consumedEffort || 0), 0);
     const globalProgress = totalEffort > 0 ? (consumedEffort / totalEffort) * 100 : 0;
+    console.log(consumedEffort);
+    console.log(totalEffort);
 
     // Analyse de l'avancement
     const progressAnalysis = timeProgress >= globalProgress 
