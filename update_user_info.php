@@ -30,7 +30,7 @@ if (!empty($userPassword)) {
 $updateQuery .= " WHERE id = ?";
 $params[] = $user_id;
 
-$stmt = $pdo->prepare($updateQuery);
+$stmt = $db->prepare($updateQuery);
 $success = $stmt->execute($params);
 
 echo json_encode(['success' => $success]);
