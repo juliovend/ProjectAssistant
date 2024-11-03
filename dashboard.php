@@ -1534,7 +1534,7 @@ function deleteCurrentProject() {
 
     // Analyse de l'avancement
     const progressAnalysis = globalProgress >= timeProgress
-        ? "Félicitations, votre projet est on-time."
+        ? "Félicitations : votre projet est on-time."
         : `Attention, votre projet prend du retard : l’avancement devrait être de ${Math.round(timeProgress)}% aujourd’hui.`;
 
     document.getElementById("progress-analysis").textContent = progressAnalysis;
@@ -1543,8 +1543,8 @@ function deleteCurrentProject() {
     const totalBudget = tasks.reduce((sum, task) => sum + ((task.consumedBudget || 0) + (task.remainingBudget || 0)), 0);
     const allottedBudget = parseFloat(document.getElementById("projectBudget").value) || 0;
     const budgetAnalysis = totalBudget > allottedBudget
-        ? `Attention, votre projet dépassera le budget initialement prévu de ${(totalBudget / allottedBudget * 100 - 100).toFixed(0)}%.`
-        : "Félicitations, votre projet est on-budget.";
+        ? `Attention : votre projet dépassera le budget initialement prévu de ${(totalBudget / allottedBudget * 100 - 100).toFixed(0)}%.`
+        : "Félicitations : votre projet est on-budget.";
 
     document.getElementById("budget-analysis").textContent = budgetAnalysis;
 }
