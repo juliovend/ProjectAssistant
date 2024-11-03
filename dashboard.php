@@ -963,6 +963,9 @@ header {
       <h4>Charge Totale</h4>
       <div class="stat-value" id="total-effort">0h</div>
     </div>
+    <div class="stat-card">
+      <p id="progress-analysis" class="h4">Calcul en cours...</p>
+    </div>
   </div>
 
   <!-- Section Budget du Projet -->
