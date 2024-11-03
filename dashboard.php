@@ -986,23 +986,11 @@ header {
       <h4>Budget Total</h4>
       <div class="stat-value" id="total-budget">0€</div>
     </div>
-  </div>
-
-<div class="card stat-section">
-    <h3>Analyse de l’assistant</h3>
-    <div id="assistant-analysis">
-        <div class="stat-card">
-            <i class="fas fa-hourglass-start"></i>
-            <h4>Avancement du projet</h4>
-            <p id="progress-analysis" class="stat-value">Calcul en cours...</p>
-        </div>
-        <div class="stat-card">
-            <i class="fas fa-euro-sign"></i>
-            <h4>Analyse du budget</h4>
-            <p id="budget-analysis" class="stat-value">Calcul en cours...</p>
-        </div>
+    <div class="stat-card">
+      <i class="fas fa-coins"></i>
+      <p id="budget-analysis" class="h4">Calcul en cours...</p>
     </div>
-</div>
+  </div>
 </div>
 
 
