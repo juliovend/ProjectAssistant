@@ -240,7 +240,7 @@ header {
 }
 
 .task-name {
-    width: 100%; /* ou une autre largeur fixe, ex : 100px, 200px */
+    width: 800px; /* ou une autre largeur fixe, ex : 100px, 200px */
     display: inline-block; /* Assure une disposition correcte */
     max-width: 800px; /* Ajustez selon vos besoins */
     overflow: hidden;
