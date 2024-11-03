@@ -1635,6 +1635,7 @@ async function fetchTasksForProject(projectId) {
         });
         renderTasks();
         updateStats();
+        updateAssistantAnalysis()
       } else {
         console.error(data.message);
       }
