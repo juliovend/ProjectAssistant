@@ -1293,7 +1293,7 @@ function updateUserInfo(event) {
     
 
 
-async function switchProject(projectId) {
+function switchProject(projectId) {
     console.log("switchProject appelé avec projectId:", projectId);
     
     // Vérifiez si l'utilisateur a sélectionné "Sélectionner un projet" ou rien du tout
@@ -1322,10 +1322,10 @@ async function switchProject(projectId) {
         
         // Chargez les détails et les tâches du projet
         loadProjectDetails(currentProjectId);
-        await fetchTasksForProject(currentProjectId);
-
-        // Mise à jour des conseils de l'assistant après le chargement complet
-        updateAssistantAnalysis();
+        fetchTasksForProject(currentProjectId).then(() => {
+            // Mise à jour des conseils de l'assistant après le chargement des détails et des tâches
+            updateAssistantAnalysis();
+        });
     }
 }
 
@@ -1605,7 +1605,7 @@ function createTask(event) {
 
 
 // Lors du chargement des tâches, remplir le set des catégories
-async function fetchTasksForProject(projectId) {
+function fetchTasksForProject(projectId) {
   fetch(`get_tasks.php?project_id=${projectId}`)
     .then(response => response.json())
     .then(data => {
@@ -1635,7 +1635,8 @@ async function fetchTasksForProject(projectId) {
         });
         renderTasks();
         updateStats();
-        updateAssistantAnalysis()
+        // Appel pour mettre à jour les conseils de l'assistant
+        updateAssistantAnalysis();
       } else {
         console.error(data.message);
       }
