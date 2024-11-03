@@ -1523,6 +1523,39 @@ function deleteCurrentProject() {
         return lotTasks.reduce((sum, task) => sum + (task.consumedBudget + task.remainingBudget), 0);
       }
 
+      function updateAssistantAnalysis() {
+    const projectStart = new Date(document.getElementById("projectStart").value);
+    const projectEnd = new Date(document.getElementById("projectEnd").value);
+    const today = new Date();
+
+    // Calcul de l'avancement temporel
+    const totalDays = (projectEnd - projectStart) / (1000 * 60 * 60 * 24);
+    const elapsedDays = (today - projectStart) / (1000 * 60 * 60 * 24);
+    const timeProgress = Math.min(Math.max(elapsedDays / totalDays, 0), 1) * 100; // En pourcentage
+
+    // Avancement global du projet
+    const globalProgress = tasks.reduce((sum, task) => sum + task.consumedEffort, 0) / tasks.reduce((sum, task) => sum + task.totalEffort, 0) * 100 || 0;
+
+    // Analyse de l'avancement
+    const progressAnalysis = timeProgress >= globalProgress 
+        ? "Félicitations, votre projet est on-time pour le moment."
+        : `Attention, vu la date de fin de votre projet, il semble un peu en retard : l’avancement global devrait être de ${Math.round(timeProgress)}% aujourd’hui.`;
+
+    document.getElementById("progress-analysis").textContent = progressAnalysis;
+
+    // Analyse du budget
+    const totalBudget = tasks.reduce((sum, task) => sum + task.consumedBudget + task.remainingBudget, 0);
+    const allottedBudget = parseFloat(document.getElementById("projectBudget").value) || 0;
+    const budgetAnalysis = totalBudget > allottedBudget
+        ? `Attention, votre projet dépasse le budget prévu initialement de ${(totalBudget / allottedBudget * 100 - 100).toFixed(1)}%.`
+        : "Félicitations, votre projet est on-budget pour le moment.";
+
+    document.getElementById("budget-analysis").textContent = budgetAnalysis;
+}
+
+document.addEventListener("DOMContentLoaded", updateAssistantAnalysis);
+document.getElementById("projectBudget").addEventListener("change", updateAssistantAnalysis);
+
       function showNewTaskModal() {
   populateCategoryOptions();
   document.getElementById('taskModal').style.display = 'block';
