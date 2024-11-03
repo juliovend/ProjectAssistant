@@ -1322,10 +1322,10 @@ function switchProject(projectId) {
         
         // Chargez les détails et les tâches du projet
         loadProjectDetails(currentProjectId);
-        fetchTasksForProject(currentProjectId).then(() => {
-            // Mise à jour des conseils de l'assistant après le chargement des détails et des tâches
-            updateAssistantAnalysis();
-        });
+        await fetchTasksForProject(currentProjectId);
+
+        // Mise à jour des conseils de l'assistant après le chargement complet
+        updateAssistantAnalysis();
     }
 }
 
@@ -1605,7 +1605,7 @@ function createTask(event) {
 
 
 // Lors du chargement des tâches, remplir le set des catégories
-function fetchTasksForProject(projectId) {
+async function fetchTasksForProject(projectId) {
   fetch(`get_tasks.php?project_id=${projectId}`)
     .then(response => response.json())
     .then(data => {
@@ -1635,8 +1635,6 @@ function fetchTasksForProject(projectId) {
         });
         renderTasks();
         updateStats();
-        // Appel pour mettre à jour les conseils de l'assistant
-        updateAssistantAnalysis();
       } else {
         console.error(data.message);
       }
