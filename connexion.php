@@ -14,7 +14,7 @@ $email = $data['email'];
 $password = $data['password'];
 
 // Modifier la requête SQL pour récupérer le nom complet
-$stmt = $db->prepare("SELECT id, nom, mot_de_passe FROM utilisateur WHERE email = :email");
+$stmt = $db->prepare("SELECT id, nom, mot_de_passe, email FROM utilisateur WHERE email = :email");
 $stmt->execute([':email' => $email]);
 $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
