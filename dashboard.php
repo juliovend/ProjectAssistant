@@ -1553,9 +1553,6 @@ function deleteCurrentProject() {
     document.getElementById("budget-analysis").textContent = budgetAnalysis;
 }
 
-document.addEventListener("DOMContentLoaded", updateAssistantAnalysis);
-document.getElementById("projectBudget").addEventListener("change", updateAssistantAnalysis);
-
       function showNewTaskModal() {
   populateCategoryOptions();
   document.getElementById('taskModal').style.display = 'block';
@@ -2294,6 +2291,7 @@ function validateTask(taskId) {
   document.addEventListener('DOMContentLoaded', function() {
     // Appel des fonctions initiales
     fetchProjects();
+    updateAssistantAnalysis();
 
 
     // Écouteurs d'événements pour les boutons et les champs
@@ -2308,10 +2306,12 @@ function validateTask(taskId) {
 
     document.getElementById("projectStart").addEventListener("change", function() {
       updateProjectAttribute('date_debut', this.value);
+      updateAssistantAnalysis();
     });
 
     document.getElementById("projectEnd").addEventListener("change", function() {
       updateProjectAttribute('date_fin', this.value);
+      updateAssistantAnalysis();
     });
 
     document.getElementById("projectBudget").addEventListener("change", function() {
@@ -2399,6 +2399,8 @@ taskList.addEventListener("change", function(event) {
             renderTasks();
             updateStats();
         }
+
+        updateAssistantAnalysis();
     }
 });
     
