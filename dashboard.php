@@ -239,6 +239,15 @@ header {
   margin-bottom: 15px;
 }
 
+.task-name {
+    width: 100%; /* ou une autre largeur fixe, ex : 100px, 200px */
+    display: inline-block; /* Assure une disposition correcte */
+    max-width: 800px; /* Ajustez selon vos besoins */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Affiche "..." si le texte est trop long */
+    white-space: nowrap; /* Évite le retour à la ligne */
+}
+
 .budget-text {
   font-size: 0.7em; /* Taille de police réduite */
   font-weight: normal; /* Pas de gras */
