@@ -1537,7 +1537,7 @@ function deleteCurrentProject() {
     const globalProgress = tasks.reduce((sum, task) => sum + task.consumedEffort, 0) / tasks.reduce((sum, task) => sum + task.totalEffort, 0) * 100 || 0;
 
     // Analyse de l'avancement
-    const progressAnalysis = timeProgress >= globalProgress 
+    const progressAnalysis =  globalProgress >= timeProgress
         ? "Félicitations, votre projet est on-time pour le moment."
         : `Attention, vu la date de fin de votre projet, il semble un peu en retard : l’avancement global devrait être de ${Math.round(timeProgress)}% aujourd’hui.`;
 
