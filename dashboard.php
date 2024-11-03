@@ -1521,9 +1521,11 @@ function deleteCurrentProject() {
     const totalDays = (projectEnd - projectStart) / (1000 * 60 * 60 * 24);
     const elapsedDays = (today - projectStart) / (1000 * 60 * 60 * 24);
     const timeProgress = Math.min(Math.max(elapsedDays / totalDays, 0), 1) * 100; // En pourcentage
+    console.log(timeProgress);
 
     // Avancement global du projet
     const globalProgress = tasks.reduce((sum, task) => sum + task.consumedEffort, 0) / tasks.reduce((sum, task) => sum + task.totalEffort, 0) * 100 || 0;
+    console.log(globalProgress);
 
     // Analyse de l'avancement
     const progressAnalysis = timeProgress >= globalProgress 
