@@ -1523,7 +1523,7 @@ function deleteCurrentProject() {
     const timeProgress = Math.min(Math.max(elapsedDays / totalDays, 0), 1) * 100; // En pourcentage
 
     // Calcul de l'avancement global du projet
-    const totalEffort = tasks.reduce((sum, task) => sum + (task.totalEffort || 0), 0);
+    const totalEffort = tasks.reduce((sum, task) => sum + (task.consumedEffort || 0) + (task.remainingEffort || 0), 0);
     const consumedEffort = tasks.reduce((sum, task) => sum + (task.consumedEffort || 0), 0);
     const globalProgress = totalEffort > 0 ? (consumedEffort / totalEffort) * 100 : 0;
     console.log(consumedEffort);
