@@ -87,7 +87,7 @@ $userEmail = $_SESSION['user_email'];
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 1.5em;
+    font-size: 1.2em;
     color: var(--text-dark);
     transition: color 0.3s;
 }
