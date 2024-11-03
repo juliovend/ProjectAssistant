@@ -1536,7 +1536,9 @@ function deleteCurrentProject() {
 
     // Analyse du budget
     const totalBudget = tasks.reduce((sum, task) => sum + task.consumedBudget + task.remainingBudget, 0);
+    console.log(totalBudget);
     const allottedBudget = parseFloat(document.getElementById("projectBudget").value) || 0;
+    console.log(allottedBudget);
     const budgetAnalysis = totalBudget > allottedBudget
         ? `Attention, votre projet dépasse le budget prévu initialement de ${(totalBudget / allottedBudget * 100 - 100).toFixed(0)}%.`
         : "Félicitations, votre projet est on-budget pour le moment.";
