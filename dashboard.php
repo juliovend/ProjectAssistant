@@ -1355,6 +1355,7 @@ function switchProject(projectId) {
         .then(data => {
             if (data.success) {
                 displayProjectDetails(data.project);
+                updateAssistantAnalysis();
             } else {
                 console.error(data.message);
             }
