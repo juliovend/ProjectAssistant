@@ -1082,7 +1082,7 @@ header {
       <div class="modal-buttons">
         <button type="button" class="btn btn-cancel" onclick="closeUserUpdateModal()">Annuler</button>
         <button type="submit" class="btn btn-create">Mettre à jour</button>
-        <button type="button" class="btn btn-danger logout-btn" onclick="logout()" title="Se déconnecter">
+        <button type="button" class="btn btn-danger logout-btn" onclick="logout()" title="Déconnexion">
           <i class="fas fa-power-off"></i> Se déconnecter
         </button>
       </div>
