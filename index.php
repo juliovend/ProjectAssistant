@@ -278,6 +278,8 @@ header("Content-Type: text/html; charset=UTF-8");
         <li><strong>Confiance :</strong> Rejoignez plus de 10 000 particuliers.</li>
         <li><strong>Analyses intelligentes :</strong> Suivez votre avancement avec des analyses automatiques.</li>
         <li><strong>Accessible partout :</strong> Gérez vos projets depuis n’importe quel appareil, à tout moment.</li>
+        <li><strong> </li>
+        <li><strong> </li>
     </ul>
     <img src="/data/PA_Snapshot.JPG" alt="Aperçu de Project Assistant" style="max-width: 100%; height: auto; border-radius: 10px; margin-top: 100 px;">
 </div>
