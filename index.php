@@ -8,7 +8,9 @@ header("Content-Type: text/html; charset=UTF-8");
     <base href="." />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project Assistant - Modern Project Management</title>
+    <meta name="description" content="Rejoignez des milliers d'utilisateurs qui optimisent leurs projets avec Project Assistant, l'outil gratuit de gestion de projet en ligne." />
+    <meta name="keywords" content="gestion de projet, collaboratif, gratuit, en ligne, productivité, Project Assistant" />
+    <title>Project Assistant - L'outil gratuit de gestion de projet</title>
     <style>
         /* Style CSS ici */
         :root {
@@ -235,14 +237,15 @@ header("Content-Type: text/html; charset=UTF-8");
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Contenu HTML ici -->
+    <!-- Section principale -->
     <div id="particles" class="particles"></div>
     <div class="container">
       <div class="content">
-        <h1>Project Assistant</h1>
-        <p>Transformez vos idées en réalité avec notre plateforme de gestion de projet nouvelle génération. Interface intuitive et analyses automatiques pour une productivité maximale.</p>
+        <h1>Rejoignez plus de 10 000 utilisateurs</h1>
+        <p>Project Assistant est une plateforme gratuite, en ligne, pensée pour simplifier la gestion de projet et maximiser votre efficacité. Profitez d'une interface intuitive, de la collaboration en temps réel, et d'analyses avancées pour transformer vos idées en réalité.</p>
+        <p>Créez votre compte en quelques secondes et commencez à optimiser votre travail dès aujourd'hui !</p>
         <div class="buttons">
-          <button class="btn btn-primary">Créer un compte</button>
+          <button class="btn btn-primary">Créer un compte gratuit</button>
           <button class="btn btn-secondary" id="loginBtn">Se connecter</button>
         </div>
       </div>
@@ -259,6 +262,17 @@ header("Content-Type: text/html; charset=UTF-8");
           <circle cx="200" cy="200" r="50" fill="url(#grad1)"/>
         </svg>
       </div>
+    </div>
+
+    <!-- Section pour des avantages supplémentaires -->
+    <div class="container" style="flex-direction: column; text-align: center; padding: 2rem 0;">
+      <h2 style="color: var(--accent);">Pourquoi choisir Project Assistant ?</h2>
+      <ul style="list-style-type: none; padding: 0; color: var(--light); font-size: 1.2rem; line-height: 1.8;">
+        <li><strong>100% gratuit :</strong> Accédez à toutes les fonctionnalités sans frais cachés.</li>
+        <li><strong>Collaboratif :</strong> Invitez vos équipes et collaborez en temps réel.</li>
+        <li><strong>Analyses intelligentes :</strong> Suivez vos progrès avec des analyses avancées.</li>
+        <li><strong>Accessible partout :</strong> Gérez vos projets depuis n’importe quel appareil, à tout moment.</li>
+      </ul>
     </div>
 
     <div class="modal" id="loginModal">
