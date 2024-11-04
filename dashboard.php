@@ -1323,7 +1323,7 @@ function switchProject(projectId) {
         // Chargez les détails et les tâches du projet
         loadProjectDetails(currentProjectId);
         fetchTasksForProject(currentProjectId)
-            updateAssistantAnalysis();
+            //updateAssistantAnalysis();
         
     }
 }
@@ -1636,7 +1636,7 @@ function fetchTasksForProject(projectId) {
         renderTasks();
         updateStats();
         // Appel pour mettre à jour les conseils de l'assistant
-        //updateAssistantAnalysis();
+        updateAssistantAnalysis();
       } else {
         console.error(data.message);
       }
