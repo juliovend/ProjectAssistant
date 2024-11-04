@@ -843,6 +843,15 @@ header {
         }
 
       }
+    
+      .logout-btn {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
       
     </style>
     
@@ -1073,6 +1082,9 @@ header {
       <div class="modal-buttons">
         <button type="button" class="btn btn-cancel" onclick="closeUserUpdateModal()">Annuler</button>
         <button type="submit" class="btn btn-create">Mettre à jour</button>
+        <button type="button" class="btn btn-danger logout-btn" onclick="logout()" title="Se déconnecter">
+          <i class="fas fa-power-off"></i> Se déconnecter
+        </button>
       </div>
     </form>
   </div>
@@ -2285,6 +2297,14 @@ function validateTask(taskId) {
         updateStats();
         renderTasks();
     }
+}
+
+function logout() {
+    fetch('logout.php') // Fichier PHP pour fermer la session
+        .then(() => {
+            window.location.href = 'index.php'; // Redirige vers la page d'accueil
+        })
+        .catch(error => console.error('Erreur lors de la déconnexion:', error));
 }
 
 
