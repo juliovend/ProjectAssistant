@@ -18,7 +18,7 @@ if (isset($_GET['token'])) {
         $stmt = $db->prepare($updateQuery);
         $stmt->execute([$user['id']]);
 
-        echo "<p>Votre email a été vérifié avec succès ! Vous pouvez maintenant <a href='login.php'>vous connecter</a>.</p>";
+        echo "<p>Votre email a été vérifié avec succès ! Vous pouvez maintenant <a href='index.php'>vous connecter</a>.</p>";
     } else {
         echo "<p>Lien de validation invalide ou expiré.</p>";
     }
