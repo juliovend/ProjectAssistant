@@ -944,7 +944,7 @@ header {
         </div>
       </div>
       
-    <div class="stats-grid">
+<div class="stats-grid">
   <!-- Section Charge du Projet -->
   <div class="card stat-section">
     <h3>Suivi Charge</h3>
@@ -962,6 +962,9 @@ header {
       <i class="fas fa-tasks"></i>
       <h4>Charge Totale</h4>
       <div class="stat-value" id="total-effort">0h</div>
+    </div>
+    <div class="stat-card">
+      <p id="progress-analysis" class="h4">Calcul en cours...</p>
     </div>
   </div>
 
@@ -983,9 +986,11 @@ header {
       <h4>Budget Total</h4>
       <div class="stat-value" id="total-budget">0€</div>
     </div>
+    <div class="stat-card">
+      <p id="budget-analysis" class="h4">Calcul en cours...</p>
+    </div>
   </div>
 </div>
-
 
 <div class="card">
   <div class="task-list-header">
@@ -1317,7 +1322,8 @@ function switchProject(projectId) {
         
         // Chargez les détails et les tâches du projet
         loadProjectDetails(currentProjectId);
-        fetchTasksForProject(currentProjectId); // Charge les tâches du projet
+        fetchTasksForProject(currentProjectId)
+        
     }
 }
 
@@ -1348,6 +1354,7 @@ function switchProject(projectId) {
         .then(data => {
             if (data.success) {
                 displayProjectDetails(data.project);
+                updateAssistantAnalysis();
             } else {
                 console.error(data.message);
             }
@@ -1507,6 +1514,46 @@ function deleteCurrentProject() {
         return lotTasks.reduce((sum, task) => sum + (task.consumedBudget + task.remainingBudget), 0);
       }
 
+      function updateAssistantAnalysis() {
+    const projectStart = new Date(document.getElementById("projectStart").value);
+    const projectEnd = new Date(document.getElementById("projectEnd").value);
+    const today = new Date();
+
+    // Calcul de l'avancement temporel
+    const totalDays = (projectEnd - projectStart) / (1000 * 60 * 60 * 24);
+    const elapsedDays = (today - projectStart) / (1000 * 60 * 60 * 24);
+    const timeProgress = Math.min(Math.max(elapsedDays / totalDays, 0), 1) * 100; // En pourcentage
+
+    // Calcul de l'avancement global du projet
+    const totalEffort = tasks.reduce((sum, task) => sum + (task.consumedEffort || 0) + (task.remainingEffort || 0), 0);
+    const consumedEffort = tasks.reduce((sum, task) => sum + (task.consumedEffort || 0), 0);
+    const globalProgress = totalEffort > 0 ? (consumedEffort / totalEffort) * 100 : 0;
+
+    // Analyse de l'avancement
+    const progressAnalysis = globalProgress >= timeProgress
+        ? "Félicitations : votre projet est on-time."
+        : `Attention, votre projet prend du retard : l’avancement devrait être de ${Math.round(timeProgress)}% aujourd’hui.`;
+    document.getElementById("progress-analysis").innerHTML = progressAnalysis;
+
+    // Analyse du budget
+    const totalBudget = tasks.reduce((sum, task) => sum + ((task.consumedBudget || 0) + (task.remainingBudget || 0)), 0);
+    const allottedBudget = parseFloat(document.getElementById("projectBudget").value) || 0;
+    const budgetAnalysis = totalBudget > allottedBudget
+        ? `Attention : votre projet dépassera le budget initialement prévu de ${(totalBudget / allottedBudget * 100 - 100).toFixed(0)}%.`
+        : "Félicitations : votre projet est on-budget.";
+    document.getElementById("budget-analysis").innerHTML = budgetAnalysis;
+
+    // Conseiller la prochaine tâche à traiter
+    const sortedTasks = tasks
+        .filter(task => task.remainingEffort > 0)  // Filtrer les tâches non terminées
+        .sort((a, b) => a.priority - b.priority || b.remainingEffort - a.remainingEffort);  // Trier par priorité et charge restante
+    const topTasks = sortedTasks.slice(0, 1);
+    const taskRecommendations = topTasks.map(task => `${task.category} - ${task.name}`).join('<br>');
+
+    document.getElementById("progress-analysis").innerHTML +=
+        topTasks.length > 0 ? `<br>Pour avancer, vous devriez traiter la tâche suivante : ${taskRecommendations}.` : "<br>Aucune tâche restante à traiter.";
+}
+
       function showNewTaskModal() {
   populateCategoryOptions();
   document.getElementById('taskModal').style.display = 'block';
@@ -1593,6 +1640,8 @@ function fetchTasksForProject(projectId) {
         });
         renderTasks();
         updateStats();
+        // Appel pour mettre à jour les conseils de l'assistant
+        updateAssistantAnalysis();
       } else {
         console.error(data.message);
       }
@@ -1694,6 +1743,7 @@ function toggleTaskValidation(taskId) {
 
         // Mise à jour des statistiques
         updateStats();
+        updateAssistantAnalysis();
     }
 }
 
@@ -2246,7 +2296,6 @@ function validateTask(taskId) {
     // Appel des fonctions initiales
     fetchProjects();
 
-
     // Écouteurs d'événements pour les boutons et les champs
     const cancelButton = document.querySelector("#newProjectModal .btn-cancel");
     if (cancelButton) {
@@ -2259,14 +2308,17 @@ function validateTask(taskId) {
 
     document.getElementById("projectStart").addEventListener("change", function() {
       updateProjectAttribute('date_debut', this.value);
+      updateAssistantAnalysis();
     });
 
     document.getElementById("projectEnd").addEventListener("change", function() {
       updateProjectAttribute('date_fin', this.value);
+      updateAssistantAnalysis();
     });
 
     document.getElementById("projectBudget").addEventListener("change", function() {
       updateProjectAttribute('budget', this.value);
+      updateAssistantAnalysis();
     });
     
       // Écouteur sur le sélecteur de catégorie dans la modale de création de tâche
@@ -2348,6 +2400,7 @@ taskList.addEventListener("change", function(event) {
             task[taskProperty] = value;
             renderTasks();
             updateStats();
+            updateAssistantAnalysis();
         }
     }
 });
@@ -2359,6 +2412,7 @@ taskList.addEventListener("change", function(event) {
     } else {
         toggleBtn.textContent = 'suivi par Priorité';
     }
+
   });
     
     
