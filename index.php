@@ -272,18 +272,18 @@ header("Content-Type: text/html; charset=UTF-8");
     </div>
 
     <!-- Section pour des avantages supplémentaires -->
-    <div class="container" style="flex-direction: column; text-align: center; padding: 2rem 0;">
-      <ul style="list-style-type: none; padding: 0; color: var(--light); font-size: 1.2rem; line-height: 1.8;">
+<div class="container" style="flex-direction: column; text-align: center; padding: 1rem 0;">
+    <ul style="list-style-type: none; padding: 0; color: var(--light); font-size: 1.2rem; line-height: 1.8;">
         <li><strong>100% gratuit :</strong> Accédez à toutes les fonctionnalités sans frais cachés.</li>
         <li><strong>Confiance :</strong> Rejoignez plus de 10 000 particuliers.</li>
         <li><strong>Analyses intelligentes :</strong> Suivez votre avancement avec des analyses automatiques.</li>
         <li><strong>Accessible partout :</strong> Gérez vos projets depuis n’importe quel appareil, à tout moment.</li>
-      </ul>
-    </div>
+    </ul>
+</div>
 
-    <!-- Aperçu de l'application -->
-<div class="container" style="text-align: center; padding: 2rem;">
-    <h2 style="color: var(--light); font-size: 1.5rem; margin-bottom: 1rem;"></h2>
+<!-- Aperçu de l'application -->
+<div class="container" style="text-align: center; padding: 1rem 0 2rem;">
+    <h2 style="color: var(--light); font-size: 1.5rem; margin: 0 0 1rem;">Aperçu de l'interface utilisateur</h2>
     <img src="/data/PA_Snapshot.JPG" alt="Aperçu de Project Assistant" style="max-width: 100%; height: auto; border-radius: 10px;">
 </div>
 
