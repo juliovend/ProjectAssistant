@@ -283,7 +283,7 @@ header("Content-Type: text/html; charset=UTF-8");
 
     <!-- Aperçu de l'application -->
 <div class="container" style="text-align: center; padding: 2rem;">
-    <h2 style="color: var(--light); font-size: 1.5rem; margin-bottom: 1rem;">Aperçu de l'interface utilisateur</h2>
+    <h2 style="color: var(--light); font-size: 1.5rem; margin-bottom: 1rem;"></h2>
     <img src="/data/PA_Snapshot.JPG" alt="Aperçu de Project Assistant" style="max-width: 100%; height: auto; border-radius: 10px;">
 </div>
 
