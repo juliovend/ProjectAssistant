@@ -266,7 +266,6 @@ header("Content-Type: text/html; charset=UTF-8");
 
     <!-- Section pour des avantages supplémentaires -->
     <div class="container" style="flex-direction: column; text-align: center; padding: 2rem 0;">
-      <h2 style="color: var(--accent);">Pourquoi choisir Project Assistant ?</h2>
       <ul style="list-style-type: none; padding: 0; color: var(--light); font-size: 1.2rem; line-height: 1.8;">
         <li><strong>100% gratuit :</strong> Accédez à toutes les fonctionnalités sans frais cachés.</li>
         <li><strong>Confiance :</strong> Rejoignez plus de 10 000 utilisateurs !</li>
