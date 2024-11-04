@@ -1533,7 +1533,7 @@ function deleteCurrentProject() {
     const progressAnalysis = globalProgress >= timeProgress
         ? "Félicitations : votre projet est on-time."
         : `Attention, votre projet prend du retard : l’avancement devrait être de ${Math.round(timeProgress)}% aujourd’hui.`;
-    document.getElementById("progress-analysis").textContent = progressAnalysis;
+    document.getElementById("progress-analysis").innerHTML = progressAnalysis;
 
     // Analyse du budget
     const totalBudget = tasks.reduce((sum, task) => sum + ((task.consumedBudget || 0) + (task.remainingBudget || 0)), 0);
@@ -1541,17 +1541,17 @@ function deleteCurrentProject() {
     const budgetAnalysis = totalBudget > allottedBudget
         ? `Attention : votre projet dépassera le budget initialement prévu de ${(totalBudget / allottedBudget * 100 - 100).toFixed(0)}%.`
         : "Félicitations : votre projet est on-budget.";
-    document.getElementById("budget-analysis").textContent = budgetAnalysis;
+    document.getElementById("budget-analysis").innerHTML = budgetAnalysis;
 
     // Conseiller les 3 prochaines tâches à traiter
     const sortedTasks = tasks
         .filter(task => task.remainingEffort > 0)  // Filtrer les tâches non terminées
-        .sort((a, b) =>  a.priority - b.priority || b.remainingEffort - a.remainingEffort);  // Trier par priorité et charge restante
+        .sort((a, b) => b.priority - a.priority || b.remainingEffort - a.remainingEffort);  // Trier par priorité et charge restante
     const topTasks = sortedTasks.slice(0, 3);
-    const taskRecommendations = topTasks.map(task => `${task.category}: ${task.name}`).join(', ');
+    const taskRecommendations = topTasks.map(task => `${task.category}: ${task.name}`).join('<br>');
 
-    document.getElementById("progress-analysis").textContent +=
-        topTasks.length > 0 ? ` Pour avancer, considérez de traiter en priorité : ${taskRecommendations}.` : " Aucune tâche restante à traiter.";
+    document.getElementById("progress-analysis").innerHTML +=
+        topTasks.length > 0 ? `<br>Pour avancer, considérez de traiter en priorité :<br>${taskRecommendations}.` : "<br>Aucune tâche restante à traiter.";
 }
 
       function showNewTaskModal() {
