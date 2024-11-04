@@ -1,5 +1,6 @@
 <?php
 header("Content-Type: application/json");
+include 'email_functions.php';
 
 require_once 'database_connection.php'; // Inclure la connexion à la base de données
 
@@ -26,17 +27,24 @@ if ($result) {
 
 // Hacher le mot de passe
 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+$verification_token = bin2hex(random_bytes(16)); // Génère un token unique
 
 // Insérer les nouvelles données d'utilisateur
 try {
-    $stmt = $db->prepare("INSERT INTO utilisateur (nom, email, mot_de_passe) VALUES (:name, :email, :password)");
+    $stmt = $db->prepare("INSERT INTO utilisateur (nom, email, mot_de_passe, email_verified, verification_token) VALUES (:name, :email, :password, 0, :token)");
     $stmt->execute([
         ':name' => $fullName,
         ':email' => $email,
-        ':password' => $hashedPassword
+        ':password' => $hashedPassword,
+        ':token'=> $verification_token
     ]);
 
-    echo json_encode(['success' => true, 'message' => 'Compte créé avec succès.']);
+    // Si l'insertion est réussie, envoyer l'email de validation
+    if (sendVerificationEmail($email, $fullName, $verification_token)) {
+        echo json_encode(["success" => true, "message" => "Compte créé avec succès ! Vérifiez votre email pour confirmer votre inscription."]);
+    } else {
+        echo json_encode(["success" => false, "message" => "Échec de l'envoi de l'email de validation."]);
+    }
 } catch (PDOException $e) {
     echo json_encode(['success' => false, 'message' => 'Erreur lors de la création du compte : ' . $e->getMessage()]);
     exit();

@@ -426,7 +426,7 @@ fetch('connexion.php', {
     })
     .then(data => {
       if (data.success) {
-        alert("Compte créé avec succès !");
+        alert("Compte créé avec succès ! Vérifiez votre email pour confirmer votre inscription.");
         document.getElementById('signupModal').classList.remove('active');
       } else {
         alert("Échec de la création du compte : " + data.message);
