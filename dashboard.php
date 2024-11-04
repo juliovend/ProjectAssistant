@@ -1551,7 +1551,7 @@ function deleteCurrentProject() {
     const taskRecommendations = topTasks.map(task => `- ${task.category} - ${task.name}`).join('<br>');
 
     document.getElementById("progress-analysis").innerHTML +=
-        topTasks.length > 0 ? `<br>Pour avancer, vous devriez traiter les tâches suivantes :<br>${taskRecommendations}.` : "<br>Aucune tâche restante à traiter.";
+        topTasks.length > 0 ? `<br><br>Pour avancer, vous devriez traiter la tâche suivante : ${taskRecommendations}.` : "<br>Aucune tâche restante à traiter.";
 }
 
       function showNewTaskModal() {
