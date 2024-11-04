@@ -1323,7 +1323,6 @@ function switchProject(projectId) {
         // Chargez les détails et les tâches du projet
         loadProjectDetails(currentProjectId);
         fetchTasksForProject(currentProjectId)
-            //updateAssistantAnalysis();
         
     }
 }
@@ -2394,6 +2393,7 @@ taskList.addEventListener("change", function(event) {
             task[taskProperty] = value;
             renderTasks();
             updateStats();
+            updateAssistantAnalysis();
         }
     }
 });
