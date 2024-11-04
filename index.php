@@ -8,9 +8,10 @@ header("Content-Type: text/html; charset=UTF-8");
     <base href="." />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project Assistant - Modern Project Management</title>
+    <meta name="description" content="Rejoignez des milliers d'utilisateurs qui optimisent leurs projets avec Project Assistant, l'outil gratuit de gestion de projet en ligne." />
+    <meta name="keywords" content="gestion de projet, collaboratif, gratuit, en ligne, productivité, Project Assistant" />
+    <title>Project Assistant - L'outil gratuit de gestion de projet</title>
     <style>
-        /* Style CSS ici */
         :root {
           --primary: #6C63FF;
           --secondary: #2A2D3E;
@@ -31,6 +32,7 @@ header("Content-Type: text/html; charset=UTF-8");
           color: var(--light);
           min-height: 100vh;
           overflow-x: hidden;
+          position: relative;
         }
 
         .container {
@@ -41,6 +43,8 @@ header("Content-Type: text/html; charset=UTF-8");
           max-width: 1400px;
           margin: 0 auto;
           min-height: 100vh;
+          position: relative;
+          z-index: 1; /* Place les sections au-dessus des particules */
         }
 
         .content {
@@ -117,7 +121,9 @@ header("Content-Type: text/html; charset=UTF-8");
         }
 
         .particles {
-          position: absolute;
+          position: fixed;
+          top: 0;
+          left: 0;
           width: 100%;
           height: 100%;
           z-index: -1;
@@ -195,21 +201,21 @@ header("Content-Type: text/html; charset=UTF-8");
         .close-btn:hover {
           color: var(--accent);
         }
-        
+
         .signup-form {
-        background: var(--secondary);
-        padding: 2rem;
-        border-radius: 20px;
-        width: 100%;
-        max-width: 400px;
-        position: relative;
-        box-shadow: 0 0 40px rgba(108, 99, 255, 0.2);
+          background: var(--secondary);
+          padding: 2rem;
+          border-radius: 20px;
+          width: 100%;
+          max-width: 400px;
+          position: relative;
+          box-shadow: 0 0 40px rgba(108, 99, 255, 0.2);
         }
 
         .signup-form h2 {
-        margin-bottom: 1.5rem;
-        color: var(--light);
-        text-align: center;
+          margin-bottom: 1.5rem;
+          color: var(--light);
+          text-align: center;
         }
 
         @media (max-width: 768px) {
@@ -218,15 +224,15 @@ header("Content-Type: text/html; charset=UTF-8");
             text-align: center;
             padding: 1rem;
           }
-          
+
           .buttons {
             justify-content: center;
           }
-          
+
           .illustration {
             margin-top: 2rem;
           }
-          
+
           h1 {
             font-size: 2.5rem;
           }
@@ -235,14 +241,18 @@ header("Content-Type: text/html; charset=UTF-8");
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Contenu HTML ici -->
+    <!-- Particules couvrant toute la page -->
     <div id="particles" class="particles"></div>
+    
+    <!-- Section principale -->
     <div class="container">
       <div class="content">
         <h1>Project Assistant</h1>
-        <p>Transformez vos idées en réalité avec notre plateforme de gestion de projet nouvelle génération. Collaboration en temps réel, analyses avancées et interface intuitive pour une productivité maximale.</p>
+        <p>Project Assistant est une plateforme gratuite, en ligne, pensée pour simplifier la réalisation de projet et maximiser votre efficacité. Profitez d'une interface intuitive et d'analyses automatiques pour transformer vos idées en réalité.</p>
+        <p>La plateforme a été conçue pour simplifier la vie des particuliers qui souhaitent mener à bien leurs projets : travaux de rénovation, organisation d'un mariage, développement de site marchand, ... </p>
+        <p>Créez votre compte en quelques secondes et commencez à optimiser votre travail dès aujourd'hui !</p>
         <div class="buttons">
-          <button class="btn btn-primary">Créer un compte</button>
+          <button class="btn btn-primary">Créer un compte gratuit</button>
           <button class="btn btn-secondary" id="loginBtn">Se connecter</button>
         </div>
       </div>
@@ -260,6 +270,21 @@ header("Content-Type: text/html; charset=UTF-8");
         </svg>
       </div>
     </div>
+
+    <!-- Section pour des avantages supplémentaires -->
+<div class="container" style="flex-direction: column; text-align: center; padding: 1rem 0;">
+    <ul style="list-style-type: none; padding: 0; color: var(--light); font-size: 1.2rem; line-height: 1.8;">
+        <li><strong>100% gratuit :</strong> Accédez à toutes les fonctionnalités sans frais cachés.</li>
+        <li><strong>Confiance :</strong> Rejoignez plus de 10 000 particuliers.</li>
+        <li><strong>Analyses intelligentes :</strong> Suivez votre avancement avec des analyses automatiques.</li>
+        <li><strong>Accessible partout :</strong> Gérez vos projets depuis n’importe quel appareil, à tout moment.</li>
+    </ul>
+    <div style="margin-top: 50px;">
+      <img src="/data/PA_Snapshot.JPG" alt="Aperçu de Project Assistant" style="max-width: 80%; height: auto; border-radius: 10px; margin-top: 100 px;">
+    </div>
+</div>
+
+
 
     <div class="modal" id="loginModal">
       <div class="login-form">
@@ -305,9 +330,8 @@ header("Content-Type: text/html; charset=UTF-8");
   </div>
 </div>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        // JavaScript ici
         particlesJS('particles', {
           particles: {
             number: {
