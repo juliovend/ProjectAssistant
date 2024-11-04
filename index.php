@@ -279,7 +279,7 @@ header("Content-Type: text/html; charset=UTF-8");
         <li><strong>Analyses intelligentes :</strong> Suivez votre avancement avec des analyses automatiques.</li>
         <li><strong>Accessible partout :</strong> Gérez vos projets depuis n’importe quel appareil, à tout moment.</li>
     </ul>
-    <img src="/data/PA_Snapshot.JPG" alt="Aperçu de Project Assistant" style="max-width: 100%; height: auto; border-radius: 10px;">
+    <img src="/data/PA_Snapshot.JPG" alt="Aperçu de Project Assistant" style="max-width: 100%; height: auto; border-radius: 10px;top-margin: 20 px;">
 </div>
 
 
