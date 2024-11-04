@@ -279,6 +279,11 @@ header("Content-Type: text/html; charset=UTF-8");
         <li><strong>Analyses intelligentes :</strong> Suivez votre avancement avec des analyses automatiques.</li>
         <li><strong>Accessible partout :</strong> Gérez vos projets depuis n’importe quel appareil, à tout moment.</li>
     </ul>
+    <img src="/data/PA_Snapshot.JPG" alt="Aperçu de Project Assistant" style="max-width: 100%; height: auto; border-radius: 10px;">
+</div>
+
+
+
     <div class="modal" id="loginModal">
       <div class="login-form">
         <button class="close-btn" id="closeModal">&times;</button>
@@ -296,11 +301,6 @@ header("Content-Type: text/html; charset=UTF-8");
         </form>
       </div>
     </div>
-</div>
-
-
-
-    
     
     <div class="modal" id="signupModal">
   <div class="signup-form">
