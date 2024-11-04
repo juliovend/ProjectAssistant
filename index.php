@@ -241,8 +241,8 @@ header("Content-Type: text/html; charset=UTF-8");
     <div id="particles" class="particles"></div>
     <div class="container">
       <div class="content">
-        <h1>Rejoignez plus de 10 000 utilisateurs</h1>
-        <p>Project Assistant est une plateforme gratuite, en ligne, pensée pour simplifier la gestion de projet et maximiser votre efficacité. Profitez d'une interface intuitive, de la collaboration en temps réel, et d'analyses avancées pour transformer vos idées en réalité.</p>
+        <h1>Project Assistant</h1>
+        <p>Project Assistant est une plateforme gratuite, en ligne, pensée pour simplifier la gestion de projet et maximiser votre efficacité. Profitez d'une interface intuitive et d'analyses avancées pour transformer toutes vos idées en réalité.</p>
         <p>Créez votre compte en quelques secondes et commencez à optimiser votre travail dès aujourd'hui !</p>
         <div class="buttons">
           <button class="btn btn-primary">Créer un compte gratuit</button>
@@ -262,17 +262,16 @@ header("Content-Type: text/html; charset=UTF-8");
           <circle cx="200" cy="200" r="50" fill="url(#grad1)"/>
         </svg>
       </div>
-    </div>
-
-    <!-- Section pour des avantages supplémentaires -->
+      <!-- Section pour des avantages supplémentaires -->
     <div class="container" style="flex-direction: column; text-align: center; padding: 2rem 0;">
       <h2 style="color: var(--accent);">Pourquoi choisir Project Assistant ?</h2>
       <ul style="list-style-type: none; padding: 0; color: var(--light); font-size: 1.2rem; line-height: 1.8;">
         <li><strong>100% gratuit :</strong> Accédez à toutes les fonctionnalités sans frais cachés.</li>
-        <li><strong>Collaboratif :</strong> Invitez vos équipes et collaborez en temps réel.</li>
-        <li><strong>Analyses intelligentes :</strong> Suivez vos progrès avec des analyses avancées.</li>
+        <li><strong>Confiance :</strong> Rejoignez plus de 10 000 utilisateurs !</li>
+        <li><strong>Analyses intelligentes :</strong> Suivez votre avancement avec des analyses automatiques avancées.</li>
         <li><strong>Accessible partout :</strong> Gérez vos projets depuis n’importe quel appareil, à tout moment.</li>
       </ul>
+    </div>
     </div>
 
     <div class="modal" id="loginModal">
