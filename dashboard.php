@@ -955,7 +955,7 @@ header {
     </div>
     <div class="stat-card">
       <i class="fas fa-hourglass-half"></i>
-      <h4>Charge Restante</h4>
+      <h4> Charge Restante</h4>
       <div class="stat-value" id="remaining-effort">0h</div>
     </div>
     <div class="stat-card">
