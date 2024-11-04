@@ -1528,14 +1528,11 @@ function deleteCurrentProject() {
     const totalEffort = tasks.reduce((sum, task) => sum + (task.consumedEffort || 0) + (task.remainingEffort || 0), 0);
     const consumedEffort = tasks.reduce((sum, task) => sum + (task.consumedEffort || 0), 0);
     const globalProgress = totalEffort > 0 ? (consumedEffort / totalEffort) * 100 : 0;
-    console.log(consumedEffort);
-    console.log(totalEffort);
 
     // Analyse de l'avancement
     const progressAnalysis = globalProgress >= timeProgress
         ? "Félicitations : votre projet est on-time."
         : `Attention, votre projet prend du retard : l’avancement devrait être de ${Math.round(timeProgress)}% aujourd’hui.`;
-
     document.getElementById("progress-analysis").textContent = progressAnalysis;
 
     // Analyse du budget
@@ -1544,8 +1541,17 @@ function deleteCurrentProject() {
     const budgetAnalysis = totalBudget > allottedBudget
         ? `Attention : votre projet dépassera le budget initialement prévu de ${(totalBudget / allottedBudget * 100 - 100).toFixed(0)}%.`
         : "Félicitations : votre projet est on-budget.";
-
     document.getElementById("budget-analysis").textContent = budgetAnalysis;
+
+    // Conseiller les 3 prochaines tâches à traiter
+    const sortedTasks = tasks
+        .filter(task => task.remainingEffort > 0)  // Filtrer les tâches non terminées
+        .sort((a, b) => b.priority - a.priority || b.remainingEffort - a.remainingEffort);  // Trier par priorité et charge restante
+    const topTasks = sortedTasks.slice(0, 3);
+    const taskRecommendations = topTasks.map(task => `${task.category}: ${task.name}`).join(', ');
+
+    document.getElementById("progress-analysis").textContent +=
+        topTasks.length > 0 ? ` Pour avancer, considérez de traiter en priorité : ${taskRecommendations}.` : " Aucune tâche restante à traiter.";
 }
 
       function showNewTaskModal() {
