@@ -37,7 +37,7 @@ header("Content-Type: text/html; charset=UTF-8");
 
         .container {
           display: flex;
-          /*justify-content: space-between;*/
+          justify-content: space-between;
           align-items: center;
           padding: 2rem;
           max-width: 1400px;
@@ -279,13 +279,6 @@ header("Content-Type: text/html; charset=UTF-8");
         <li><strong>Analyses intelligentes :</strong> Suivez votre avancement avec des analyses automatiques.</li>
         <li><strong>Accessible partout :</strong> Gérez vos projets depuis n’importe quel appareil, à tout moment.</li>
     </ul>
-</div>
-
-<!-- Aperçu de l'application -->
-<div class="container" style="text-align: center; padding: 1rem 0; margin-top: -20px;">
-    <img src="/data/PA_Snapshot.JPG" alt="Aperçu de Project Assistant" style="max-width: 100%; height: auto; border-radius: 10px;">
-</div>
-
     <div class="modal" id="loginModal">
       <div class="login-form">
         <button class="close-btn" id="closeModal">&times;</button>
@@ -303,6 +296,11 @@ header("Content-Type: text/html; charset=UTF-8");
         </form>
       </div>
     </div>
+</div>
+
+
+
+    
     
     <div class="modal" id="signupModal">
   <div class="signup-form">
