@@ -240,7 +240,7 @@ header("Content-Type: text/html; charset=UTF-8");
     <div class="container">
       <div class="content">
         <h1>Project Assistant</h1>
-        <p>Transformez vos idées en réalité avec notre plateforme de gestion de projet nouvelle génération. Interface intuitive et analyses automatiques pour une productivité maximale. Enfin un outil de gestion de projet pour les particuliers !</p>
+        <p>Transformez vos idées en réalité avec notre plateforme de gestion de projet nouvelle génération. Interface intuitive et analyses automatiques pour une productivité maximale.</p>
         <div class="buttons">
           <button class="btn btn-primary">Créer un compte</button>
           <button class="btn btn-secondary" id="loginBtn">Se connecter</button>
