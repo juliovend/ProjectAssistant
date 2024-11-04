@@ -280,7 +280,7 @@ header("Content-Type: text/html; charset=UTF-8");
         <li><strong>Accessible partout :</strong> Gérez vos projets depuis n’importe quel appareil, à tout moment.</li>
     </ul>
     <div style="margin-top: 100px;">
-      <img src="/data/PA_Snapshot.JPG" alt="Aperçu de Project Assistant" style="max-width: 100%; height: auto; border-radius: 10px; margin-top: 100 px;">
+      <img src="/data/PA_Snapshot.JPG" alt="Aperçu de Project Assistant" style="max-width: 80%; height: auto; border-radius: 10px; margin-top: 100 px;">
     </div>
 </div>
 
