@@ -248,7 +248,8 @@ header("Content-Type: text/html; charset=UTF-8");
     <div class="container">
       <div class="content">
         <h1>Project Assistant</h1>
-        <p>Project Assistant est une plateforme gratuite, en ligne, pensée pour simplifier la gestion de projet et maximiser votre efficacité. Profitez d'une interface intuitive et d'analyses avancées pour transformer toutes vos idées en réalité.</p>
+        <p>Project Assistant est une plateforme gratuite, en ligne, pensée pour simplifier la réalisation de projet et maximiser votre efficacité. Profitez d'une interface intuitive et d'analyses automatiques pour transformer vos idées en réalité.</p>
+        <p>La plateforme a été conçue pour simplifier la vie des particuliers qui souhaitent mener à bien leurs projets : travaux de rénovation, organisation d'un mariage, développement de site marchand, ... </p>
         <p>Créez votre compte en quelques secondes et commencez à optimiser votre travail dès aujourd'hui !</p>
         <div class="buttons">
           <button class="btn btn-primary">Créer un compte gratuit</button>
@@ -274,8 +275,8 @@ header("Content-Type: text/html; charset=UTF-8");
     <div class="container" style="flex-direction: column; text-align: center; padding: 2rem 0;">
       <ul style="list-style-type: none; padding: 0; color: var(--light); font-size: 1.2rem; line-height: 1.8;">
         <li><strong>100% gratuit :</strong> Accédez à toutes les fonctionnalités sans frais cachés.</li>
-        <li><strong>Confiance :</strong> Rejoignez plus de 10 000 utilisateurs !</li>
-        <li><strong>Analyses intelligentes :</strong> Suivez votre avancement avec des analyses automatiques avancées.</li>
+        <li><strong>Confiance :</strong> Rejoignez plus de 10 000 particuliers.</li>
+        <li><strong>Analyses intelligentes :</strong> Suivez votre avancement avec des analyses automatiques.</li>
         <li><strong>Accessible partout :</strong> Gérez vos projets depuis n’importe quel appareil, à tout moment.</li>
       </ul>
     </div>
