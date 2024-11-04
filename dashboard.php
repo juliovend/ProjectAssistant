@@ -1743,6 +1743,7 @@ function toggleTaskValidation(taskId) {
 
         // Mise à jour des statistiques
         updateStats();
+        updateAssistantAnalysis();
     }
 }
 
