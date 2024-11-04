@@ -1543,11 +1543,11 @@ function deleteCurrentProject() {
         : "Félicitations : votre projet est on-budget.";
     document.getElementById("budget-analysis").innerHTML = budgetAnalysis;
 
-    // Conseiller les 3 prochaines tâches à traiter
+    // Conseiller la prochaine tâche à traiter
     const sortedTasks = tasks
         .filter(task => task.remainingEffort > 0)  // Filtrer les tâches non terminées
-        .sort((a, b) => b.priority - a.priority || b.remainingEffort - a.remainingEffort);  // Trier par priorité et charge restante
-    const topTasks = sortedTasks.slice(0, 3);
+        .sort((a, b) => b.priority - a.priority || a.remainingEffort - b.remainingEffort);  // Trier par priorité et charge restante
+    const topTasks = sortedTasks.slice(0, 1);
     const taskRecommendations = topTasks.map(task => `- ${task.category} - ${task.name}`).join('<br>');
 
     document.getElementById("progress-analysis").innerHTML +=
