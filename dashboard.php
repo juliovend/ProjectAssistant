@@ -1548,10 +1548,10 @@ function deleteCurrentProject() {
         .filter(task => task.remainingEffort > 0)  // Filtrer les tâches non terminées
         .sort((a, b) => b.priority - a.priority || a.remainingEffort - b.remainingEffort);  // Trier par priorité et charge restante
     const topTasks = sortedTasks.slice(0, 1);
-    const taskRecommendations = topTasks.map(task => `- ${task.category} - ${task.name}`).join('<br>');
+    const taskRecommendations = topTasks.map(task => `${task.category} - ${task.name}`).join('<br>');
 
     document.getElementById("progress-analysis").innerHTML +=
-        topTasks.length > 0 ? `<br><br>Pour avancer, vous devriez traiter la tâche suivante : ${taskRecommendations}.` : "<br>Aucune tâche restante à traiter.";
+        topTasks.length > 0 ? `<br>Pour avancer, vous devriez traiter la tâche suivante : ${taskRecommendations}.` : "<br>Aucune tâche restante à traiter.";
 }
 
       function showNewTaskModal() {
