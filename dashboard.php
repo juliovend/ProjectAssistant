@@ -2497,3 +2497,58 @@ taskList.addEventListener("change", function(event) {
         }
     }
 </style>
+
+<style>
+    /* Ensure project selector and buttons fit within small screen */
+    .project-selector-container, .action-buttons-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+    }
+    .action-button {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    /* Adjust block and font sizes for "suivi charge" and "suivi budget" sections */
+    .tracking-block {
+        width: 100%;
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    
+    @media (max-width: 767px) {
+        .tracking-block {
+            padding: 10px;
+            font-size: 0.9rem;
+        }
+    }
+
+    /* Fix icon aspect ratio for add-task to ensure it remains circular */
+    .add-task-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Fix task layout overflow */
+    .task-list-container {
+        overflow-x: auto;
+        padding: 5px;
+    }
+    .task-item {
+        min-width: 200px;
+    }
+
+    /* Adjust task attributes to prevent overflow */
+    .task-attribute {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>
