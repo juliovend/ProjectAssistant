@@ -2441,92 +2441,50 @@ taskList.addEventListener("change", function(event) {
 </html>
 
 <style>
-    /* Ensure all container elements are responsive */
-    .container {
+    /* Global container adjustments for responsiveness */
+    .container, .main-content {
         display: flex;
         flex-direction: column;
+        align-items: center;
         padding: 10px;
-    }
-    
-    /* Main section layout */
-    .main-content {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin-top: 20px;
-    }
-    
-    .block {
         width: 100%;
-        margin-bottom: 20px;
+        box-sizing: border-box;
     }
 
-    /* Style for larger screens */
-    @media (min-width: 768px) {
-        .main-content {
-            flex-direction: row;
-            justify-content: space-around;
-        }
-        .block {
-            width: 48%;
-        }
-    }
-
-    /* Adjustments for mobile screens */
-    @media (max-width: 767px) {
-        .main-content {
-            flex-direction: column;
-            align-items: center;
-        }
-        .block {
-            width: 100%;
-            padding: 10px;
-        }
-        
-        /* Make navbar items stack on mobile */
-        .navbar {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .navbar-item {
-            width: 100%;
-            text-align: center;
-            margin: 5px 0;
-        }
-    }
-</style>
-
-<style>
-    /* Ensure project selector and buttons fit within small screen */
+    /* Project selector and action buttons adjustments */
     .project-selector-container, .action-buttons-container {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 10px;
+        gap: 8px;
         width: 100%;
-    }
-    .action-button {
-        padding: 10px;
-        font-size: 0.9rem;
-    }
-
-    /* Adjust block and font sizes for "suivi charge" and "suivi budget" sections */
-    .tracking-block {
-        width: 100%;
-        font-size: 1rem;
-        margin-bottom: 10px;
     }
     
-    @media (max-width: 767px) {
-        .tracking-block {
-            padding: 10px;
-            font-size: 0.9rem;
-        }
+    .project-selector, .action-button {
+        flex: 1 1 auto;
+        padding: 8px 12px;
+        font-size: 1rem;
+        max-width: 100%;
     }
 
-    /* Fix icon aspect ratio for add-task to ensure it remains circular */
+    /* Tracking block adjustments for charge and budget sections */
+    .tracking-section {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px;
+        font-size: 1rem;
+    }
+    
+    .tracking-block {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+        font-size: 0.9em;
+    }
+
+    /* Circle icon styling for task addition */
     .add-task-icon {
         width: 40px;
         height: 40px;
@@ -2534,21 +2492,47 @@ taskList.addEventListener("change", function(event) {
         display: inline-flex;
         align-items: center;
         justify-content: center;
+        font-size: 1.2rem;
     }
 
-    /* Fix task layout overflow */
+    /* Adjustments for task list overflow */
     .task-list-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
         overflow-x: auto;
+        width: 100%;
         padding: 5px;
+        box-sizing: border-box;
     }
+    
     .task-item {
-        min-width: 200px;
+        min-width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 8px;
     }
 
-    /* Adjust task attributes to prevent overflow */
+    /* Task attribute overflow control */
     .task-attribute {
+        max-width: 100px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+    }
+
+    /* Mobile-specific adjustments */
+    @media (max-width: 767px) {
+        .tracking-section {
+            flex-direction: column;
+        }
+        .tracking-block, .task-attribute, .project-selector, .action-button {
+            font-size: 0.8rem;
+            max-width: 100%;
+        }
+        .add-task-icon {
+            width: 35px;
+            height: 35px;
+        }
     }
 </style>
