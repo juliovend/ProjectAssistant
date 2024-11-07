@@ -2439,3 +2439,61 @@ taskList.addEventListener("change", function(event) {
 </script>
   </body>
 </html>
+
+<style>
+    /* Ensure all container elements are responsive */
+    .container {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    /* Main section layout */
+    .main-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    
+    .block {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Style for larger screens */
+    @media (min-width: 768px) {
+        .main-content {
+            flex-direction: row;
+            justify-content: space-around;
+        }
+        .block {
+            width: 48%;
+        }
+    }
+
+    /* Adjustments for mobile screens */
+    @media (max-width: 767px) {
+        .main-content {
+            flex-direction: column;
+            align-items: center;
+        }
+        .block {
+            width: 100%;
+            padding: 10px;
+        }
+        
+        /* Make navbar items stack on mobile */
+        .navbar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .navbar-item {
+            width: 100%;
+            text-align: center;
+            margin: 5px 0;
+        }
+    }
+</style>
