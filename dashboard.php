@@ -876,26 +876,32 @@ $userEmail = $_SESSION['user_email'];
                 justify-content: flex-start;
             }
 
-            .add-task-btn,
+            /* Remove width: auto for .add-task-btn to maintain its circular shape */
             .btn-toggle-mode {
-                width: auto; /* Ajustement pour éviter la pleine largeur */
+                width: auto;
             }
 
             .project-fields-container {
                 flex-direction: column;
                 gap: 5px; /* Réduction de l'espace vertical */
+                margin-bottom: 0; /* Remove bottom margin */
+                padding: 0; /* Remove padding */
             }
 
             .project-field {
-                margin-bottom: 0; /* Éliminer les marges inférieures */
+                margin: 0; /* Remove all margins */
+                padding: 0; /* Remove padding */
             }
 
-            .project-field label {
-                margin-bottom: 2px; /* Réduire la marge entre le label et l'input */
-            }
-
+            .project-field label,
             .project-field input {
-                margin-bottom: 0; /* Éliminer les marges inférieures des inputs */
+                margin: 0; /* Remove margins */
+                padding: 0; /* Remove padding */
+            }
+
+            /* Remove bottom margin of the card to eliminate extra space after 'budget alloué' */
+            .card.project-details-inline {
+                margin-bottom: 0;
             }
 
             .task-header {
@@ -912,11 +918,11 @@ $userEmail = $_SESSION['user_email'];
             }
 
             .effort-budget-section {
-                grid-template-columns: 1fr; /* Stack sur mobile */
+                grid-template-columns: 1fr; /* Stack on mobile */
             }
 
             .task-effort {
-                flex-direction: column; /* Stack labels et inputs */
+                flex-direction: column; /* Stack labels and inputs */
                 align-items: flex-start;
             }
 
@@ -1070,7 +1076,7 @@ $userEmail = $_SESSION['user_email'];
             </div>
             <div class="stat-card">
                 <i class="fas fa-coins"></i>
-                <h4>Budget Total</h4>
+                <h4>Budget Totale</h4>
                 <div class="stat-value" id="total-budget">0€</div>
             </div>
             <div class="stat-card">
