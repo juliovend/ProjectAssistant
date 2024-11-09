@@ -569,6 +569,7 @@ $userEmail = $_SESSION['user_email'];
 
         .project-field label {
             color: var(--text-dark);
+            margin-bottom: 5px;
         }
 
         .project-field input {
@@ -882,7 +883,19 @@ $userEmail = $_SESSION['user_email'];
 
             .project-fields-container {
                 flex-direction: column;
-                gap: 10px; /* Réduction de l'espace vertical */
+                gap: 5px; /* Réduction de l'espace vertical */
+            }
+
+            .project-field {
+                margin-bottom: 0; /* Éliminer les marges inférieures */
+            }
+
+            .project-field label {
+                margin-bottom: 2px; /* Réduire la marge entre le label et l'input */
+            }
+
+            .project-field input {
+                margin-bottom: 0; /* Éliminer les marges inférieures des inputs */
             }
 
             .task-header {
