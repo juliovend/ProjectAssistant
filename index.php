@@ -265,8 +265,8 @@ header("Content-Type: text/html; charset=UTF-8");
     }
 
     .app-logo {
-        width: 50px;
-        height: 50px;
+        width: 60px;
+        height: 60px;
     }
 
     .content, .illustration {
