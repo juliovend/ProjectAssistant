@@ -932,6 +932,26 @@ $userEmail = $_SESSION['user_email'];
             .task-effort input {
                 width: 100%;
             }
+
+            /* Diminuer la taille de la police pour les blocs "Suivi Charge" et "Suivi Budget" */
+            .card.stat-section {
+                font-size: 14px; /* Ajustez cette valeur pour correspondre à "Fiche Projet" */
+            }
+
+            .card.stat-section h3 {
+                font-size: 16px; /* Taille des titres des sections */
+                margin-bottom: 10px; /* Ajuster l'espacement si nécessaire */
+            }
+
+            .card.stat-section .stat-card h4,
+            .card.stat-section .stat-card .stat-value {
+                font-size: 14px; /* Taille de la police pour les sous-titres et valeurs */
+            }
+
+            .card.stat-section .stat-card i {
+                font-size: 1.2em; /* Taille des icônes ajustée */
+                margin-right: 10px; /* Espacement à droite des icônes */
+            }
         }
 
         .logout-btn {
