@@ -264,6 +264,11 @@ header("Content-Type: text/html; charset=UTF-8");
         padding: 1rem;
     }
 
+    .app-logo {
+        width: 40px;
+        height: 40px;
+    }
+
     .content, .illustration {
         max-width: 100%;
     }
