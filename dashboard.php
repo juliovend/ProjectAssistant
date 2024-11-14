@@ -941,6 +941,7 @@ $userEmail = $_SESSION['user_email'];
             .card.stat-section h3 {
                 font-size: 16px; /* Taille des titres des sections */
                 margin-bottom: 10px; /* Ajuster l'espacement si nécessaire */
+                text-align: left;
             }
 
             .card.stat-section .stat-card h4,
