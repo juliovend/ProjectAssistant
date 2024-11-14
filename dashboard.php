@@ -898,6 +898,7 @@ $userEmail = $_SESSION['user_email'];
             .project-field input {
                 margin: 0; /* Remove margins */
                 padding: 0; /* Remove padding */
+                font-size: 16px;
             }
 
             /* Remove bottom margin of the card to eliminate extra space after 'budget alloué' */
