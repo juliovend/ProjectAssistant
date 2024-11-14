@@ -845,17 +845,98 @@ $userEmail = $_SESSION['user_email'];
             .header-content {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 10px;
+                gap: 15px;
+            }
+
+            .left-section,
+            .right-section {
+                width: 100%;
             }
 
             .left-section {
-                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
             }
 
-            .right-section {
-                width: 100%;
-                align-items: flex-start;
+            /* Ajuster la taille de la police du titre */
+            .left-section h1 {
+                font-size: 24px; /* Ajustez cette valeur selon vos préférences */
+                margin: 10px 0;
             }
+
+            .app-logo {
+                width: 50px;
+                height: 50px;
+            }
+
+            /* Ajuster la disposition de la section droite */
+    .right-section {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Ajuster le message de bienvenue et le bouton des paramètres */
+    .right-section-up {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .welcome-message {
+        font-size: 16px;
+    }
+
+    .btn-settings {
+        font-size: 20px;
+    }
+
+    /* Ajuster la disposition du project-selector */
+    .project-selector {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 10px;
+    }
+
+    /* Ajuster la taille de la police et le padding du select et des boutons */
+    .project-selector select,
+    .project-selector .btn {
+        font-size: 16px;
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Centrer le texte dans les boutons */
+    .project-selector .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Ajuster le select pour une meilleure apparence sur mobile */
+    .project-selector select {
+        -webkit-appearance: none; /* Pour uniformiser l'apparence du select sur iOS */
+        -moz-appearance: none;
+        appearance: none;
+    }
+
+    /* Optionnel : ajuster les icônes dans les boutons */
+    .project-selector .btn i {
+        margin-right: 5px;
+    }
+
+    /* Ajuster le padding du header si nécessaire */
+    header {
+        padding: 10px;
+    }
 
             .task-header-left {
                 flex-direction: column;
