@@ -237,6 +237,76 @@ header("Content-Type: text/html; charset=UTF-8");
             font-size: 2.5rem;
           }
         }
+
+        /* Ajout des styles pour les smartphones */
+@media (max-width: 480px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .content, .illustration {
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    .buttons .btn {
+        width: 100%;
+        font-size: 0.9rem;
+        padding: 0.8rem 1.5rem;
+        text-align: center;
+    }
+
+    .illustration {
+        margin-top: 1.5rem;
+    }
+
+    .illustration svg {
+        width: 250px;
+        height: 250px;
+    }
+
+    .login-form, .signup-form {
+        padding: 1.5rem;
+        width: 90%;
+    }
+
+    .form-group input {
+        font-size: 1rem;
+        padding: 0.7rem;
+    }
+
+    .container ul {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .container ul li {
+        margin-bottom: 1rem;
+    }
+
+    .container img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 2rem;
+    }
+}
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
