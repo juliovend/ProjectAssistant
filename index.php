@@ -335,6 +335,22 @@ header("Content-Type: text/html; charset=UTF-8");
     <!-- Section principale -->
     <div class="container">
       <div class="content">
+        <svg class="app-logo" viewBox="0 0 100 100">
+                        <defs>
+                            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#1a75ff" />
+                                <stop offset="100%" style="stop-color:#0044cc" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="50" cy="50" r="45" fill="none" stroke="url(#logoGradient)" stroke-width="2" />
+                        <circle cx="30" cy="30" r="8" fill="url(#logoGradient)" />
+                        <circle cx="70" cy="30" r="8" fill="url(#logoGradient)" />
+                        <circle cx="50" cy="50" r="8" fill="url(#logoGradient)" />
+                        <circle cx="30" cy="70" r="8" fill="url(#logoGradient)" />
+                        <circle cx="70" cy="70" r="8" fill="url(#logoGradient)" />
+                        <path d="M30 30 L70 30 L50 50 L70 70 L30 70" fill="none" stroke="#4d94ff" stroke-width="3" stroke-dasharray="4,2" />
+                        <animate attributeName="stroke-width" values="2;3;2" dur="2s" repeatCount="indefinite" />
+        </svg>
         <h1>Project Assistant</h1>
         <p>Project Assistant est une plateforme gratuite, en ligne, pensée pour simplifier la réalisation de projet et maximiser votre efficacité. Profitez d'une interface intuitive et d'analyses automatiques pour transformer vos idées en réalité.</p>
         <p>La plateforme a été conçue pour simplifier la vie des particuliers qui souhaitent mener à bien leurs projets : travaux de rénovation, organisation d'un mariage, développement de site marchand, ... </p>
