@@ -47,6 +47,12 @@ header("Content-Type: text/html; charset=UTF-8");
           z-index: 1; /* Place les sections au-dessus des particules */
         }
 
+        .app-logo {
+            animation: pulse 2s infinite ease-in-out;
+            width: 50px;
+            height: 50px;
+        }
+
         .content {
           flex: 1;
           max-width: 600px;
