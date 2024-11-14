@@ -47,6 +47,16 @@ header("Content-Type: text/html; charset=UTF-8");
           z-index: 1; /* Place les sections au-dessus des particules */
         }
 
+        .app-logo {
+            animation: pulse 2s infinite ease-in-out;
+            width: 70px;
+            height: 70px;
+        }
+
+        .app-logo:hover {
+            animation: rotate 1s infinite linear;
+        }
+
         .content {
           flex: 1;
           max-width: 600px;
@@ -218,6 +228,13 @@ header("Content-Type: text/html; charset=UTF-8");
           text-align: center;
         }
 
+        .screenshot-image {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 100px; /* Vous pourrez ajuster cette valeur */
+}
+
         @media (max-width: 768px) {
           .container {
             flex-direction: column;
@@ -237,6 +254,92 @@ header("Content-Type: text/html; charset=UTF-8");
             font-size: 2.5rem;
           }
         }
+
+        /* Ajout des styles pour les smartphones */
+@media (max-width: 480px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .app-logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .content, .illustration {
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+        margin-bottom: 2rem; /* Ajouté pour créer de l'espace */
+    }
+
+    .buttons .btn {
+        width: 100%;
+        font-size: 0.9rem;
+        padding: 0.8rem 1.5rem;
+        text-align: center;
+    }
+
+    .illustration {
+        margin-top: 1.5rem;
+    }
+
+    .illustration svg {
+        width: 250px;
+        height: 250px;
+    }
+
+    .login-form, .signup-form {
+        padding: 1.5rem;
+        width: 90%;
+    }
+
+    .form-group input {
+        font-size: 1rem;
+        padding: 0.7rem;
+    }
+
+    .container {
+        padding-bottom: 1rem; /* Réduire le padding inférieur si nécessaire */
+    }
+
+    .container ul {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .container ul li {
+        margin-bottom: 1rem;
+    }
+
+    .container img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 2rem;
+    }
+
+    /* Réduire l'espace au-dessus de l'image */
+    .screenshot-image {
+        margin-top: 10px; /* Ajustez cette valeur selon vos préférences */
+    }
+}
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
@@ -247,6 +350,22 @@ header("Content-Type: text/html; charset=UTF-8");
     <!-- Section principale -->
     <div class="container">
       <div class="content">
+        <svg class="app-logo" viewBox="0 0 100 100">
+                        <defs>
+                            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#1a75ff" />
+                                <stop offset="100%" style="stop-color:#0044cc" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="50" cy="50" r="45" fill="none" stroke="url(#logoGradient)" stroke-width="2" />
+                        <circle cx="30" cy="30" r="8" fill="url(#logoGradient)" />
+                        <circle cx="70" cy="30" r="8" fill="url(#logoGradient)" />
+                        <circle cx="50" cy="50" r="8" fill="url(#logoGradient)" />
+                        <circle cx="30" cy="70" r="8" fill="url(#logoGradient)" />
+                        <circle cx="70" cy="70" r="8" fill="url(#logoGradient)" />
+                        <path d="M30 30 L70 30 L50 50 L70 70 L30 70" fill="none" stroke="#4d94ff" stroke-width="3" stroke-dasharray="4,2" />
+                        <animate attributeName="stroke-width" values="2;3;2" dur="2s" repeatCount="indefinite" />
+        </svg>
         <h1>Project Assistant</h1>
         <p>Project Assistant est une plateforme gratuite, en ligne, pensée pour simplifier la réalisation de projet et maximiser votre efficacité. Profitez d'une interface intuitive et d'analyses automatiques pour transformer vos idées en réalité.</p>
         <p>La plateforme a été conçue pour simplifier la vie des particuliers qui souhaitent mener à bien leurs projets : travaux de rénovation, organisation d'un mariage, développement de site marchand, ... </p>
@@ -275,12 +394,12 @@ header("Content-Type: text/html; charset=UTF-8");
 <div class="container" style="flex-direction: column; text-align: center; padding: 1rem 0;">
     <ul style="list-style-type: none; padding: 0; color: var(--light); font-size: 1.2rem; line-height: 1.8;">
         <li><strong>100% gratuit :</strong> Accédez à toutes les fonctionnalités sans frais cachés.</li>
-        <li><strong>Confiance :</strong> Rejoignez plus de 10 000 particuliers.</li>
+        <li><strong>Confiance :</strong> Suit la méthode PMI - Project Management Institute.</li>
         <li><strong>Analyses intelligentes :</strong> Suivez votre avancement avec des analyses automatiques.</li>
         <li><strong>Accessible partout :</strong> Gérez vos projets depuis n’importe quel appareil, à tout moment.</li>
     </ul>
     <div style="margin-top: 50px;">
-      <img src="/data/PA_Snapshot.JPG" alt="Aperçu de Project Assistant" style="max-width: 80%; height: auto; border-radius: 10px; margin-top: 100 px;">
+      <img src="/data/PA_Snapshot.JPG" alt="Aperçu de Project Assistant" class="screenshot-image">
     </div>
 </div>
 
