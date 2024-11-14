@@ -317,7 +317,7 @@ header("Content-Type: text/html; charset=UTF-8");
 
     /* Réduire l'espace au-dessus de l'image */
     .screenshot-image {
-        margin-top: 20px; /* Ajustez cette valeur selon vos préférences */
+        margin-top: 10px; /* Ajustez cette valeur selon vos préférences */
     }
 }
     </style>
