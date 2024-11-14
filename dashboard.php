@@ -145,7 +145,7 @@ $userEmail = $_SESSION['user_email'];
 
         header {
             position: relative;
-            z-index: 1001;
+            z-index: 100;
         }
 
         .page-overlay {
