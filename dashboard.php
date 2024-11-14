@@ -894,6 +894,12 @@ $userEmail = $_SESSION['user_email'];
         box-sizing: border-box;
     }
 
+    .project-field {
+        flex: 1 1 auto; /* Ajouté pour corriger l'espace vertical */
+        margin: 0;
+        padding: 0;
+    }
+
     /* Ajouter un léger espace vertical entre chaque champ du bloc "Fiche Projet" */
     .project-fields-container .project-field {
         margin-bottom: 10px;
