@@ -49,8 +49,8 @@ header("Content-Type: text/html; charset=UTF-8");
 
         .app-logo {
             animation: pulse 2s infinite ease-in-out;
-            width: 50px;
-            height: 50px;
+            width: 70px;
+            height: 70px;
         }
 
         .app-logo:hover {
@@ -265,8 +265,8 @@ header("Content-Type: text/html; charset=UTF-8");
     }
 
     .app-logo {
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
     }
 
     .content, .illustration {
