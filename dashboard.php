@@ -902,7 +902,7 @@ $userEmail = $_SESSION['user_email'];
 
     /* Ajouter un léger espace vertical entre chaque champ du bloc "Fiche Projet" */
     .project-fields-container .project-field {
-        margin-bottom: 8px;
+        margin-bottom: 10px;
     }
 
     /* Retirer le margin-bottom du dernier champ pour un espacement cohérent */
