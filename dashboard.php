@@ -935,7 +935,7 @@ $userEmail = $_SESSION['user_email'];
 
             /* Diminuer la taille de la police pour les blocs "Suivi Charge" et "Suivi Budget" */
             .card.stat-section {
-                font-size: 14px; /* Ajustez cette valeur pour correspondre à "Fiche Projet" */
+                font-size: 16px; /* Ajustez cette valeur pour correspondre à "Fiche Projet" */
             }
 
             .card.stat-section h3 {
@@ -945,7 +945,7 @@ $userEmail = $_SESSION['user_email'];
 
             .card.stat-section .stat-card h4,
             .card.stat-section .stat-card .stat-value {
-                font-size: 14px; /* Taille de la police pour les sous-titres et valeurs */
+                font-size: 16px; /* Taille de la police pour les sous-titres et valeurs */
             }
 
             .card.stat-section .stat-card i {
