@@ -902,7 +902,7 @@ $userEmail = $_SESSION['user_email'];
 
             /* Remove bottom margin of the card to eliminate extra space after 'budget alloué' */
             .card.project-details-inline {
-                margin-bottom: 0;
+                margin-bottom: 15px;
             }
 
             .task-header {
