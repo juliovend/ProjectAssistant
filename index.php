@@ -264,6 +264,7 @@ header("Content-Type: text/html; charset=UTF-8");
         flex-direction: column;
         gap: 0.5rem;
         width: 100%;
+        margin-bottom: 2rem; /* Ajouté pour créer de l'espace */
     }
 
     .buttons .btn {
