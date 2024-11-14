@@ -394,7 +394,7 @@ header("Content-Type: text/html; charset=UTF-8");
 <div class="container" style="flex-direction: column; text-align: center; padding: 1rem 0;">
     <ul style="list-style-type: none; padding: 0; color: var(--light); font-size: 1.2rem; line-height: 1.8;">
         <li><strong>100% gratuit :</strong> Accédez à toutes les fonctionnalités sans frais cachés.</li>
-        <li><strong>Confiance :</strong> Rejoignez plus de 10 000 particuliers.</li>
+        <li><strong>Confiance :</strong> Suit la méthode PMI - Project Management Institute.</li>
         <li><strong>Analyses intelligentes :</strong> Suivez votre avancement avec des analyses automatiques.</li>
         <li><strong>Accessible partout :</strong> Gérez vos projets depuis n’importe quel appareil, à tout moment.</li>
     </ul>
