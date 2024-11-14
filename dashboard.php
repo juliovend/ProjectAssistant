@@ -881,35 +881,38 @@ $userEmail = $_SESSION['user_email'];
                 width: auto;
             }
 
-            .project-fields-container {
-                flex-direction: column;
-                gap: 5px; /* Réduction de l'espace vertical */
-                margin-bottom: 0; /* Remove bottom margin */
-                padding: 0; /* Remove padding */
-            }
+            /* Styles pour les champs du bloc "Fiche Projet" */
+    .project-field label,
+    .project-field input {
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+    }
 
-            .project-field {
-                flex: 1 1 auto; /* Ajouté pour corriger l'espace vertical */
-                margin: 0; /* Remove all margins */
-                padding: 0; /* Remove padding */
-            }
+    .project-field input {
+        padding: 10px;
+        box-sizing: border-box;
+    }
 
-            .project-field label,
-            .project-field input {
-                margin: 0; /* Remove margins */
-                padding: 0; /* Remove padding */
-                font-size: 16px;
-            }
+    /* Ajouter un léger espace vertical entre chaque champ du bloc "Fiche Projet" */
+    .project-fields-container .project-field {
+        margin-bottom: 10px;
+    }
 
-            /* Remove bottom margin of the card to eliminate extra space after 'budget alloué' */
-            .card.project-details-inline {
-                margin-bottom: 20px;
-            }
+    /* Retirer le margin-bottom du dernier champ pour un espacement cohérent */
+    .project-fields-container .project-field:last-child {
+        margin-bottom: 0;
+    }
 
-            .card.project-details-inline h3 {
-                font-size: 18px; /* Ajustez cette valeur selon vos préférences */
-                margin-bottom: 20px;
-            }
+    .card.project-details-inline {
+        margin-bottom: 15px;
+    }
+
+    /* Ajuster la taille et l'espacement du titre "Fiche Projet" */
+    .card.project-details-inline h3 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
 
             .task-header {
                 flex-direction: column;
