@@ -260,6 +260,7 @@ header("Content-Type: text/html; charset=UTF-8");
 
     h1 {
         font-size: 2rem;
+        margin-bottom: 1.5rem;
     }
 
     p {
