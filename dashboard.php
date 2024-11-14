@@ -482,6 +482,7 @@ $userEmail = $_SESSION['user_email'];
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5);
             z-index: 1000;
+            overflow: auto; /* Permet le scroll si nécessaire */
         }
 
         .add-task-btn {
@@ -503,14 +504,16 @@ $userEmail = $_SESSION['user_email'];
 
         .modal-content {
             background-color: var(--card-dark);
+            margin: 10% auto;
             padding: 20px;
-            border-radius: 8px;
+            border-radius: 5px;
             width: 90%;
             max-width: 500px;
-            position: absolute;
-            top: 50%;
+            position: relative;
+            box-sizing: border-box;
+            /*top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);*/
         }
 
         .form-group {
