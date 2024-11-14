@@ -950,6 +950,8 @@ $userEmail = $_SESSION['user_email'];
             /* Diminuer la taille de la police pour les blocs "Suivi Charge" et "Suivi Budget" */
             .card.stat-section {
                 font-size: 16px; /* Ajustez cette valeur pour correspondre à "Fiche Projet" */
+                padding-left: 15px; /* Même valeur pour tous les conteneurs */
+                padding-right: 15px;
             }
 
             .card.stat-section h3 {
