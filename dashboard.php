@@ -581,13 +581,6 @@ $userEmail = $_SESSION['user_email'];
             width: 100%;
         }
 
-        /* Mobile responsiveness fix */
-        @media (max-width: 600px) {
-            .project-field {
-                margin-bottom: 10px; /* Reduce the vertical space between fields */
-            }
-        }
-
         .btn-primary {
             background-color: var(--secondary-dark);
             color: var(--text-dark);
@@ -896,6 +889,7 @@ $userEmail = $_SESSION['user_email'];
             }
 
             .project-field {
+                flex: 1 1 auto; /* Ajouté pour corriger l'espace vertical */
                 margin: 0; /* Remove all margins */
                 padding: 0; /* Remove padding */
             }
