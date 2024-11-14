@@ -218,6 +218,13 @@ header("Content-Type: text/html; charset=UTF-8");
           text-align: center;
         }
 
+        .screenshot-image {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 100px; /* Vous pourrez ajuster cette valeur */
+}
+
         @media (max-width: 768px) {
           .container {
             flex-direction: column;
@@ -307,6 +314,11 @@ header("Content-Type: text/html; charset=UTF-8");
         height: auto;
         margin-top: 2rem;
     }
+
+    /* Réduire l'espace au-dessus de l'image */
+    .screenshot-image {
+        margin-top: 20px; /* Ajustez cette valeur selon vos préférences */
+    }
 }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -351,7 +363,7 @@ header("Content-Type: text/html; charset=UTF-8");
         <li><strong>Accessible partout :</strong> Gérez vos projets depuis n’importe quel appareil, à tout moment.</li>
     </ul>
     <div style="margin-top: 50px;">
-      <img src="/data/PA_Snapshot.JPG" alt="Aperçu de Project Assistant" style="max-width: 80%; height: auto; border-radius: 10px; margin-top: 100 px;">
+      <img src="/data/PA_Snapshot.JPG" alt="Aperçu de Project Assistant" class="screenshot-image">
     </div>
 </div>
 
