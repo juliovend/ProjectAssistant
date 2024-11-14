@@ -906,6 +906,11 @@ $userEmail = $_SESSION['user_email'];
                 margin-bottom: 20px;
             }
 
+            .card.project-details-inline h3 {
+                font-size: 18px; /* Ajustez cette valeur selon vos préférences */
+                margin-bottom: 10px;
+            }
+
             .task-header {
                 flex-direction: column;
                 align-items: flex-start;
@@ -939,7 +944,7 @@ $userEmail = $_SESSION['user_email'];
             }
 
             .card.stat-section h3 {
-                font-size: 16px; /* Taille des titres des sections */
+                font-size: 18px; /* Taille des titres des sections */
                 margin-bottom: 10px; /* Ajuster l'espacement si nécessaire */
                 text-align: left;
             }
