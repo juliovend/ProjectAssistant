@@ -898,6 +898,7 @@ $userEmail = $_SESSION['user_email'];
 
     .btn-settings {
         font-size: 20px;
+        margin-left: auto;
     }
 
     /* Ajuster la disposition du project-selector */
