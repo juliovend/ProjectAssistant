@@ -300,6 +300,10 @@ header("Content-Type: text/html; charset=UTF-8");
         padding: 0.7rem;
     }
 
+    .container {
+        padding-bottom: 1rem; /* Réduire le padding inférieur si nécessaire */
+    }
+
     .container ul {
         font-size: 1rem;
         line-height: 1.5;
