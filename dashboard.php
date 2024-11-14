@@ -947,6 +947,24 @@ $userEmail = $_SESSION['user_email'];
                 width: 100%;
             }
 
+            /* Assurer un padding gauche cohérent pour tous les conteneurs .card */
+    .card {
+        padding-left: 15px; /* Ajustez cette valeur si nécessaire */
+        padding-right: 15px;
+    }
+
+    /* Supprimer les marges par défaut des titres h3 */
+    .card h3 {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    /* S'assurer que les titres n'ont pas de padding gauche supplémentaire */
+    .card h3 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
             /* Diminuer la taille de la police pour les blocs "Suivi Charge" et "Suivi Budget" */
             .card.stat-section {
                 font-size: 16px; /* Ajustez cette valeur pour correspondre à "Fiche Projet" */
