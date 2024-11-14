@@ -905,7 +905,6 @@ $userEmail = $_SESSION['user_email'];
         gap: 10px;
     }
 
-    /* Ajuster la taille de la police et le padding du select et des boutons */
     .project-selector select,
     .project-selector .btn {
         font-size: 16px;
@@ -914,26 +913,37 @@ $userEmail = $_SESSION['user_email'];
         box-sizing: border-box;
     }
 
-    /* Centrer le texte dans les boutons */
+    /* Ajouter le style pour la button-group */
+    .project-selector .button-group {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        gap: 4%;
+    }
+
+    .project-selector .button-group .btn {
+        width: 48%;
+        padding: 10px;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+
     .project-selector .btn {
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    /* Ajuster le select pour une meilleure apparence sur mobile */
     .project-selector select {
-        -webkit-appearance: none; /* Pour uniformiser l'apparence du select sur iOS */
+        -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
     }
 
-    /* Optionnel : ajuster les icônes dans les boutons */
     .project-selector .btn i {
         margin-right: 5px;
     }
 
-    /* Ajuster le padding du header si nécessaire */
     header {
         padding: 10px;
     }
@@ -1127,12 +1137,14 @@ $userEmail = $_SESSION['user_email'];
                         <button class="btn" onclick="showNewProjectModal()">
                             <i class="fas fa-plus"></i> Nouveau projet
                         </button>
-                        <button class="btn btn-primary" onclick="duplicateCurrentProject()" id="duplicateProjectBtn" style="display: none;">
-                            <i class="fas fa-copy"></i>
-                        </button>
-                        <button class="btn btn-danger" onclick="deleteCurrentProject()" id="deleteProjectBtn" style="display: none;">
-                            <i class="fas fa-trash"></i>
-                        </button>
+                        <div class="button-group">
+                            <button class="btn btn-primary" onclick="duplicateCurrentProject()" id="duplicateProjectBtn" style="display: none;">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                            <button class="btn btn-danger" onclick="deleteCurrentProject()" id="deleteProjectBtn" style="display: none;">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
