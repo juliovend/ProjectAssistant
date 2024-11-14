@@ -53,6 +53,10 @@ header("Content-Type: text/html; charset=UTF-8");
             height: 50px;
         }
 
+        .app-logo:hover {
+            animation: rotate 1s infinite linear;
+        }
+
         .content {
           flex: 1;
           max-width: 600px;
