@@ -229,20 +229,6 @@
 
         <p>Merci d'utiliser <strong>Project Assistant</strong> pour gérer vos projets efficacement !</p>
 
-        <!-- Script pour gérer le défilement interne -->
-        <script>
-        document.addEventListener('click', function(event) {
-            if (event.target.tagName === 'A' && event.target.hash) {
-                event.preventDefault();
-                var targetId = event.target.hash.substring(1);
-                var targetElement = document.getElementById(targetId);
-                if (targetElement) {
-                    targetElement.scrollIntoView({ behavior: 'smooth' });
-                }
-            }
-        });
-        </script>
-
     </div>
 </body>
 </html>
