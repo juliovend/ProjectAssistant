@@ -1506,27 +1506,25 @@ $userEmail = $_SESSION['user_email'];
         }
 
         function showHelpModal() {
-            console.log('showHelpModal called');
-    // Afficher la modale
+    console.log('showHelpModal called');
     document.getElementById('helpModal').style.display = 'block';
 
-    // Vérifier si le contenu du guide est déjà chargé
     const guideContent = document.getElementById('guideContent');
     if (!guideContent.innerHTML.trim()) {
-        // Charger le guide utilisateur à partir du fichier guide_utilisateur.html
+        console.log('Fetching guide_utilisateur.html...');
         fetch('guide_utilisateur.html')
-    .then(response => {
-        console.log('Réponse du fetch :', response);
-        return response.text();
-    })
-    .then(data => {
-        console.log('Contenu du guide utilisateur :', data);
-        guideContent.innerHTML = data;
-    })
-    .catch(error => {
-        guideContent.innerHTML = '<p>Erreur lors du chargement du guide utilisateur.</p>';
-        console.error('Erreur:', error);
-    });
+            .then(response => {
+                console.log('Fetch response:', response);
+                return response.text();
+            })
+            .then(data => {
+                console.log('Guide content received');
+                guideContent.innerHTML = data;
+            })
+            .catch(error => {
+                guideContent.innerHTML = '<p>Erreur lors du chargement du guide utilisateur.</p>';
+                console.error('Erreur:', error);
+            });
     }
 }
 
