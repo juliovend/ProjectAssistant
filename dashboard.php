@@ -109,6 +109,66 @@ $userEmail = $_SESSION['user_email'];
             margin-bottom: 8px;
         }
 
+        .btn-help {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: var(--text-dark);
+    transition: color 0.3s;
+    margin-left: 10px; /* Ajustez selon vos besoins */
+}
+
+.btn-help:hover {
+    color: var(--secondary-dark);
+}
+
+/* Styles pour la modale d'aide */
+#helpModal .modal-content {
+    max-width: 800px;
+    height: 80%;
+    overflow-y: auto;
+}
+
+#helpModal h3 {
+    margin-top: 0;
+}
+
+#helpModal .modal-body {
+    padding: 10px;
+    color: var(--text-dark);
+}
+
+.user-guide h1,
+.user-guide h2,
+.user-guide h3,
+.user-guide h4,
+.user-guide h5,
+.user-guide h6 {
+    color: var(--text-dark);
+    margin-top: 20px;
+}
+
+.user-guide p {
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.user-guide ul,
+.user-guide ol {
+    margin-left: 20px;
+    color: var(--text-dark);
+}
+
+.user-guide a {
+    color: var(--secondary-dark);
+    text-decoration: none;
+}
+
+.user-guide a:hover {
+    text-decoration: underline;
+}
+
         .project-selector {
             display: flex;
             flex-wrap: wrap;
@@ -1149,6 +1209,9 @@ $userEmail = $_SESSION['user_email'];
                         <button class="btn-settings" onclick="showUserUpdateModal()" title="Paramètres du compte">
                             <i class="fas fa-cog"></i>
                         </button>
+                        <button class="btn-help" onclick="showHelpModal()" title="Tutoriel">
+                            <i class="fas fa-question-circle"></i>
+                        </button>
                     </div>
                     <div class="project-selector">
                         <select id="projectSelect" onchange="switchProject(this.value)">
@@ -1344,6 +1407,16 @@ $userEmail = $_SESSION['user_email'];
         </div>
     </div>
 
+    <div id="helpModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-body" id="guideContent">
+        </div>
+        <div class="modal-buttons">
+            <button type="button" class="btn btn-cancel" onclick="closeHelpModal()">Fermer</button>
+        </div>
+    </div>
+</div>
+
     <div id="newProjectModal" class="modal">
         <div class="modal-content">
             <h3>Nouveau Projet</h3>
@@ -1429,6 +1502,63 @@ $userEmail = $_SESSION['user_email'];
             document.getElementById('userUpdateModal').style.display = 'none';
             document.getElementById('userUpdateForm').reset();
         }
+
+        function showHelpModal() {
+    console.log('showHelpModal called');
+    document.getElementById('helpModal').style.display = 'block';
+
+    const guideContent = document.getElementById('guideContent');
+
+    // Vérifier si le guide est déjà chargé
+    if (!guideContent.innerHTML.trim()) {
+        console.log('Fetching guide_utilisateur.html...');
+        fetch('guide_utilisateur.html')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erreur HTTP ' + response.status);
+                }
+                return response.text();
+            })
+            .then(data => {
+                console.log('Guide content received');
+                guideContent.innerHTML = data;
+
+                // Attacher les écouteurs d'événements aux liens après le chargement
+                attachGuideLinkHandlers();
+            })
+            .catch(error => {
+                guideContent.innerHTML = '<p>Erreur lors du chargement du guide utilisateur.</p>';
+                console.error('Erreur:', error);
+            });
+    } else {
+        // Si le guide est déjà chargé, s'assurer que les handlers sont attachés
+        attachGuideLinkHandlers();
+    }
+}
+
+function attachGuideLinkHandlers() {
+    const guideContent = document.getElementById('guideContent');
+
+    // Sélectionner tous les liens avec des href commençant par '#'
+    const links = guideContent.querySelectorAll('a[href^="#"]');
+
+    links.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = guideContent.querySelector('#' + targetId);
+
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+}
+
+function closeHelpModal() {
+    document.getElementById('helpModal').style.display = 'none';
+}
 
         function updateUserInfo(event) {
             event.preventDefault();
@@ -2687,6 +2817,14 @@ $userEmail = $_SESSION['user_email'];
             }
 
         });
+
+        // Fermer la modale lorsqu'on clique en dehors du contenu
+window.onclick = function(event) {
+    const helpModal = document.getElementById('helpModal');
+    if (event.target == helpModal) {
+        helpModal.style.display = "none";
+    }
+}
     </script>
 </body>
 </html>
