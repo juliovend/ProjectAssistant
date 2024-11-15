@@ -1513,7 +1513,7 @@ $userEmail = $_SESSION['user_email'];
     const guideContent = document.getElementById('guideContent');
     if (!guideContent.innerHTML.trim()) {
         // Charger le guide utilisateur à partir du fichier guide_utilisateur.html
-        fetch('guide_utilisateur.html')
+        fetch('./guide_utilisateur.html')
             .then(response => response.text())
             .then(data => {
                 guideContent.innerHTML = data;
