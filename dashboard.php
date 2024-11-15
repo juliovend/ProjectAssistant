@@ -1411,7 +1411,6 @@ $userEmail = $_SESSION['user_email'];
     <div class="modal-content">
         <h3>Guide Utilisateur</h3>
         <div class="modal-body" id="guideContent">
-            <!-- Le contenu du guide utilisateur sera inséré ici -->
         </div>
         <div class="modal-buttons">
             <button type="button" class="btn btn-cancel" onclick="closeHelpModal()">Fermer</button>
