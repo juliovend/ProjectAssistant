@@ -1,6 +1,225 @@
-<div class="user-guide">
-    <!-- Collez ici le contenu du guide utilisateur -->
-    <!-- Par exemple : -->
-    <h1>Guide Utilisateur de Project Assistant</h1>
-    <!-- ... le reste du guide ... -->
-</div>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Guide Utilisateur de Project Assistant</title>
+    <style>
+        /* Styles pour le guide utilisateur */
+        body {
+            background-color: var(--background-dark, #0f0f1a);
+            color: var(--text-dark, #ecf0f1);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .user-guide {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--text-dark, #ecf0f1);
+            margin-top: 20px;
+        }
+        p {
+            color: var(--text-dark, #ecf0f1);
+        }
+        ul, ol {
+            margin-left: 20px;
+            color: var(--text-dark, #ecf0f1);
+        }
+        a {
+            color: var(--secondary-dark, #2d4059);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        hr {
+            border: 1px solid var(--border-dark, #2d2d3f);
+            margin: 20px 0;
+        }
+        /* Vous pouvez ajouter des styles supplémentaires si nécessaire */
+    </style>
+    <!-- Inclusion de Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="user-guide">
+        <!-- Contenu du guide utilisateur -->
+
+        <h1>Guide Utilisateur de Project Assistant</h1>
+
+        <p>Bienvenue dans <strong>Project Assistant</strong>, votre outil de gestion de projets intuitif et efficace. Ce guide vous aidera à naviguer à travers les principales fonctionnalités de l'application.</p>
+
+        <hr>
+
+        <h2>Table des Matières</h2>
+        <ol>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#connexion">Connexion et Paramètres du Compte</a></li>
+            <li><a href="#gestion-des-projets">Gestion des Projets</a>
+                <ul>
+                    <li><a href="#selectionner-un-projet">Sélectionner un Projet</a></li>
+                    <li><a href="#creer-un-nouveau-projet">Créer un Nouveau Projet</a></li>
+                    <li><a href="#dupliquer-un-projet">Dupliquer un Projet</a></li>
+                    <li><a href="#supprimer-un-projet">Supprimer un Projet</a></li>
+                </ul>
+            </li>
+            <li><a href="#fiche-projet">Fiche Projet</a>
+                <ul>
+                    <li><a href="#modifier-informations-projet">Modifier les Informations du Projet</a></li>
+                    <li><a href="#suivi-avancement-global">Suivi de l'Avancement Global</a></li>
+                </ul>
+            </li>
+            <li><a href="#suivi-charge-budget">Suivi Charge et Suivi Budget</a>
+                <ul>
+                    <li><a href="#comprendre-les-indicateurs">Comprendre les Indicateurs</a></li>
+                    <li><a href="#analyse-de-lassistant">Analyse de l'Assistant</a></li>
+                </ul>
+            </li>
+            <li><a href="#gestion-des-taches">Gestion des Tâches</a>
+                <ul>
+                    <li><a href="#ajouter-une-tache">Ajouter une Tâche</a></li>
+                    <li><a href="#modifier-une-tache">Modifier une Tâche</a></li>
+                    <li><a href="#valider-une-tache">Valider une Tâche</a></li>
+                    <li><a href="#supprimer-ou-dupliquer-une-tache">Supprimer ou Dupliquer une Tâche</a></li>
+                    <li><a href="#regroupement-des-taches">Regroupement des Tâches</a></li>
+                </ul>
+            </li>
+            <li><a href="#exportation-des-donnees">Exportation des Données</a></li>
+            <li><a href="#conseils-de-lassistant">Conseils de l'Assistant</a></li>
+            <li><a href="#deconnexion">Déconnexion</a></li>
+            <li><a href="#acceder-au-guide-utilisateur">Accéder au Guide Utilisateur</a></li>
+            <li><a href="#support">Support</a></li>
+        </ol>
+
+        <hr>
+
+        <h2 id="introduction">1. Introduction</h2>
+        <p><strong>Project Assistant</strong> est une application web conçue pour faciliter la gestion de vos projets. Elle vous permet de suivre l'avancement de vos tâches, de gérer vos ressources et d'analyser le progrès de votre projet en temps réel.</p>
+
+        <hr>
+
+        <h2 id="connexion">2. Connexion et Paramètres du Compte</h2>
+        <ul>
+            <li><strong>Connexion :</strong> Pour accéder à l'application, connectez-vous avec vos identifiants.</li>
+            <li><strong>Paramètres du Compte :</strong> Cliquez sur l'icône des paramètres (<i class="fas fa-cog"></i>) en haut à droite pour modifier vos informations personnelles ou changer votre mot de passe.</li>
+            <li><strong>Déconnexion :</strong> Vous pouvez vous déconnecter depuis le menu des paramètres du compte.</li>
+        </ul>
+
+        <hr>
+
+        <h2 id="gestion-des-projets">3. Gestion des Projets</h2>
+
+        <h3 id="selectionner-un-projet">Sélectionner un Projet</h3>
+        <p>Utilisez le menu déroulant <strong>"Sélectionner un projet"</strong> pour choisir le projet sur lequel vous souhaitez travailler. Si aucun projet n'est sélectionné, l'application vous invitera à en créer un nouveau.</p>
+
+        <h3 id="creer-un-nouveau-projet">Créer un Nouveau Projet</h3>
+        <p>Cliquez sur le bouton <strong>"Nouveau projet"</strong> pour créer un nouveau projet. Renseignez le nom du projet, les dates de début et de fin, ainsi que le budget alloué.</p>
+
+        <h3 id="dupliquer-un-projet">Dupliquer un Projet</h3>
+        <p>Sélectionnez le projet que vous souhaitez dupliquer. Cliquez sur l'icône <strong>"Dupliquer le projet"</strong> (<i class="fas fa-copy"></i>) pour créer une copie du projet existant. Donnez un nouveau nom au projet dupliqué.</p>
+
+        <h3 id="supprimer-un-projet">Supprimer un Projet</h3>
+        <p>Sélectionnez le projet que vous souhaitez supprimer. Cliquez sur l'icône <strong>"Supprimer le projet"</strong> (<i class="fas fa-trash"></i>). Confirmez la suppression lorsque l'application vous le demande.</p>
+
+        <hr>
+
+        <h2 id="fiche-projet">4. Fiche Projet</h2>
+
+        <h3 id="modifier-informations-projet">Modifier les Informations du Projet</h3>
+        <p>Dans la section <strong>"Fiche Projet"</strong>, vous pouvez modifier le nom du projet, les dates de début et de fin, ainsi que le budget alloué. Les modifications sont sauvegardées automatiquement.</p>
+
+        <h3 id="suivi-avancement-global">Suivi de l'Avancement Global</h3>
+        <p>La barre de progression affiche l'avancement global du projet en pourcentage. Elle est calculée en fonction de la charge de travail consommée par rapport à la charge totale estimée.</p>
+
+        <hr>
+
+        <h2 id="suivi-charge-budget">5. Suivi Charge et Suivi Budget</h2>
+
+        <h3 id="comprendre-les-indicateurs">Comprendre les Indicateurs</h3>
+        <ul>
+            <li><strong>Charge Consommée :</strong> Total des heures déjà travaillées sur le projet.</li>
+            <li><strong>Charge Restante :</strong> Estimation des heures restantes pour compléter le projet.</li>
+            <li><strong>Charge Totale :</strong> Somme de la charge consommée et de la charge restante.</li>
+            <li><strong>Budget Dépensé :</strong> Montant total dépensé jusqu'à présent.</li>
+            <li><strong>Budget Restant :</strong> Estimation du budget nécessaire pour terminer le projet.</li>
+            <li><strong>Budget Total :</strong> Somme du budget dépensé et du budget restant.</li>
+        </ul>
+
+        <h3 id="analyse-de-lassistant">Analyse de l'Assistant</h3>
+        <p>L'application fournit des conseils basés sur l'état actuel du projet. Les messages en <span style="color: var(--success-dark);">vert</span> indiquent que le projet est <strong>on-time</strong> ou <strong>on-budget</strong>. Les messages en <span style="color: var(--warning-dark);">orange</span> signalent un retard ou un dépassement de budget. L'assistant peut également recommander les prochaines tâches à traiter pour optimiser l'avancement.</p>
+
+        <hr>
+
+        <h2 id="gestion-des-taches">6. Gestion des Tâches</h2>
+
+        <h3 id="ajouter-une-tache">Ajouter une Tâche</h3>
+        <p>Cliquez sur le bouton <strong>"+"</strong> dans la section <strong>"Liste des Tâches"</strong> pour ajouter une nouvelle tâche. Renseignez les informations suivantes :</p>
+        <ul>
+            <li><strong>Catégorie :</strong> Choisissez une catégorie existante ou créez-en une nouvelle.</li>
+            <li><strong>Nom de la Tâche :</strong> Donnez un titre à votre tâche.</li>
+            <li><strong>Priorité :</strong> Attribuez une priorité entre 0 (basse) et 100 (haute).</li>
+            <li><strong>Charge Estimée :</strong> Indiquez le nombre d'heures estimées pour cette tâche.</li>
+            <li><strong>Budget Estimé :</strong> Spécifiez le budget estimé pour cette tâche.</li>
+        </ul>
+
+        <h3 id="modifier-une-tache">Modifier une Tâche</h3>
+        <p>Cliquez sur l'icône <strong>"Déplier"</strong> (<i class="fas fa-chevron-down"></i>) pour afficher les détails d'une tâche. Vous pouvez modifier :</p>
+        <ul>
+            <li><strong>Nom de la Tâche</strong></li>
+            <li><strong>Priorité</strong></li>
+            <li><strong>Catégorie</strong></li>
+            <li><strong>Charge Consommée</strong></li>
+            <li><strong>Charge Restante</strong></li>
+            <li><strong>Budget Dépensé</strong></li>
+            <li><strong>Budget Restant</strong></li>
+            <li><strong>Commentaire</strong></li>
+        </ul>
+
+        <h3 id="valider-une-tache">Valider une Tâche</h3>
+        <p>Cliquez sur l'icône <strong>"Valider la tâche"</strong> (<i class="fas fa-check-circle"></i>) pour marquer une tâche comme terminée. La charge restante sera automatiquement mise à zéro. Vous pouvez annuler la validation en cliquant à nouveau sur l'icône.</p>
+
+        <h3 id="supprimer-ou-dupliquer-une-tache">Supprimer ou Dupliquer une Tâche</h3>
+        <ul>
+            <li><strong>Supprimer :</strong> Cliquez sur l'icône <strong>"Supprimer la tâche"</strong> (<i class="fas fa-trash"></i>) et confirmez la suppression.</li>
+            <li><strong>Dupliquer :</strong> Cliquez sur l'icône <strong>"Dupliquer la tâche"</strong> (<i class="fas fa-copy"></i>) pour créer une copie de la tâche.</li>
+        </ul>
+
+        <h3 id="regroupement-des-taches">Regroupement des Tâches</h3>
+        <p>Vous pouvez regrouper les tâches par <strong>catégorie</strong> ou par <strong>priorité</strong>. Utilisez le bouton <strong>"suivi par Catégorie/Priorité"</strong> pour basculer entre les modes. Cliquez sur les en-têtes des groupes pour déplier ou replier les tâches.</p>
+
+        <hr>
+
+        <h2 id="exportation-des-donnees">7. Exportation des Données</h2>
+        <p>Cliquez sur le bouton <strong>"Exporter"</strong> (<i class="fas fa-file-excel"></i>) pour exporter la liste des tâches au format Excel. Le fichier contiendra toutes les informations sur vos tâches pour une analyse externe.</p>
+
+        <hr>
+
+        <h2 id="conseils-de-lassistant">8. Conseils de l'Assistant</h2>
+        <p>L'application analyse en temps réel l'état de votre projet. Des conseils vous sont fournis pour vous aider à rester <strong>on-time</strong> et <strong>on-budget</strong>. Les messages vous indiqueront également la prochaine tâche à traiter en priorité.</p>
+
+        <hr>
+
+        <h2 id="deconnexion">9. Déconnexion</h2>
+        <p>Pour vous déconnecter, accédez aux <strong>Paramètres du Compte</strong> en cliquant sur l'icône des paramètres (<i class="fas fa-cog"></i>). Cliquez sur le bouton <strong>"Se déconnecter"</strong> (<i class="fas fa-power-off"></i>) pour terminer votre session.</p>
+
+        <hr>
+
+        <h2 id="acceder-au-guide-utilisateur">10. Accéder au Guide Utilisateur</h2>
+        <p>Vous pouvez accéder à ce guide utilisateur à tout moment en cliquant sur l'icône <strong>"Aide"</strong> (<i class="fas fa-question-circle"></i>) située en haut de l'écran. Ce guide vous fournira des informations détaillées sur les fonctionnalités et l'utilisation de l'application.</p>
+
+        <hr>
+
+        <h2 id="support">11. Support</h2>
+        <p>Si vous rencontrez des problèmes ou avez des questions, n'hésitez pas à contacter notre équipe de support à l'adresse suivante : <strong>support@projectassistant.com</strong></p>
+
+        <hr>
+
+        <p>Merci d'utiliser <strong>Project Assistant</strong> pour gérer vos projets efficacement !</p>
+
+        <!-- Fin du guide utilisateur -->
+    </div>
+</body>
+</html>
