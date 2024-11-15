@@ -1510,6 +1510,7 @@ $userEmail = $_SESSION['user_email'];
     document.getElementById('helpModal').style.display = 'block';
 
     const guideContent = document.getElementById('guideContent');
+    console.log('Contenu actuel de guideContent.innerHTML :', guideContent.innerHTML);
     if (!guideContent.innerHTML.trim()) {
         console.log('Fetching guide_utilisateur.html...');
         fetch('guide_utilisateur.html')
