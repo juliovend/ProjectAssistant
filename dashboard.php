@@ -1209,7 +1209,7 @@ $userEmail = $_SESSION['user_email'];
                         <button class="btn-settings" onclick="showUserUpdateModal()" title="Paramètres du compte">
                             <i class="fas fa-cog"></i>
                         </button>
-                        <button class="btn-help" onclick="showHelpModal()">
+                        <button class="btn-help" onclick="showHelpModal()" title="Tutoriel">
                             <i class="fas fa-question-circle"></i>
                         </button>
                     </div>
@@ -1409,7 +1409,6 @@ $userEmail = $_SESSION['user_email'];
 
     <div id="helpModal" class="modal">
     <div class="modal-content">
-        <h3>Guide Utilisateur</h3>
         <div class="modal-body" id="guideContent">
         </div>
         <div class="modal-buttons">
