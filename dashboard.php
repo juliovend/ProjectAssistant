@@ -109,6 +109,20 @@ $userEmail = $_SESSION['user_email'];
             margin-bottom: 8px;
         }
 
+        .btn-help {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: var(--text-dark);
+    transition: color 0.3s;
+    margin-left: 10px; /* Ajustez selon vos besoins */
+}
+
+.btn-help:hover {
+    color: var(--secondary-dark);
+}
+
         .project-selector {
             display: flex;
             flex-wrap: wrap;
@@ -1149,6 +1163,9 @@ $userEmail = $_SESSION['user_email'];
                         <button class="btn-settings" onclick="showUserUpdateModal()" title="Paramètres du compte">
                             <i class="fas fa-cog"></i>
                         </button>
+                        <button class="btn-help" onclick="showHelpModal()" title="Guide Utilisateur">
+                            <i class="fas fa-question-circle"></i>
+                        </button>
                     </div>
                     <div class="project-selector">
                         <select id="projectSelect" onchange="switchProject(this.value)">
@@ -1343,6 +1360,18 @@ $userEmail = $_SESSION['user_email'];
             </form>
         </div>
     </div>
+
+    <div id="helpModal" class="modal">
+    <div class="modal-content">
+        <h3>Guide Utilisateur</h3>
+        <div class="modal-body" id="guideContent">
+            <!-- Le contenu du guide utilisateur sera inséré ici -->
+        </div>
+        <div class="modal-buttons">
+            <button type="button" class="btn btn-cancel" onclick="closeHelpModal()">Fermer</button>
+        </div>
+    </div>
+</div>
 
     <div id="newProjectModal" class="modal">
         <div class="modal-content">
