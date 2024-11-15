@@ -1209,7 +1209,7 @@ $userEmail = $_SESSION['user_email'];
                         <button class="btn-settings" onclick="showUserUpdateModal()" title="Paramètres du compte">
                             <i class="fas fa-cog"></i>
                         </button>
-                        <button class="btn-help" onclick="showHelpModal()" title="Guide Utilisateur">
+                        <button class="btn-help" onclick="showHelpModal()">
                             <i class="fas fa-question-circle"></i>
                         </button>
                     </div>
