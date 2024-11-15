@@ -1506,6 +1506,7 @@ $userEmail = $_SESSION['user_email'];
         }
 
         function showHelpModal() {
+            console.log('showHelpModal called');
     // Afficher la modale
     document.getElementById('helpModal').style.display = 'block';
 
