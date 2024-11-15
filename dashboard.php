@@ -2064,16 +2064,26 @@ $userEmail = $_SESSION['user_email'];
         }
 
         function renderTasks() {
-            const taskList = document.getElementById('task-list');
-            const expandedGroups = new Set();
+                // Mettre à jour expandedTasks à partir du DOM actuel avant de re-rendre
+    document.querySelectorAll('.task-details').forEach(detail => {
+        const taskId = detail.id.replace('task-details-', '');
+        if (detail.style.display !== 'none') {
+            expandedTasks[taskId] = true;
+        } else {
+            expandedTasks[taskId] = false;
+        }
+    });
 
-            document.querySelectorAll('.group-header').forEach(header => {
-                if (!header.classList.contains('collapsed')) {
-                    expandedGroups.add(header.getAttribute('data-key'));
-                }
-            });
+    const taskList = document.getElementById('task-list');
+    const expandedGroups = new Set();
 
-            taskList.innerHTML = '';
+    document.querySelectorAll('.group-header').forEach(header => {
+        if (!header.classList.contains('collapsed')) {
+            expandedGroups.add(header.getAttribute('data-key'));
+        }
+    });
+
+    taskList.innerHTML = '';
 
             let tasksGrouped = {};
             let groupKeys = [];
