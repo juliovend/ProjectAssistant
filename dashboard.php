@@ -244,11 +244,11 @@ $userEmail = $_SESSION['user_email'];
         }
 
         .success-message {
-            color: var(--success-dark);
+            color: #28a745; /* Vert vif */
         }
 
         .warning-message {
-            color: var(--warning-dark);
+            color: #ff9800; /* Orange vif */
         }
 
         .task-list {
