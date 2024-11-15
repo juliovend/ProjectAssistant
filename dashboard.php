@@ -1459,6 +1459,30 @@ $userEmail = $_SESSION['user_email'];
             document.getElementById('userUpdateForm').reset();
         }
 
+        function showHelpModal() {
+    // Afficher la modale
+    document.getElementById('helpModal').style.display = 'block';
+
+    // Vérifier si le contenu du guide est déjà chargé
+    const guideContent = document.getElementById('guideContent');
+    if (!guideContent.innerHTML.trim()) {
+        // Charger le guide utilisateur à partir du fichier guide_utilisateur.html
+        fetch('guide_utilisateur.html')
+            .then(response => response.text())
+            .then(data => {
+                guideContent.innerHTML = data;
+            })
+            .catch(error => {
+                guideContent.innerHTML = '<p>Erreur lors du chargement du guide utilisateur.</p>';
+                console.error('Erreur:', error);
+            });
+    }
+}
+
+function closeHelpModal() {
+    document.getElementById('helpModal').style.display = 'none';
+}
+
         function updateUserInfo(event) {
             event.preventDefault();
 
@@ -2716,6 +2740,14 @@ $userEmail = $_SESSION['user_email'];
             }
 
         });
+
+        // Fermer la modale lorsqu'on clique en dehors du contenu
+window.onclick = function(event) {
+    const helpModal = document.getElementById('helpModal');
+    if (event.target == helpModal) {
+        helpModal.style.display = "none";
+    }
+}
     </script>
 </body>
 </html>
