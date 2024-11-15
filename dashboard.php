@@ -123,6 +123,52 @@ $userEmail = $_SESSION['user_email'];
     color: var(--secondary-dark);
 }
 
+/* Styles pour la modale d'aide */
+#helpModal .modal-content {
+    max-width: 800px;
+    height: 80%;
+    overflow-y: auto;
+}
+
+#helpModal h3 {
+    margin-top: 0;
+}
+
+#helpModal .modal-body {
+    padding: 10px;
+    color: var(--text-dark);
+}
+
+.user-guide h1,
+.user-guide h2,
+.user-guide h3,
+.user-guide h4,
+.user-guide h5,
+.user-guide h6 {
+    color: var(--text-dark);
+    margin-top: 20px;
+}
+
+.user-guide p {
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.user-guide ul,
+.user-guide ol {
+    margin-left: 20px;
+    color: var(--text-dark);
+}
+
+.user-guide a {
+    color: var(--secondary-dark);
+    text-decoration: none;
+}
+
+.user-guide a:hover {
+    text-decoration: underline;
+}
+
         .project-selector {
             display: flex;
             flex-wrap: wrap;
