@@ -7,7 +7,7 @@
         /* Styles pour le guide utilisateur */
         body {
             background-color: var(--background-dark, #0f0f1a);
-            color: var(--text-dark, #ecf0f1);
+            color: var(--text-dark, #ffffff);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 20px;
@@ -18,18 +18,18 @@
             margin: 0 auto;
         }
         h1, h2, h3, h4, h5, h6 {
-            color: var(--text-dark, #ecf0f1);
+            color: var(--text-dark, #ffffff);
             margin-top: 20px;
         }
         p {
-            color: var(--text-dark, #ecf0f1);
+            color: var(--text-dark, #ffffff);
         }
         ul, ol {
             margin-left: 20px;
-            color: var(--text-dark, #ecf0f1);
+            color: var(--text-dark, #ffffff);
         }
         a {
-            color: var(--secondary-dark, #2d4059);
+            color: var(--text-dark, #ffffff);
             text-decoration: none;
         }
         a:hover {
@@ -39,7 +39,18 @@
             border: 1px solid var(--border-dark, #2d2d3f);
             margin: 20px 0;
         }
-        /* Vous pouvez ajouter des styles supplémentaires si nécessaire */
+        /* Styles pour la table des matières */
+        .user-guide ol, .user-guide ul {
+            color: var(--text-dark, #ffffff);
+        }
+        .user-guide ol a, .user-guide ul a {
+            color: var(--text-dark, #ffffff);
+            text-decoration: none;
+        }
+        .user-guide ol a:hover, .user-guide ul a:hover {
+            text-decoration: underline;
+        }
+        /* Autres styles si nécessaire */
     </style>
     <!-- Inclusion de Font Awesome pour les icônes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -58,7 +69,8 @@
         <ol>
             <li><a href="#introduction">Introduction</a></li>
             <li><a href="#connexion">Connexion et Paramètres du Compte</a></li>
-            <li><a href="#gestion-des-projets">Gestion des Projets</a>
+            <li>
+                <a href="#gestion-des-projets">Gestion des Projets</a>
                 <ul>
                     <li><a href="#selectionner-un-projet">Sélectionner un Projet</a></li>
                     <li><a href="#creer-un-nouveau-projet">Créer un Nouveau Projet</a></li>
@@ -66,19 +78,23 @@
                     <li><a href="#supprimer-un-projet">Supprimer un Projet</a></li>
                 </ul>
             </li>
-            <li><a href="#fiche-projet">Fiche Projet</a>
+            <li>
+                <a href="#fiche-projet">Fiche Projet</a>
                 <ul>
-                    <li><a href="#modifier-informations-projet">Modifier les Informations du Projet</a></li>
-                    <li><a href="#suivi-avancement-global">Suivi de l'Avancement Global</a></li>
+                    <li><a href="#modifier-les-details-du-projet">Modifier les Détails du Projet</a></li>
+                    <li><a href="#budget-du-projet">Budget du Projet</a></li>
                 </ul>
             </li>
-            <li><a href="#suivi-charge-budget">Suivi Charge et Suivi Budget</a>
+            <li>
+                <a href="#suivi-charge-et-budget">Suivi Charge et Budget</a>
                 <ul>
-                    <li><a href="#comprendre-les-indicateurs">Comprendre les Indicateurs</a></li>
-                    <li><a href="#analyse-de-lassistant">Analyse de l'Assistant</a></li>
+                    <li><a href="#suivi-de-la-charge">Suivi de la Charge</a></li>
+                    <li><a href="#suivi-du-budget">Suivi du Budget</a></li>
+                    <li><a href="#avancement-global">Avancement Global</a></li>
                 </ul>
             </li>
-            <li><a href="#gestion-des-taches">Gestion des Tâches</a>
+            <li>
+                <a href="#gestion-des-taches">Gestion des Tâches</a>
                 <ul>
                     <li><a href="#ajouter-une-tache">Ajouter une Tâche</a></li>
                     <li><a href="#modifier-une-tache">Modifier une Tâche</a></li>
@@ -96,77 +112,71 @@
 
         <hr>
 
+        <!-- Sections du guide avec les IDs correspondants -->
         <h2 id="introduction">1. Introduction</h2>
-        <p><strong>Project Assistant</strong> est une application web conçue pour faciliter la gestion de vos projets. Elle vous permet de suivre l'avancement de vos tâches, de gérer vos ressources et d'analyser le progrès de votre projet en temps réel.</p>
+        <p><strong>Project Assistant</strong> est une application web conçue pour vous aider à gérer efficacement vos projets. Elle offre des fonctionnalités de suivi de charge, de budget, et vous fournit des conseils pour maintenir vos projets dans les délais et les budgets impartis.</p>
 
         <hr>
 
         <h2 id="connexion">2. Connexion et Paramètres du Compte</h2>
-        <ul>
-            <li><strong>Connexion :</strong> Pour accéder à l'application, connectez-vous avec vos identifiants.</li>
-            <li><strong>Paramètres du Compte :</strong> Cliquez sur l'icône des paramètres (<i class="fas fa-cog"></i>) en haut à droite pour modifier vos informations personnelles ou changer votre mot de passe.</li>
-            <li><strong>Déconnexion :</strong> Vous pouvez vous déconnecter depuis le menu des paramètres du compte.</li>
-        </ul>
+        <p>Pour utiliser <strong>Project Assistant</strong>, vous devez vous connecter avec vos identifiants. Si vous n'avez pas de compte, veuillez contacter l'administrateur pour en obtenir un.</p>
+        <p>Une fois connecté, vous pouvez accéder aux <strong>Paramètres du Compte</strong> en cliquant sur l'icône des paramètres (<i class="fas fa-cog"></i>) située en haut à droite. Vous pouvez y modifier votre nom d'utilisateur, votre adresse e-mail et votre mot de passe.</p>
 
         <hr>
 
         <h2 id="gestion-des-projets">3. Gestion des Projets</h2>
 
         <h3 id="selectionner-un-projet">Sélectionner un Projet</h3>
-        <p>Utilisez le menu déroulant <strong>"Sélectionner un projet"</strong> pour choisir le projet sur lequel vous souhaitez travailler. Si aucun projet n'est sélectionné, l'application vous invitera à en créer un nouveau.</p>
+        <p>Utilisez le menu déroulant <strong>"Sélectionner un projet"</strong> pour choisir le projet sur lequel vous souhaitez travailler. Si aucun projet n'est sélectionné, vous ne pourrez pas accéder aux fonctionnalités de gestion des tâches.</p>
 
         <h3 id="creer-un-nouveau-projet">Créer un Nouveau Projet</h3>
-        <p>Cliquez sur le bouton <strong>"Nouveau projet"</strong> pour créer un nouveau projet. Renseignez le nom du projet, les dates de début et de fin, ainsi que le budget alloué.</p>
+        <p>Cliquez sur le bouton <strong>"Nouveau projet"</strong> (<i class="fas fa-plus"></i>) pour créer un nouveau projet. Vous devrez fournir un nom de projet, une date de début, une date de fin et un budget alloué.</p>
 
         <h3 id="dupliquer-un-projet">Dupliquer un Projet</h3>
-        <p>Sélectionnez le projet que vous souhaitez dupliquer. Cliquez sur l'icône <strong>"Dupliquer le projet"</strong> (<i class="fas fa-copy"></i>) pour créer une copie du projet existant. Donnez un nouveau nom au projet dupliqué.</p>
+        <p>Pour dupliquer le projet actuel, cliquez sur le bouton <strong>"Dupliquer le projet"</strong> (<i class="fas fa-copy"></i>). Vous serez invité à entrer un nouveau nom pour le projet dupliqué.</p>
 
         <h3 id="supprimer-un-projet">Supprimer un Projet</h3>
-        <p>Sélectionnez le projet que vous souhaitez supprimer. Cliquez sur l'icône <strong>"Supprimer le projet"</strong> (<i class="fas fa-trash"></i>). Confirmez la suppression lorsque l'application vous le demande.</p>
+        <p>Cliquez sur le bouton <strong>"Supprimer le projet"</strong> (<i class="fas fa-trash"></i>) pour supprimer le projet actuel. Attention, cette action est irréversible.</p>
 
         <hr>
 
         <h2 id="fiche-projet">4. Fiche Projet</h2>
 
-        <h3 id="modifier-informations-projet">Modifier les Informations du Projet</h3>
-        <p>Dans la section <strong>"Fiche Projet"</strong>, vous pouvez modifier le nom du projet, les dates de début et de fin, ainsi que le budget alloué. Les modifications sont sauvegardées automatiquement.</p>
+        <h3 id="modifier-les-details-du-projet">Modifier les Détails du Projet</h3>
+        <p>Dans la section <strong>"Fiche Projet"</strong>, vous pouvez modifier le nom du projet, les dates de début et de fin, ainsi que le budget alloué. Les modifications sont enregistrées automatiquement.</p>
 
-        <h3 id="suivi-avancement-global">Suivi de l'Avancement Global</h3>
-        <p>La barre de progression affiche l'avancement global du projet en pourcentage. Elle est calculée en fonction de la charge de travail consommée par rapport à la charge totale estimée.</p>
+        <h3 id="budget-du-projet">Budget du Projet</h3>
+        <p>Le budget alloué au projet est utilisé pour calculer le suivi du budget en fonction des tâches créées. Assurez-vous de le mettre à jour si nécessaire.</p>
 
         <hr>
 
-        <h2 id="suivi-charge-budget">5. Suivi Charge et Suivi Budget</h2>
+        <h2 id="suivi-charge-et-budget">5. Suivi Charge et Budget</h2>
 
-        <h3 id="comprendre-les-indicateurs">Comprendre les Indicateurs</h3>
-        <ul>
-            <li><strong>Charge Consommée :</strong> Total des heures déjà travaillées sur le projet.</li>
-            <li><strong>Charge Restante :</strong> Estimation des heures restantes pour compléter le projet.</li>
-            <li><strong>Charge Totale :</strong> Somme de la charge consommée et de la charge restante.</li>
-            <li><strong>Budget Dépensé :</strong> Montant total dépensé jusqu'à présent.</li>
-            <li><strong>Budget Restant :</strong> Estimation du budget nécessaire pour terminer le projet.</li>
-            <li><strong>Budget Total :</strong> Somme du budget dépensé et du budget restant.</li>
-        </ul>
+        <h3 id="suivi-de-la-charge">Suivi de la Charge</h3>
+        <p>La section <strong>"Suivi Charge"</strong> vous permet de visualiser la charge consommée, la charge restante et la charge totale du projet. Ces données sont calculées en fonction des tâches.</p>
 
-        <h3 id="analyse-de-lassistant">Analyse de l'Assistant</h3>
-        <p>L'application fournit des conseils basés sur l'état actuel du projet. Les messages en <span style="color: var(--success-dark);">vert</span> indiquent que le projet est <strong>on-time</strong> ou <strong>on-budget</strong>. Les messages en <span style="color: var(--warning-dark);">orange</span> signalent un retard ou un dépassement de budget. L'assistant peut également recommander les prochaines tâches à traiter pour optimiser l'avancement.</p>
+        <h3 id="suivi-du-budget">Suivi du Budget</h3>
+        <p>La section <strong>"Suivi Budget"</strong> affiche le budget dépensé, le budget restant et le budget total du projet, basés sur les informations saisies dans les tâches.</p>
+
+        <h3 id="avancement-global">Avancement Global</h3>
+        <p>L'<strong>"Avancement Global"</strong> du projet est représenté par une barre de progression, calculée en fonction de la charge totale et de la charge consommée.</p>
 
         <hr>
 
         <h2 id="gestion-des-taches">6. Gestion des Tâches</h2>
 
         <h3 id="ajouter-une-tache">Ajouter une Tâche</h3>
-        <p>Cliquez sur le bouton <strong>"+"</strong> dans la section <strong>"Liste des Tâches"</strong> pour ajouter une nouvelle tâche. Renseignez les informations suivantes :</p>
+        <p>Cliquez sur le bouton <strong>"Ajouter une tâche"</strong> (<i class="fas fa-plus"></i>) pour créer une nouvelle tâche. Vous devrez spécifier :</p>
         <ul>
-            <li><strong>Catégorie :</strong> Choisissez une catégorie existante ou créez-en une nouvelle.</li>
-            <li><strong>Nom de la Tâche :</strong> Donnez un titre à votre tâche.</li>
-            <li><strong>Priorité :</strong> Attribuez une priorité entre 0 (basse) et 100 (haute).</li>
-            <li><strong>Charge Estimée :</strong> Indiquez le nombre d'heures estimées pour cette tâche.</li>
-            <li><strong>Budget Estimé :</strong> Spécifiez le budget estimé pour cette tâche.</li>
+            <li><strong>Catégorie</strong> (vous pouvez en créer une nouvelle si nécessaire)</li>
+            <li><strong>Nom de la Tâche</strong></li>
+            <li><strong>Priorité</strong> (entre 0 et 100)</li>
+            <li><strong>Charge Estimée</strong> (en heures)</li>
+            <li><strong>Budget Estimé</strong> (en euros)</li>
         </ul>
 
         <h3 id="modifier-une-tache">Modifier une Tâche</h3>
-        <p>Cliquez sur l'icône <strong>"Déplier"</strong> (<i class="fas fa-chevron-down"></i>) pour afficher les détails d'une tâche. Vous pouvez modifier :</p>
+        <p>Pour modifier une tâche, cliquez sur le bouton d'expansion (<i class="fas fa-chevron-down"></i>) à côté de son nom. Vous pouvez alors modifier les attributs suivants :</p>
         <ul>
             <li><strong>Nom de la Tâche</strong></li>
             <li><strong>Priorité</strong></li>
@@ -219,7 +229,20 @@
 
         <p>Merci d'utiliser <strong>Project Assistant</strong> pour gérer vos projets efficacement !</p>
 
-        <!-- Fin du guide utilisateur -->
+        <!-- Script pour gérer le défilement interne -->
+        <script>
+        document.addEventListener('click', function(event) {
+            if (event.target.tagName === 'A' && event.target.hash) {
+                event.preventDefault();
+                var targetId = event.target.hash.substring(1);
+                var targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+        </script>
+
     </div>
 </body>
 </html>
