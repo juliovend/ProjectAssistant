@@ -243,6 +243,14 @@ $userEmail = $_SESSION['user_email'];
             color: var(--text-dark);
         }
 
+        .success-message {
+            color: var(--success-dark);
+        }
+
+        .warning-message {
+            color: var(--warning-dark);
+        }
+
         .task-list {
             list-style: none;
             padding: 0;
@@ -1777,19 +1785,38 @@ $userEmail = $_SESSION['user_email'];
             const consumedEffort = tasks.reduce((sum, task) => sum + (task.consumedEffort || 0), 0);
             const globalProgress = totalEffort > 0 ? (consumedEffort / totalEffort) * 100 : 0;
 
-            // Analyse de l'avancement
-            const progressAnalysis = globalProgress >= timeProgress
-                ? "Félicitations : votre projet est on-time."
-                : `Attention, votre projet prend du retard : l’avancement devrait être de ${Math.round(timeProgress)}% aujourd’hui.`;
-            document.getElementById("progress-analysis").innerHTML = progressAnalysis;
+           // Sélection des éléments DOM pour les messages
+    const progressAnalysisElement = document.getElementById("progress-analysis");
+    const budgetAnalysisElement = document.getElementById("budget-analysis");
 
-            // Analyse du budget
-            const totalBudget = tasks.reduce((sum, task) => sum + ((task.consumedBudget || 0) + (task.remainingBudget || 0)), 0);
-            const allottedBudget = parseFloat(document.getElementById("projectBudget").value) || 0;
-            const budgetAnalysis = totalBudget > allottedBudget
-                ? `Attention : votre projet dépassera le budget initialement prévu de ${(totalBudget / allottedBudget * 100 - 100).toFixed(0)}%.`
-                : "Félicitations : votre projet est on-budget.";
-            document.getElementById("budget-analysis").innerHTML = budgetAnalysis;
+    // Réinitialisation des classes
+    progressAnalysisElement.classList.remove('success-message', 'warning-message');
+    budgetAnalysisElement.classList.remove('success-message', 'warning-message');
+
+    // Analyse de l'avancement
+    let progressAnalysis;
+    if (globalProgress >= timeProgress) {
+        progressAnalysis = "Félicitations : votre projet est on-time.";
+        progressAnalysisElement.classList.add('success-message');
+    } else {
+        progressAnalysis = `Attention, votre projet prend du retard : l’avancement devrait être de ${Math.round(timeProgress)}% aujourd’hui.`;
+        progressAnalysisElement.classList.add('warning-message');
+    }
+    progressAnalysisElement.innerHTML = progressAnalysis;
+
+    // Analyse du budget
+    const totalBudget = tasks.reduce((sum, task) => sum + ((task.consumedBudget || 0) + (task.remainingBudget || 0)), 0);
+    const allottedBudget = parseFloat(document.getElementById("projectBudget").value) || 0;
+
+    let budgetAnalysis;
+    if (totalBudget > allottedBudget) {
+        budgetAnalysis = `Attention : votre projet dépassera le budget initialement prévu de ${(totalBudget / allottedBudget * 100 - 100).toFixed(0)}%.`;
+        budgetAnalysisElement.classList.add('warning-message');
+    } else {
+        budgetAnalysis = "Félicitations : votre projet est on-budget.";
+        budgetAnalysisElement.classList.add('success-message');
+    }
+    budgetAnalysisElement.innerHTML = budgetAnalysis;
 
             // Conseiller la prochaine tâche à traiter
             const sortedTasks = tasks
