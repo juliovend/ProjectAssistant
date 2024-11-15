@@ -1508,23 +1508,52 @@ $userEmail = $_SESSION['user_email'];
     document.getElementById('helpModal').style.display = 'block';
 
     const guideContent = document.getElementById('guideContent');
-    console.log('Contenu actuel de guideContent.innerHTML :', guideContent.innerHTML);
+
+    // Vérifier si le guide est déjà chargé
     if (!guideContent.innerHTML.trim()) {
         console.log('Fetching guide_utilisateur.html...');
         fetch('guide_utilisateur.html')
             .then(response => {
-                console.log('Fetch response:', response);
+                if (!response.ok) {
+                    throw new Error('Erreur HTTP ' + response.status);
+                }
                 return response.text();
             })
             .then(data => {
                 console.log('Guide content received');
                 guideContent.innerHTML = data;
+
+                // Attacher les écouteurs d'événements aux liens après le chargement
+                attachGuideLinkHandlers();
             })
             .catch(error => {
                 guideContent.innerHTML = '<p>Erreur lors du chargement du guide utilisateur.</p>';
                 console.error('Erreur:', error);
             });
+    } else {
+        // Si le guide est déjà chargé, s'assurer que les handlers sont attachés
+        attachGuideLinkHandlers();
     }
+}
+
+function attachGuideLinkHandlers() {
+    const guideContent = document.getElementById('guideContent');
+
+    // Sélectionner tous les liens avec des href commençant par '#'
+    const links = guideContent.querySelectorAll('a[href^="#"]');
+
+    links.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = guideContent.querySelector('#' + targetId);
+
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
 }
 
 function closeHelpModal() {
