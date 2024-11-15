@@ -325,6 +325,7 @@ $userEmail = $_SESSION['user_email'];
             align-items: center;
             gap: 10px;
             flex: 1;
+            min-width: 0;
         }
 
         .task-header input[type="text"] {
@@ -335,6 +336,7 @@ $userEmail = $_SESSION['user_email'];
             font-weight: bold;
             padding: 2px 5px;
             width: 100%;
+            box-sizing: border-box;
         }
 
         .task-header input[type="text"]:hover:not([disabled]),
@@ -684,6 +686,11 @@ $userEmail = $_SESSION['user_email'];
             grid-column: 1 / -1;
             margin-top: 10px;
         }
+
+        .task-name {
+    flex: 1;
+    min-width: 0; /* Empêche le débordement du contenu */
+}
 
         .task-comment textarea {
             width: 100%;
