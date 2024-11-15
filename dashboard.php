@@ -1513,15 +1513,19 @@ $userEmail = $_SESSION['user_email'];
     const guideContent = document.getElementById('guideContent');
     if (!guideContent.innerHTML.trim()) {
         // Charger le guide utilisateur à partir du fichier guide_utilisateur.html
-        fetch('./guide_utilisateur.html')
-            .then(response => response.text())
-            .then(data => {
-                guideContent.innerHTML = data;
-            })
-            .catch(error => {
-                guideContent.innerHTML = '<p>Erreur lors du chargement du guide utilisateur.</p>';
-                console.error('Erreur:', error);
-            });
+        fetch('guide_utilisateur.html')
+    .then(response => {
+        console.log('Réponse du fetch :', response);
+        return response.text();
+    })
+    .then(data => {
+        console.log('Contenu du guide utilisateur :', data);
+        guideContent.innerHTML = data;
+    })
+    .catch(error => {
+        guideContent.innerHTML = '<p>Erreur lors du chargement du guide utilisateur.</p>';
+        console.error('Erreur:', error);
+    });
     }
 }
 
