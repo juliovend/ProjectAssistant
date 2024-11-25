@@ -491,7 +491,7 @@ $userEmail = $_SESSION['user_email'];
         }
 
         .btn:hover {
-            color: var(--secondary-dark);
+            background-color: #3d5079;
         }
 
         .btn-danger {
@@ -575,6 +575,10 @@ $userEmail = $_SESSION['user_email'];
             justify-content: center;
             font-size: 20px;
             margin-bottom: 0;
+        }
+
+        .add-task-btn:hover {
+            background-color: #239d57;
         }
 
         .modal-content {
@@ -662,6 +666,12 @@ $userEmail = $_SESSION['user_email'];
         .btn-primary {
             background-color: var(--secondary-dark);
             color: var(--text-dark);
+            width: 40px;
+            height: 40px;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .btn-primary:hover {
