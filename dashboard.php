@@ -490,6 +490,10 @@ $userEmail = $_SESSION['user_email'];
             color: var(--text-dark);
         }
 
+        .btn:hover {
+            color: var(--secondary-dark);
+        }
+
         .btn-danger {
             background-color: var(--danger-dark);
             width: 40px;
