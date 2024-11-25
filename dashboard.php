@@ -502,7 +502,6 @@ $userEmail = $_SESSION['user_email'];
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 4px;
         }
 
         .btn-danger:hover {
@@ -669,7 +668,6 @@ $userEmail = $_SESSION['user_email'];
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 4px;
         }
 
         .btn-primary:hover {
