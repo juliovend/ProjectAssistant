@@ -577,6 +577,10 @@ $userEmail = $_SESSION['user_email'];
             margin-bottom: 0;
         }
 
+        .add-task-btn:hover {
+            background-color: #239d57;
+        }
+
         .modal-content {
             background-color: var(--card-dark);
             margin: 10% auto;
