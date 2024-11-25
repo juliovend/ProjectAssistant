@@ -491,7 +491,7 @@ $userEmail = $_SESSION['user_email'];
         }
 
         .btn:hover {
-            color: var(--secondary-dark);
+            background-color: #3d5079;
         }
 
         .btn-danger {
