@@ -662,6 +662,12 @@ $userEmail = $_SESSION['user_email'];
         .btn-primary {
             background-color: var(--secondary-dark);
             color: var(--text-dark);
+            width: 40px;
+            height: 40px;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .btn-primary:hover {
