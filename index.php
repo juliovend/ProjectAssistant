@@ -127,18 +127,9 @@ header("Content-Type: text/html; charset=UTF-8");
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            max-width: 300px;
 }
 
-.illustration::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom right, rgba(108,99,255,0.2), rgba(0,245,255,0.2));
-  pointer-events: none; /* Pour ne pas empêcher l'interaction avec la vidéo */
-}
 
         .illustration:hover {
           transform: scale(1.02); /* Légère mise en avant au survol */
