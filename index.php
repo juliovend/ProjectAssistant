@@ -472,15 +472,15 @@ header("Content-Type: text/html; charset=UTF-8");
         <div class="feature-container">
             <div class="feature-box">
                 <h3>Organisation Simplifiée</h3>
-                <p>Définissez des lots de travail, assignez des ressources, et suivez l'avancement en un coup d'œil.</p>
+                <p>Définissez des lots de travail, des priorités, et suivez l'avancement en un coup d'œil.</p>
             </div>
             <div class="feature-box">
                 <h3>Suivi du Budget</h3>
-                <p>Gardez le contrôle sur vos dépenses et ajustez vos ressources en temps réel.</p>
+                <p>Gardez le contrôle sur vos dépenses et ajustez vos prévisions en temps réel.</p>
             </div>
             <div class="feature-box">
                 <h3>Visualisation de la Charge</h3>
-                <p>Anticipez la disponibilité de votre équipe et répartissez les tâches intelligemment.</p>
+                <p>Anticipez la charge à venir et priorisez les tâches intelligemment.</p>
             </div>
             <div class="feature-box">
                 <h3>Interface Intuitive</h3>
@@ -495,7 +495,7 @@ header("Content-Type: text/html; charset=UTF-8");
         <div class="steps">
             <div class="step">
                 <h3>1. Créez votre projet</h3>
-                <p>Ajoutez vos tâches, définissez un budget et assignez des responsables.</p>
+                <p>Ajoutez vos tâches, estimez la charge et définissez un budget.</p>
             </div>
             <div class="step">
                 <h3>2. Suivez l'avancement</h3>
