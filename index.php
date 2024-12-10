@@ -459,7 +459,7 @@ header("Content-Type: text/html; charset=UTF-8");
             <button class="btn btn-primary" onclick="document.getElementById('signupModal').classList.add('active')">Essayer gratuitement</button>
         </div>
         <div class="illustration" style="flex:1;display:flex;justify-content:center;align-items:center;">
-          <video width="600" autoplay loop muted playsinline>
+          <video width="400" autoplay loop muted playsinline>
             <source src="/data/Video_Accueil.mp4" type="video/mp4" />
             Votre navigateur ne supporte pas la vidéo HTML5.
           </video>
