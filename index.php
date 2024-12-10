@@ -123,13 +123,12 @@ header("Content-Type: text/html; charset=UTF-8");
         }
 
         .illustration {
-          flex: 1;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border-radius: 20px;       /* Bords arrondis */
-          overflow: hidden;          /* Coupe la vidéo pour suivre la forme arrondie */
-          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Ombre douce pour donner de la profondeur */
+          backdrop-filter: blur(10px); /* floute l'arrière-plan derrière la vidéo */
+          background: rgba(255, 255, 255, 0.1); /* Couche translucide pour accentuer le flou */
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          border-radius: 20px;
+          overflow: hidden;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
         .illustration video {
