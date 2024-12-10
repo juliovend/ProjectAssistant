@@ -127,6 +127,14 @@ header("Content-Type: text/html; charset=UTF-8");
           display: flex;
           justify-content: center;
           align-items: center;
+          border-radius: 20px;       /* Bords arrondis */
+          overflow: hidden;          /* Coupe la vidéo pour suivre la forme arrondie */
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Ombre douce pour donner de la profondeur */
+        }
+
+        .illustration video {
+          width: 100%;
+          height: auto;
         }
 
         .app-logo {
