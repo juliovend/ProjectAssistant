@@ -453,7 +453,7 @@ header("Content-Type: text/html; charset=UTF-8");
         </div>
         <div class="illustration" style="flex:1;display:flex;justify-content:center;align-items:center;">
           <video width="400" autoplay loop muted playsinline>
-            <source src="data/ma_video.mp4" type="video/mp4" />
+            <source src="data/mavideo.mp4" type="video/mp4" />
             Votre navigateur ne supporte pas la vidéo HTML5.
           </video>
         </div>
