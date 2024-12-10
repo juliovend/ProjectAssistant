@@ -1,7 +1,6 @@
 <?php
 header("Content-Type: text/html; charset=UTF-8");
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -35,61 +34,39 @@ header("Content-Type: text/html; charset=UTF-8");
           position: relative;
         }
 
-        .container {
+        /* Header */
+        header {
+          width: 100%;
+          background: var(--dark);
+          padding: 1rem 2rem;
           display: flex;
+          align-items: center;
           justify-content: space-between;
-          align-items: center;
-          padding: 2rem;
-          max-width: 1400px;
-          margin: 0 auto;
-          min-height: 100vh;
           position: relative;
-          z-index: 1; /* Place les sections au-dessus des particules */
+          z-index: 10;
         }
 
-        .app-logo {
-            animation: pulse 2s infinite ease-in-out;
-            width: 70px;
-            height: 70px;
-        }
-
-        .app-logo:hover {
-            animation: rotate 1s infinite linear;
-        }
-
-        .content {
-          flex: 1;
-          max-width: 600px;
-        }
-
-        .illustration {
-          flex: 1;
+        header .logo {
           display: flex;
-          justify-content: center;
           align-items: center;
-        }
-
-        h1 {
-          font-size: 3.5rem;
-          margin-bottom: 1rem;
-          background: linear-gradient(135deg, var(--primary), var(--accent));
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
-
-        p {
-          font-size: 1.2rem;
-          margin-bottom: 2rem;
-          line-height: 1.6;
-        }
-
-        .buttons {
-          display: flex;
           gap: 1rem;
         }
 
+        header nav a {
+          color: var(--light);
+          text-decoration: none;
+          font-weight: 600;
+        }
+
+        header nav {
+          display: flex;
+          gap: 2rem;
+          align-items: center;
+        }
+
+        /* Buttons */
         .btn {
-          padding: 1rem 2rem;
+          padding: 0.8rem 1.5rem;
           border-radius: 50px;
           border: none;
           font-size: 1rem;
@@ -120,6 +97,59 @@ header("Content-Type: text/html; charset=UTF-8");
           color: white;
         }
 
+        /* Hero Section */
+        #hero {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 4rem 2rem;
+          max-width: 1400px;
+          margin: 0 auto;
+          min-height: 100vh;
+        }
+
+        #hero h1 {
+          font-size: 3rem;
+          background: linear-gradient(135deg, var(--primary), var(--accent));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          margin-bottom: 1rem;
+        }
+
+        #hero p {
+          font-size: 1.2rem;
+          line-height: 1.6;
+          margin-bottom: 2rem;
+        }
+
+        .illustration {
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .app-logo {
+          animation: pulse 2s infinite ease-in-out;
+          width: 50px;
+          height: 50px;
+        }
+
+        .app-logo:hover {
+            animation: rotate 1s infinite linear;
+        }
+
+        @keyframes pulse {
+          0% { transform: scale(1); }
+          50% { transform: scale(1.05); }
+          100% { transform: scale(1); }
+        }
+
+        @keyframes rotate {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+
         .floating {
           animation: float 3s ease-in-out infinite;
         }
@@ -130,15 +160,136 @@ header("Content-Type: text/html; charset=UTF-8");
           100% { transform: translateY(0px); }
         }
 
-        .particles {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          z-index: -1;
+        /* Features Section */
+        #features {
+          padding: 4rem 2rem;
+          max-width: 1400px;
+          margin: 0 auto;
+          text-align: center;
         }
 
+        #features h2 {
+          font-size: 2rem;
+          margin-bottom: 2rem;
+        }
+
+        #features .feature-container {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 2rem;
+          justify-content: center;
+        }
+
+        #features .feature-box {
+          background: var(--secondary);
+          padding: 2rem;
+          border-radius: 10px;
+          max-width: 300px;
+          text-align: center;
+        }
+
+        #features .feature-box h3 {
+          margin-bottom: 1rem;
+          font-size: 1.5rem;
+        }
+
+        #features .feature-box p {
+          font-size: 1rem;
+          line-height: 1.4;
+        }
+
+        /* How it works Section */
+        #how-it-works {
+          padding: 4rem 2rem;
+          max-width: 1400px;
+          margin: 0 auto;
+          text-align: center;
+        }
+
+        #how-it-works h2 {
+          font-size: 2rem;
+          margin-bottom: 2rem;
+        }
+
+        #how-it-works .steps {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 2rem;
+          justify-content: center;
+        }
+
+        #how-it-works .step {
+          max-width: 300px;
+        }
+
+        #how-it-works .step h3 {
+          margin-bottom: 1rem;
+          font-size: 1.4rem;
+        }
+
+        #how-it-works .step p {
+          font-size: 1rem;
+          line-height: 1.4;
+        }
+
+        /* Pricing Section */
+        #pricing {
+          padding: 4rem 2rem;
+          max-width: 1400px;
+          margin: 0 auto;
+          text-align: center;
+        }
+
+        #pricing h2 {
+          font-size: 2rem;
+          margin-bottom: 2rem;
+        }
+
+        #pricing p {
+          font-size: 1.2rem;
+          line-height: 1.6;
+          max-width: 600px;
+          margin: 0 auto 2rem auto;
+        }
+
+        /* CTA Final */
+        #cta-final {
+          padding: 4rem 2rem;
+          max-width: 1400px;
+          margin: 0 auto;
+          text-align: center;
+        }
+
+        #cta-final h2 {
+          font-size: 2rem;
+          margin-bottom: 2rem;
+        }
+
+        #cta-final p {
+          font-size: 1.2rem;
+          line-height: 1.6;
+          max-width: 600px;
+          margin: 0 auto 2rem auto;
+        }
+
+        /* Footer */
+        footer {
+          background: var(--secondary);
+          color: var(--light);
+          padding: 2rem;
+          text-align: center;
+        }
+
+        footer a {
+          color: var(--light);
+          text-decoration: none;
+        }
+
+        footer a:hover {
+          text-decoration: underline;
+        }
+
+        /* Modals */
         .modal {
           display: none;
           position: fixed;
@@ -156,7 +307,7 @@ header("Content-Type: text/html; charset=UTF-8");
           display: flex;
         }
 
-        .login-form {
+        .login-form, .signup-form {
           background: var(--secondary);
           padding: 2rem;
           border-radius: 20px;
@@ -166,7 +317,7 @@ header("Content-Type: text/html; charset=UTF-8");
           box-shadow: 0 0 40px rgba(108, 99, 255, 0.2);
         }
 
-        .login-form h2 {
+        .login-form h2, .signup-form h2 {
           margin-bottom: 1.5rem;
           color: var(--light);
           text-align: center;
@@ -212,199 +363,170 @@ header("Content-Type: text/html; charset=UTF-8");
           color: var(--accent);
         }
 
-        .signup-form {
-          background: var(--secondary);
-          padding: 2rem;
-          border-radius: 20px;
-          width: 100%;
-          max-width: 400px;
-          position: relative;
-          box-shadow: 0 0 40px rgba(108, 99, 255, 0.2);
-        }
-
-        .signup-form h2 {
-          margin-bottom: 1.5rem;
-          color: var(--light);
-          text-align: center;
-        }
-
-        .screenshot-image {
-    max-width: 80%;
-    height: auto;
-    border-radius: 10px;
-    margin-top: 100px; /* Vous pourrez ajuster cette valeur */
-}
-
+        /* Responsivité */
         @media (max-width: 768px) {
-          .container {
+          #hero {
             flex-direction: column;
             text-align: center;
-            padding: 1rem;
-          }
-
-          .buttons {
-            justify-content: center;
           }
 
           .illustration {
             margin-top: 2rem;
           }
 
-          h1 {
+          #hero h1 {
             font-size: 2.5rem;
+          }
+
+          header nav {
+            gap:1rem;
           }
         }
 
-        /* Ajout des styles pour les smartphones */
-@media (max-width: 480px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 1rem;
-    }
+        @media (max-width: 480px) {
+          #hero h1 {
+            font-size: 2rem;
+          }
 
-    .app-logo {
-        width: 60px;
-        height: 60px;
-    }
+          #hero p {
+            font-size: 1rem;
+          }
 
-    .content, .illustration {
-        max-width: 100%;
-    }
+          .btn {
+            font-size: 0.9rem;
+            padding: 0.8rem 1.5rem;
+          }
+        }
 
-    h1 {
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
-    }
+        .particles {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+        }
 
-    p {
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .buttons {
-        flex-direction: column;
-        gap: 0.5rem;
-        width: 100%;
-        margin-bottom: 2rem; /* Ajouté pour créer de l'espace */
-    }
-
-    .buttons .btn {
-        width: 100%;
-        font-size: 0.9rem;
-        padding: 0.8rem 1.5rem;
-        text-align: center;
-    }
-
-    .illustration {
-        margin-top: 1.5rem;
-    }
-
-    .illustration svg {
-        width: 250px;
-        height: 250px;
-    }
-
-    .login-form, .signup-form {
-        padding: 1.5rem;
-        width: 90%;
-    }
-
-    .form-group input {
-        font-size: 1rem;
-        padding: 0.7rem;
-    }
-
-    .container {
-        padding-bottom: 1rem; /* Réduire le padding inférieur si nécessaire */
-    }
-
-    .container ul {
-        font-size: 1rem;
-        line-height: 1.5;
-    }
-
-    .container ul li {
-        margin-bottom: 1rem;
-    }
-
-    .container img {
-        max-width: 100%;
-        height: auto;
-        margin-top: 2rem;
-    }
-
-    /* Réduire l'espace au-dessus de l'image */
-    .screenshot-image {
-        margin-top: 10px; /* Ajustez cette valeur selon vos préférences */
-    }
-}
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Particules couvrant toute la page -->
+    <!-- Fond de particules -->
     <div id="particles" class="particles"></div>
-    
-    <!-- Section principale -->
-    <div class="container">
-      <div class="content">
-        <svg class="app-logo" viewBox="0 0 100 100">
-                        <defs>
-                            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#1a75ff" />
-                                <stop offset="100%" style="stop-color:#0044cc" />
-                            </linearGradient>
-                        </defs>
-                        <circle cx="50" cy="50" r="45" fill="none" stroke="url(#logoGradient)" stroke-width="2" />
-                        <circle cx="30" cy="30" r="8" fill="url(#logoGradient)" />
-                        <circle cx="70" cy="30" r="8" fill="url(#logoGradient)" />
-                        <circle cx="50" cy="50" r="8" fill="url(#logoGradient)" />
-                        <circle cx="30" cy="70" r="8" fill="url(#logoGradient)" />
-                        <circle cx="70" cy="70" r="8" fill="url(#logoGradient)" />
-                        <path d="M30 30 L70 30 L50 50 L70 70 L30 70" fill="none" stroke="#4d94ff" stroke-width="3" stroke-dasharray="4,2" />
-                        <animate attributeName="stroke-width" values="2;3;2" dur="2s" repeatCount="indefinite" />
-        </svg>
-        <h1>Project Assistant</h1>
-        <p>Project Assistant est une plateforme gratuite, en ligne, pensée pour simplifier la réalisation de projet et maximiser votre efficacité. Profitez d'une interface intuitive et d'analyses automatiques pour transformer vos idées en réalité.</p>
-        <p>La plateforme a été conçue pour simplifier la vie des particuliers qui souhaitent mener à bien leurs projets : travaux de rénovation, organisation d'un mariage, développement de site marchand, ... </p>
-        <p>Créez votre compte en quelques secondes et commencez à optimiser votre travail dès aujourd'hui !</p>
-        <div class="buttons">
-          <button class="btn btn-primary">Créer un compte gratuit</button>
-          <button class="btn btn-secondary" id="loginBtn">Se connecter</button>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <svg class="app-logo" viewBox="0 0 100 100">
+                <defs>
+                    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#1a75ff" />
+                        <stop offset="100%" style="stop-color:#0044cc" />
+                    </linearGradient>
+                </defs>
+                <circle cx="50" cy="50" r="45" fill="none" stroke="url(#logoGradient)" stroke-width="2" />
+                <circle cx="30" cy="30" r="8" fill="url(#logoGradient)" />
+                <circle cx="70" cy="30" r="8" fill="url(#logoGradient)" />
+                <circle cx="50" cy="50" r="8" fill="url(#logoGradient)" />
+                <circle cx="30" cy="70" r="8" fill="url(#logoGradient)" />
+                <circle cx="70" cy="70" r="8" fill="url(#logoGradient)" />
+                <path d="M30 30 L70 30 L50 50 L70 70 L30 70" fill="none" stroke="#4d94ff" stroke-width="3" stroke-dasharray="4,2" />
+                <animate attributeName="stroke-width" values="2;3;2" dur="2s" repeatCount="indefinite" />
+            </svg>
+            <span style="font-weight:700; font-size:1.2rem; color:var(--light);">Project Assistant</span>
         </div>
-      </div>
-      <div class="illustration">
-        <svg class="floating" width="400" height="400" viewBox="0 0 400 400">
-          <defs>
-            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:var(--primary)" />
-              <stop offset="100%" style="stop-color:var(--accent)" />
-            </linearGradient>
-          </defs>
-          <circle cx="200" cy="200" r="180" fill="none" stroke="url(#grad1)" stroke-width="4"/>
-          <path d="M150,150 L250,150 L250,250 L150,250 Z" fill="url(#grad1)" opacity="0.5"/>
-          <circle cx="200" cy="200" r="50" fill="url(#grad1)"/>
-        </svg>
-      </div>
-    </div>
+        <nav>
+            <a href="#features">Fonctionnalités</a>
+            <a href="#how-it-works">Comment ça marche</a>
+            <a href="#pricing">Tarifs</a>
+            <button class="btn btn-secondary" id="loginBtn">Se connecter</button>
+            <button class="btn btn-primary" id="signupBtn">Créer un compte</button>
+        </nav>
+    </header>
 
-    <!-- Section pour des avantages supplémentaires -->
-<div class="container" style="flex-direction: column; text-align: center; padding: 1rem 0;">
-    <ul style="list-style-type: none; padding: 0; color: var(--light); font-size: 1.2rem; line-height: 1.8;">
-        <li><strong>100% gratuit :</strong> Accédez à toutes les fonctionnalités sans frais cachés.</li>
-        <li><strong>Confiance :</strong> Suit la méthode PMI - Project Management Institute.</li>
-        <li><strong>Analyses intelligentes :</strong> Suivez votre avancement avec des analyses automatiques.</li>
-        <li><strong>Accessible partout :</strong> Gérez vos projets depuis n’importe quel appareil, à tout moment.</li>
-    </ul>
-    <div style="margin-top: 50px;">
-      <img src="/data/PA_Snapshot.JPG" alt="Aperçu de Project Assistant" class="screenshot-image">
-    </div>
-</div>
+    <!-- Hero Section -->
+    <section id="hero">
+        <div style="flex:1;max-width:600px;">
+            <h1>Pilotez vos projets, maîtrisez votre budget, sans complexité.</h1>
+            <p>Project Assistant est un outil intuitif qui vous aide à organiser vos tâches, suivre votre charge de travail et garder un œil sur vos dépenses. Transformez vos idées en projets aboutis, facilement.</p>
+            <button class="btn btn-primary" onclick="document.getElementById('signupModal').classList.add('active')">Essayer gratuitement</button>
+        </div>
+        <div class="illustration" style="flex:1;display:flex;justify-content:center;align-items:center;">
+          <video width="600" autoplay loop muted playsinline>
+            <source src="/data/Video_Accueil.mp4" type="video/mp4" />
+            Votre navigateur ne supporte pas la vidéo HTML5.
+          </video>
+        </div>
+    </section>
 
+    <!-- Fonctionnalités Clés -->
+    <section id="features">
+        <h2>Fonctionnalités Clés</h2>
+        <div class="feature-container">
+            <div class="feature-box">
+                <h3>Organisation Simplifiée</h3>
+                <p>Définissez des lots de travail, des priorités, et suivez l'avancement en un coup d'œil.</p>
+            </div>
+            <div class="feature-box">
+                <h3>Suivi du Budget</h3>
+                <p>Gardez le contrôle sur vos dépenses et ajustez vos prévisions en temps réel.</p>
+            </div>
+            <div class="feature-box">
+                <h3>Visualisation de la Charge</h3>
+                <p>Anticipez la charge à venir et priorisez les tâches intelligemment.</p>
+            </div>
+            <div class="feature-box">
+                <h3>Interface Intuitive</h3>
+                <p>Aucune formation compliquée. Prenez en main l'outil en quelques minutes.</p>
+            </div>
+        </div>
+    </section>
 
+    <!-- Comment ça marche ? -->
+    <section id="how-it-works">
+        <h2>Comment ça marche ?</h2>
+        <div class="steps">
+            <div class="step">
+                <h3>1. Créez votre projet</h3>
+                <p>Ajoutez vos tâches, estimez la charge et définissez un budget.</p>
+            </div>
+            <div class="step">
+                <h3>2. Suivez l'avancement</h3>
+                <p>Consultez l'état de chaque lot de travail, les dépenses et le temps investi.</p>
+            </div>
+            <div class="step">
+                <h3>3. Ajustez et finalisez</h3>
+                <p>Modifiez, optimisez, et menez votre projet à son terme, en toute simplicité.</p>
+            </div>
+        </div>
+    </section>
 
+    <!-- Tarifs -->
+    <section id="pricing">
+        <h2>Tarification</h2>
+        <p>Project Assistant est 100% gratuit, sans frais cachés. Créez votre compte et commencez dès maintenant !</p>
+        <button class="btn btn-primary" onclick="document.getElementById('signupModal').classList.add('active')">Créer un compte gratuit</button>
+    </section>
+
+    <!-- CTA Final -->
+    <section id="cta-final">
+        <h2>Prêt à optimiser vos projets ?</h2>
+        <p>Rejoignez dès maintenant une communauté d'utilisateurs qui simplifient leur gestion de projet avec Project Assistant.</p>
+        <button class="btn btn-primary" onclick="document.getElementById('signupModal').classList.add('active')">Commencer gratuitement</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; <?php echo date("Y"); ?> Project Assistant - Tous droits réservés.</p>
+        <p>
+            <a href="#">A propos</a> | 
+            <a href="#">Contact</a> | 
+            <a href="#">Conditions</a> | 
+            <a href="#">Politique de confidentialité</a>
+        </p>
+    </footer>
+
+    <!-- Modal Connexion -->
     <div class="modal" id="loginModal">
       <div class="login-form">
         <button class="close-btn" id="closeModal">&times;</button>
@@ -422,34 +544,35 @@ header("Content-Type: text/html; charset=UTF-8");
         </form>
       </div>
     </div>
-    
-    <div class="modal" id="signupModal">
-  <div class="signup-form">
-    <button class="close-btn" id="closeSignupModal">&times;</button>
-    <h2>Créer un compte</h2>
-    <form id="signupForm">
-      <div class="form-group">
-        <label for="fullName">Nom complet</label>
-        <input type="text" id="fullName" required>
-      </div>
-      <div class="form-group">
-        <label for="signupEmail">Email</label>
-        <input type="email" id="signupEmail" required>
-      </div>
-      <div class="form-group">
-        <label for="signupPassword">Mot de passe</label>
-        <input type="password" id="signupPassword" required>
-      </div>
-      <div class="form-group">
-        <label for="confirmPassword">Confirmer le mot de passe</label>
-        <input type="password" id="confirmPassword" required>
-      </div>
-      <button type="submit" class="btn btn-primary" style="width: 100%">Créer mon compte</button>
-    </form>
-  </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Modal Inscription -->
+    <div class="modal" id="signupModal">
+      <div class="signup-form">
+        <button class="close-btn" id="closeSignupModal">&times;</button>
+        <h2>Créer un compte</h2>
+        <form id="signupForm">
+          <div class="form-group">
+            <label for="fullName">Nom complet</label>
+            <input type="text" id="fullName" required>
+          </div>
+          <div class="form-group">
+            <label for="signupEmail">Email</label>
+            <input type="email" id="signupEmail" required>
+          </div>
+          <div class="form-group">
+            <label for="signupPassword">Mot de passe</label>
+            <input type="password" id="signupPassword" required>
+          </div>
+          <div class="form-group">
+            <label for="confirmPassword">Confirmer le mot de passe</label>
+            <input type="password" id="confirmPassword" required>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%">Créer mon compte</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         particlesJS('particles', {
           particles: {
@@ -491,107 +614,108 @@ header("Content-Type: text/html; charset=UTF-8");
           retina_detect: true
         });
 
+        // Ouverture modale login
         document.getElementById('loginBtn').addEventListener('click', () => {
-  document.getElementById('loginModal').classList.add('active');
-});
+          document.getElementById('loginModal').classList.add('active');
+        });
 
-document.querySelector('.btn-primary').addEventListener('click', () => {
-  document.getElementById('signupModal').classList.add('active');
-});
+        // Ouverture modale signup via bouton header
+        document.getElementById('signupBtn').addEventListener('click', () => {
+          document.getElementById('signupModal').classList.add('active');
+        });
 
-document.getElementById('closeModal').addEventListener('click', () => {
-  document.getElementById('loginModal').classList.remove('active');
-});
+        // Fermeture modales
+        document.getElementById('closeModal').addEventListener('click', () => {
+          document.getElementById('loginModal').classList.remove('active');
+        });
 
-document.getElementById('closeSignupModal').addEventListener('click', () => {
-  document.getElementById('signupModal').classList.remove('active');
-});
+        document.getElementById('closeSignupModal').addEventListener('click', () => {
+          document.getElementById('signupModal').classList.remove('active');
+        });
 
-document.getElementById('loginForm').addEventListener('submit', (e) => {
-  e.preventDefault();
-  const email = document.getElementById('email').value;
-  const password = document.getElementById('password').value;
+        // Connexion
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+          e.preventDefault();
+          const email = document.getElementById('email').value;
+          const password = document.getElementById('password').value;
 
-fetch('connexion.php', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify({ email, password }),
-})
-  .then(response => {
-    console.log("Réponse brute : ", response);
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`); // Lance une erreur si le code n'est pas 200
-    }
-    return response.json();
-  })
-  .then(data => {
-    console.log("Données JSON reçues : ", data);
-    if (data.success) {
-      //alert("Connexion réussie !");
-      window.location.href = data.redirect; // Redirige vers dashboard.php
-    } else {
-      alert("Échec de la connexion : " + data.message);
-    }
-  })
-  .catch(error => {
-    console.error('Erreur lors de la connexion:', error);
-    alert('Une erreur est survenue lors de la connexion');
-  });
-});
+          fetch('connexion.php', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, password }),
+          })
+            .then(response => {
+              if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+              }
+              return response.json();
+            })
+            .then(data => {
+              if (data.success) {
+                window.location.href = data.redirect;
+              } else {
+                alert("Échec de la connexion : " + data.message);
+              }
+            })
+            .catch(error => {
+              console.error('Erreur lors de la connexion:', error);
+              alert('Une erreur est survenue lors de la connexion');
+            });
+        });
 
-    document.getElementById('signupForm').addEventListener('submit', (e) => {
-  e.preventDefault();
-  const fullName = document.getElementById('fullName').value;
-  const email = document.getElementById('signupEmail').value;
-  const password = document.getElementById('signupPassword').value;
-  const confirmPassword = document.getElementById('confirmPassword').value;
-  
-  if (password !== confirmPassword) {
-    alert('Les mots de passe ne correspondent pas');
-    return;
-  }
-  
-  fetch('signup.php', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ fullName, email, password }),
-  })
-    .then(response => {
-      console.log("Réponse brute : ", response);
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      return response.json();
-    })
-    .then(data => {
-      if (data.success) {
-        alert("Compte créé avec succès ! Vérifiez votre email pour confirmer votre inscription.");
-        document.getElementById('signupModal').classList.remove('active');
-      } else {
-        alert("Échec de la création du compte : " + data.message);
-      }
-    })
-    .catch(error => {
-      console.error('Erreur lors de la création du compte:', error);
-      alert('Une erreur est survenue lors de la création du compte');
-    });
-});
+        // Inscription
+        document.getElementById('signupForm').addEventListener('submit', (e) => {
+          e.preventDefault();
+          const fullName = document.getElementById('fullName').value;
+          const email = document.getElementById('signupEmail').value;
+          const password = document.getElementById('signupPassword').value;
+          const confirmPassword = document.getElementById('confirmPassword').value;
 
-        // Close modal when clicking outside
-document.getElementById('loginModal').addEventListener('click', (e) => {
-  if (e.target.classList.contains('modal')) {
-    document.getElementById('loginModal').classList.remove('active');
-  }
-});
+          if (password !== confirmPassword) {
+            alert('Les mots de passe ne correspondent pas');
+            return;
+          }
 
-document.getElementById('signupModal').addEventListener('click', (e) => {
-  if (e.target.classList.contains('modal')) {
-    document.getElementById('signupModal').classList.remove('active');
-  }
+          fetch('signup.php', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ fullName, email, password }),
+          })
+            .then(response => {
+              if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+              }
+              return response.json();
+            })
+            .then(data => {
+              if (data.success) {
+                alert("Compte créé avec succès ! Vérifiez votre email pour confirmer votre inscription.");
+                document.getElementById('signupModal').classList.remove('active');
+              } else {
+                alert("Échec de la création du compte : " + data.message);
+              }
+            })
+            .catch(error => {
+              console.error('Erreur lors de la création du compte:', error);
+              alert('Une erreur est survenue lors de la création du compte');
+            });
+        });
+
+        // Fermer modale quand on clique en dehors
+        document.getElementById('loginModal').addEventListener('click', (e) => {
+          if (e.target.classList.contains('modal')) {
+            document.getElementById('loginModal').classList.remove('active');
+          }
+        });
+
+        document.getElementById('signupModal').addEventListener('click', (e) => {
+          if (e.target.classList.contains('modal')) {
+            document.getElementById('signupModal').classList.remove('active');
+          }
         });
     </script>
 </body>
