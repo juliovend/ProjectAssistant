@@ -129,8 +129,13 @@ header("Content-Type: text/html; charset=UTF-8");
           border-radius: 20px;
           overflow: hidden;
           box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+          transition: transform 0.3s ease;
         }
 
+        .illustration:hover {
+          transform: scale(1.02); /* Légère mise en avant au survol */
+        }
+        
         .illustration video {
           width: 100%;
           height: auto;
