@@ -451,18 +451,11 @@ header("Content-Type: text/html; charset=UTF-8");
             <p>Project Assistant est un outil intuitif qui vous aide à organiser vos tâches, suivre votre charge de travail et garder un œil sur vos dépenses. Transformez vos idées en projets aboutis, facilement.</p>
             <button class="btn btn-primary" onclick="document.getElementById('signupModal').classList.add('active')">Essayer gratuitement</button>
         </div>
-        <div class="illustration">
-            <svg class="floating" width="400" height="400" viewBox="0 0 400 400">
-              <defs>
-                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style="stop-color:var(--primary)" />
-                  <stop offset="100%" style="stop-color:var(--accent)" />
-                </linearGradient>
-              </defs>
-              <circle cx="200" cy="200" r="180" fill="none" stroke="url(#grad1)" stroke-width="4"/>
-              <path d="M150,150 L250,150 L250,250 L150,250 Z" fill="url(#grad1)" opacity="0.5"/>
-              <circle cx="200" cy="200" r="50" fill="url(#grad1)"/>
-            </svg>
+        <div class="illustration" style="flex:1;display:flex;justify-content:center;align-items:center;">
+          <video width="400" autoplay loop muted playsinline>
+            <source src="data/ma_video.mp4" type="video/mp4" />
+            Votre navigateur ne supporte pas la vidéo HTML5.
+          </video>
         </div>
     </section>
 
