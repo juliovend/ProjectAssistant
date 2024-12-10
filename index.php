@@ -137,9 +137,10 @@ header("Content-Type: text/html; charset=UTF-8");
         }
         
         .illustration video {
-          width: 100%;
-          height: auto;
-        }
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
         .app-logo {
           animation: pulse 2s infinite ease-in-out;
