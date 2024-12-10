@@ -105,6 +105,7 @@ header("Content-Type: text/html; charset=UTF-8");
           padding: 4rem 2rem;
           max-width: 1400px;
           margin: 0 auto;
+          min-height: 100vh;
         }
 
         #hero h1 {
