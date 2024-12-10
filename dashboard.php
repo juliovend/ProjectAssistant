@@ -1323,7 +1323,7 @@ $userEmail = $_SESSION['user_email'];
             </div>
             <div class="stat-card">
                 <i class="fas fa-coins"></i>
-                <h4>Budget Totale</h4>
+                <h4>Budget Total</h4>
                 <div class="stat-value" id="total-budget">0€</div>
             </div>
             <div class="stat-card">

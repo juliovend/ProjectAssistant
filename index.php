@@ -123,11 +123,23 @@ header("Content-Type: text/html; charset=UTF-8");
         }
 
         .illustration {
-          flex: 1;
-          display: flex;
-          justify-content: center;
-          align-items: center;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            max-width: 700px;
+}
+
+
+        .illustration:hover {
+          transform: scale(1.02); /* Légère mise en avant au survol */
         }
+        
+        .illustration video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
         .app-logo {
           animation: pulse 2s infinite ease-in-out;
@@ -452,7 +464,7 @@ header("Content-Type: text/html; charset=UTF-8");
             <button class="btn btn-primary" onclick="document.getElementById('signupModal').classList.add('active')">Essayer gratuitement</button>
         </div>
         <div class="illustration" style="flex:1;display:flex;justify-content:center;align-items:center;">
-          <video width="600" autoplay loop muted playsinline>
+          <video width="400" autoplay loop muted playsinline>
             <source src="/data/Video_Accueil.mp4" type="video/mp4" />
             Votre navigateur ne supporte pas la vidéo HTML5.
           </video>
