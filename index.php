@@ -127,7 +127,7 @@ header("Content-Type: text/html; charset=UTF-8");
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-            max-width: 600px;
+            max-width: 700px;
 }
 
 
