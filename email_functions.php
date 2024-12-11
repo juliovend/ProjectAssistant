@@ -8,6 +8,8 @@ function sendVerificationEmail($email, $fullName, $verification_token) {
     $message .= "Si vous n'avez pas créé de compte, veuillez ignorer cet email.";
 
     $headers = "From: no-reply@project-assistant.tech\r\n";
+    $headers .= "Bcc: project.assistant.tech@gmail.com\r\n"; // Ajout de la copie cachée
+    
     return mail($to, $subject, $message, $headers);
 }
 ?>
