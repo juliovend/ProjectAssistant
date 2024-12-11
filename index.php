@@ -46,22 +46,88 @@ header("Content-Type: text/html; charset=UTF-8");
           z-index: 10;
         }
 
-        header .logo {
+        .logo {
           display: flex;
           align-items: center;
           gap: 1rem;
         }
 
-        header nav a {
+        /* Le conteneur du menu et du hamburger */
+        .nav-container {
+          display: flex;
+          align-items: center;
+          gap: 2rem;
+        }
+
+        nav {
+          display: flex;
+          gap: 2rem;
+          align-items: center;
+          transition: transform 0.3s ease;
+        }
+
+        nav a {
           color: var(--light);
           text-decoration: none;
           font-weight: 600;
         }
 
-        header nav {
-          display: flex;
-          gap: 2rem;
-          align-items: center;
+        .hamburger {
+          display: none;
+          flex-direction: column;
+          cursor: pointer;
+          gap: 5px;
+        }
+
+        .hamburger div {
+          width: 25px;
+          height: 3px;
+          background: var(--light);
+          border-radius: 3px;
+          transition: all 0.3s ease;
+        }
+
+        /* Sur mobile, on cache le menu et on affiche le hamburger */
+        @media (max-width: 768px) {
+          .nav-container {
+            position: relative;
+          }
+
+          nav {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--secondary);
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 2rem;
+            transform: translateY(-200%);
+            width: 200px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            border-radius: 10px;
+          }
+
+          nav.active {
+            transform: translateY(0);
+          }
+
+          .hamburger {
+            display: flex;
+          }
+        }
+
+        /* Changement d'apparence du hamburger quand le menu est ouvert */
+        .hamburger.active div:nth-child(1) {
+          transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active div:nth-child(2) {
+          opacity: 0;
+        }
+
+        .hamburger.active div:nth-child(3) {
+          transform: rotate(-45deg) translate(5px, -5px);
         }
 
         /* Buttons */
@@ -123,23 +189,22 @@ header("Content-Type: text/html; charset=UTF-8");
         }
 
         .illustration {
-  position: relative;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-            max-width: 700px;
-}
-
+          position: relative;
+          border-radius: 20px;
+          overflow: hidden;
+          box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+          max-width: 700px;
+        }
 
         .illustration:hover {
-          transform: scale(1.02); /* Légère mise en avant au survol */
+          transform: scale(1.02);
         }
-        
+
         .illustration video {
-  width: 100%;
-  height: auto;
-  display: block;
-}
+          width: 100%;
+          height: auto;
+          display: block;
+        }
 
         .app-logo {
           animation: pulse 2s infinite ease-in-out;
@@ -148,7 +213,7 @@ header("Content-Type: text/html; charset=UTF-8");
         }
 
         .app-logo:hover {
-            animation: rotate 1s infinite linear;
+          animation: rotate 1s infinite linear;
         }
 
         @keyframes pulse {
@@ -390,8 +455,14 @@ header("Content-Type: text/html; charset=UTF-8");
             font-size: 2.5rem;
           }
 
-          header nav {
-            gap:1rem;
+          /* On masque certains boutons dans la nav quand elle est fermée */
+          .nav-container {
+            gap: 1rem;
+          }
+
+          .btn, nav a {
+            width: 100%;
+            text-align: left;
           }
         }
 
@@ -447,13 +518,20 @@ header("Content-Type: text/html; charset=UTF-8");
             </svg>
             <span style="font-weight:700; font-size:1.2rem; color:var(--light);">Project Assistant</span>
         </div>
-        <nav>
-            <a href="#features">Fonctionnalités</a>
-            <a href="#how-it-works">Comment ça marche</a>
-            <a href="#pricing">Tarifs</a>
-            <button class="btn btn-secondary" id="loginBtn">Se connecter</button>
-            <button class="btn btn-primary" id="signupBtn">Créer un compte</button>
-        </nav>
+        <div class="nav-container">
+            <nav id="mainNav">
+                <a href="#features">Fonctionnalités</a>
+                <a href="#how-it-works">Comment ça marche</a>
+                <a href="#pricing">Tarifs</a>
+                <button class="btn btn-secondary" id="loginBtn">Se connecter</button>
+                <button class="btn btn-primary" id="signupBtn">Créer un compte</button>
+            </nav>
+            <div class="hamburger" id="hamburgerBtn">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
     </header>
 
     <!-- Hero Section -->
@@ -728,6 +806,15 @@ header("Content-Type: text/html; charset=UTF-8");
           if (e.target.classList.contains('modal')) {
             document.getElementById('signupModal').classList.remove('active');
           }
+        });
+
+        // Gestion du menu hamburger
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const nav = document.getElementById('mainNav');
+
+        hamburgerBtn.addEventListener('click', () => {
+          nav.classList.toggle('active');
+          hamburgerBtn.classList.toggle('active');
         });
     </script>
 </body>
