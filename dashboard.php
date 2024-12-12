@@ -53,7 +53,8 @@ $userEmail = $_SESSION['user_email'];
             background-color: var(--primary-dark);
             padding: 1rem;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            z-index: 100;
+            position: relative;
+            z-index: 2000;
         }
 
         .app-logo {
@@ -235,12 +236,12 @@ $userEmail = $_SESSION['user_email'];
 
         #overlay {
             position: fixed;
-            top: 0;
+            top: 160px;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: calc(100% - 160px);
             background-color: rgba(0, 0, 0, 0.8);
-            z-index: 1000;
+            z-index: 999;
             display: none;
         }
 
