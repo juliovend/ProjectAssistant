@@ -236,10 +236,10 @@ $userEmail = $_SESSION['user_email'];
 
         #overlay {
             position: fixed;
-            top: 120px;
+            top: 140px;
             left: 0;
             width: 100%;
-            height: calc(100% - 120px);
+            height: calc(100% - 140px);
             background-color: rgba(0, 0, 0, 0.8);
             z-index: 999;
             display: none;
