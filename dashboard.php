@@ -1040,8 +1040,20 @@ $userEmail = $_SESSION['user_email'];
     }
 
     header {
-        padding: 10px;
+    position: relative;
+    z-index: 2000; /* S’assure que le header passe au-dessus de l'overlay */
     }
+
+    #overlay {
+    position: fixed;
+    top: 80px; /* Hauteur du header en mobile */
+    left: 0;
+    width: 100%;
+    height: calc(100% - 80px);
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 999;  /* Doit être inférieur au z-index du header */
+    display: none; /* Par défaut, caché tant qu'aucun projet n’est sélectionné */
+}
 
             .task-header-left {
                 flex-direction: column;
