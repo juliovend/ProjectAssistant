@@ -1055,6 +1055,10 @@ $userEmail = $_SESSION['user_email'];
     display: none; /* Par défaut, caché tant qu'aucun projet n’est sélectionné */
 }
 
+            .modal-content {
+    margin-top: 80px; /* Ajustez cette valeur */
+  }
+
             .task-header-left {
                 flex-direction: column;
                 align-items: flex-start;
