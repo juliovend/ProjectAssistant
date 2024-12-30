@@ -1056,7 +1056,7 @@ $userEmail = $_SESSION['user_email'];
 }
 
             .modal-content {
-    margin-top: 40px; /* Ajustez cette valeur */
+    margin-top: 140px; /* Ajustez cette valeur */
   }
 
             .task-header-left {
