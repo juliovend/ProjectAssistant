@@ -9,7 +9,7 @@ if (!$data) {
     echo json_encode(["success" => false, "message" => "Données JSON invalides"]);
     exit;
 }
-
+//test
 $email = $data['email'];
 $password = $data['password'];
 
@@ -32,3 +32,4 @@ if ($result) {
     echo json_encode(["success" => false, "message" => "Email non trouvé"]);
 }
 ?>
+
